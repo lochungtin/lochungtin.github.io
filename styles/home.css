@@ -1,3 +1,35 @@
+h2 {
+  font-size: 60px;
+  margin: 30px;
+}
+
+.landingStack {
+  height: 850px;
+  width: 100%;
+}
+
+.landingStackInner {
+  position: absolute;
+}
+
+.socialRowPositioner {
+  left: 50px;
+  top: 30px;
+}
+
+.socialRow {
+  align-items: center;
+  background-color: #ffffff50;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  justify-content: space-between;
+  padding-left: 30px;
+  padding-right: 30px;
+  width: 300px;
+}
+
 .skillRow {
   width: 800px;
 }

@@ -15,6 +15,11 @@ body {
   width: 100%;
 }
 
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;  
+}
+
 @font-face {
   font-family: nova;
   src: url(../font/NovaSquare-Regular.ttf);
