@@ -1,7 +1,3 @@
-h3 {
-  margin-bottom: 20px;
-}
-
 .skillRow {
   width: 800px;
 }
@@ -26,10 +22,14 @@ h3 {
   margin-bottom: 20px;
 }
 
+.skillProficiencyRow {
+  margin-bottom: 10px;
+}
+
 .skillDesc {
   height: 120px;
 }
 
 .highlighted {
-    color: #ff8730
+  color: #ff8730;
 }
