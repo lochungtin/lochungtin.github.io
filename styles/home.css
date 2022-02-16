@@ -14,7 +14,7 @@ a {
   align-items: center;
   display: flex;
   flex-direction: column;
-  justify-self: center;
+  justify-content: center;
   left: 0; 
   margin-left: auto; 
   margin-right: auto; 
@@ -24,9 +24,12 @@ a {
 }
 
 .pfpContainer {
+  align-items: center;
+  display: flex;
   border: 3px solid white;
   border-radius: 200px;
   height: 400px;
+  justify-content: center;
   width: 400px;
 }
 
@@ -38,6 +41,13 @@ a {
 .pfpTopText {
   font-size: 30px;
   margin-bottom: 30px;
+}
+
+.pfp {
+  border-radius: 200px;
+  height: 375px;
+  object-fit: cover;
+  width: 375px;
 }
 
 .pfpBottomText {
