@@ -1,11 +1,15 @@
 a {
-	color: white;
-	text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 h2 {
-  font-size: 60px;
+  font-size: 45px;
   margin: 30px;
+}
+
+h3 {
+  font-size: 25px;
 }
 
 .landingStack {
@@ -36,18 +40,28 @@ h2 {
 }
 
 .navRowPositioner {
-	right: 50px;
-	top: 30px;
-  }
+  right: 50px;
+  top: 30px;
+}
 
 .navRow {
-	align-items: center;
-	border-radius: 25px;
-	display: flex;
-	flex-direction: row;
-	height: 50px;
-	justify-content: space-between;
-	width: 400px;
+  align-items: center;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: row;
+  height: 50px;
+  justify-content: space-between;
+  width: 300px;
+}
+
+.homeText {
+  margin: 20px;
+  text-align: justify;
+  width: 800px;
+}
+
+.spacer {
+	margin-top: 60px;
 }
 
 .skillRow {
