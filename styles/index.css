@@ -12,6 +12,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  overflow-x: hidden;
   width: 100%;
 }
 
@@ -72,6 +73,19 @@ h3 {
 
 .highlighted {
   color: #ff8730;
+}
+
+.copyright {
+  align-items: center;
+  background-color: #0c0c0c;
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  width: 100%;
+}
+
+.copyrightText {
+  color: white;
 }
 
 ::-webkit-scrollbar {
