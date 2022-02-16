@@ -1,0 +1,10 @@
+.skillRow {
+    width: 800px;
+}
+
+.skillRow {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
