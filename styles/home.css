@@ -1,3 +1,8 @@
+a {
+	color: white;
+	text-decoration: none;
+}
+
 h2 {
   font-size: 60px;
   margin: 30px;
@@ -28,6 +33,21 @@ h2 {
   padding-left: 30px;
   padding-right: 30px;
   width: 300px;
+}
+
+.navRowPositioner {
+	right: 50px;
+	top: 30px;
+  }
+
+.navRow {
+	align-items: center;
+	border-radius: 25px;
+	display: flex;
+	flex-direction: row;
+	height: 50px;
+	justify-content: space-between;
+	width: 400px;
 }
 
 .skillRow {
