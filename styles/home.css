@@ -6,6 +6,45 @@ a {
   height: 850px;
 }
 
+.socialRow {
+  background-color: #ffffff50;
+}
+
+.pfpPositioner {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  left: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  right: 0; 
+  top: 150px;
+  width: 500px;
+}
+
+.pfpContainer {
+  border: 3px solid white;
+  border-radius: 200px;
+  height: 400px;
+  width: 400px;
+}
+
+.pfpText {
+  color: white;
+  text-align: center;
+}
+
+.pfpTopText {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.pfpBottomText {
+  font-size: 40px;
+  margin-top: 30px;
+}
+
 .homeText {
   margin: 20px;
   text-align: justify;
