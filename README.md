@@ -1,3 +1,3 @@
 # lochungtin.github.io
 
-## redirecting page to main site: lochungtin.github.io/site
+## redirecting page to main site: https://portfolio-lochungtin.vercel.app/
