@@ -1,0 +1,50 @@
+.skills>.row {
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: center;
+}
+
+.skills>.row>.card {
+    align-items: center;
+    background-color: rgba(var(--t3_color), 0.2);
+    border-radius: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+    width: 43vw;
+    z-index: 10;
+}
+
+.skills>.row>.card>.top {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    height: 3rem;
+    justify-content: flex-start;
+    margin-top: 3rem;
+    width: 20rem;
+}
+
+.skills>.row>.card>.top>img {
+    height: 3rem;
+}
+
+.skills>.row>.card>.indicators {
+    background: linear-gradient(90deg,
+            rgb(var(--t3_color)) 0%,
+            rgb(var(--t2_color)) 50%,
+            rgb(var(--t0_color)) 100%);
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 3rem;
+    width: 20rem;
+    height: 1.5rem;
+    position: relative;
+}

@@ -1,0 +1,187 @@
+.badge {
+	align-items: center;
+	aspect-ratio: 10 / 16;
+	background-color: rgba(var(--t2_color), 0.2);
+	border-radius: 1rem;
+	border: 4px rgb(var(--t2_color)) solid;
+	box-shadow: 0px 0px 10px rgba(var(--t2_color), 0.5);
+	display: flex;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+	text-shadow: 0px 0px 10px rgb(var(--t0_color));
+	width: 90vw;
+	z-index: 10;
+}
+
+.badge>.overlay {
+	animation: overlay-pan 40s infinite linear;
+	background: linear-gradient(rgba(var(--t2_color), 0.1),
+			rgba(var(--t1_color), 0.1) 2px,
+			transparent 2px,
+			transparent 20px);
+	background-size: 100% 22px;
+	height: 100%;
+	left: 0px;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	z-index: 2;
+}
+
+.badge>.image {
+	animation: image-pan 25s infinite linear;
+	background-image: url('https://images.unsplash.com/photo-1439853949127-fa647821eba0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80');
+	filter: sepia(100%) hue-rotate(120deg) contrast(0.5) brightness(0.5);
+	height: 100%;
+	left: 0px;
+	opacity: 0.6;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	z-index: 1;
+}
+
+.badge>.content {
+	align-items: center;
+	border-radius: 0.6rem;
+	border: 4px solid rgba(var(--t0_color), 0.2);
+	display: flex;
+	flex-direction: column;
+	flex-grow: 1;
+	gap: 10rem;
+	height: 95%;
+	justify-content: center;
+	margin: 2rem;
+	position: relative;
+	z-index: 3;
+}
+
+.badge>.content>.icon {
+	width: 30rem;
+	filter: drop-shadow(0px 0px 40px rgb(var(--t4_color)));
+}
+
+.badge>.content>.indicator-root {
+	aspect-ratio: 45;
+	position: relative;
+	width: 600px;
+}
+
+.badge>.content>.indicator-root>.indicators {
+	background: linear-gradient(to left,
+			/* transparent, */
+			/* transparent 20px, */
+			/* rgb(var(--t2_color)) 20px, */
+			rgb(var(--t0_color)) 150px,
+			/* rgb(var(--t0_color)) 180px, */
+			/* transparent 180px, */
+			/* transparent 200px, */
+		);
+	background-size: 200px 100%;
+	height: 100%;
+	left: 0px;
+	position: absolute;
+	top: 0px;
+	width: 100%;
+	z-index: 5;
+}
+
+.badge>.content>.indicator-root>.glow {
+	animation: glow-pan 25s infinite linear;
+	background-color: rgb(var(--t2_color));
+	box-shadow: 0px 0px 7px rgb(var(--t0_color));
+	height: 4px;
+	left: 10px;
+	position: absolute;
+	top: 0px;
+	width: 40px;
+	z-index: 4;
+}
+
+.badge>.content>.name {
+	font-size: 8rem;
+	margin-top: 1rem;
+}
+
+.badge>.content>.link {
+	color: rgb(var(--t0_color));
+	text-decoration: none;
+}
+
+@keyframes overlay-pan {
+	from {
+		background-position: 0% 0%;
+	}
+
+	to {
+		background-position: 0% -100%;
+	}
+}
+
+@keyframes image-pan {
+	0% {
+		background-position: 50% 50%;
+		background-size: 150%;
+	}
+
+	33% {
+		background-position: 10% 20%;
+		background-size: 250%;
+	}
+
+	34% {
+		background-position: 20% 90%;
+		background-size: 250%;
+	}
+
+	66% {
+		background-position: 90% 50%;
+		background-size: 400%;
+	}
+
+	67% {
+		background-position: 100% 80%;
+		background-size: 300%;
+	}
+
+	99% {
+		background-position: 0% 80%;
+		background-size: 200%;
+	}
+
+	100% {
+		background-position: 50% 50%;
+		background-size: 150%;
+	}
+}
+
+@keyframes glow-pan {
+	0% {
+		left: 10px;
+	}
+
+	33% {
+		left: 10px;
+	}
+
+	34% {
+		left: 70px;
+	}
+
+	66% {
+		left: 70px;
+	}
+
+	67% {
+		left: 130px;
+	}
+
+	99% {
+		left: 130px;
+	}
+
+	100% {
+		left: 10px;
+	}
+}
