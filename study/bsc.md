@@ -18,7 +18,7 @@ The experimentation involved detailed analysis, including metrics such as _compl
 
 Notably, the analysis indicated that the hyper-aggressive and MDP-based ghost agents posed a greater threat to human players due to their reduced margin of error. However, challenges and limitations arose, primarily stemming from the reduced computational power, lack of human data, and imperfect rewards, impacting the generalisation of results.
 
-# Conclusion
+## Conclusion
 
 However, my work encountered limitations. Computational constraints forced a reduction in grid size, impacting the generalisation of results to the original Pac-Man game. The absence of human data and imperfect rewards further added to the challenges of generalising findings.
 
