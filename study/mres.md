@@ -1,6 +1,6 @@
 # Master's Thesis
 
-![logo](./imperial.png ':size=40%')
+![logo](./mres.png ':size=40%')
 
 ## Introduction
 
