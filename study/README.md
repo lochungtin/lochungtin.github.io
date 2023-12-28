@@ -87,6 +87,8 @@ This is a research master's degree, which means that the nature of this degree p
 
 ## [DPhil Medical Physics and Bioengineering](./dphil.md)
 
+This is a partnered PhD program between UCL and Leo Cancer Care Ltd. The research focus for this program is understanding and evaluating the performance of segmentation techniques for medical scans. Due to NDAs, details cannot be disclosed about the research.
+
 | Institute                     | Duration       | Final Grade |
 | :---------------------------- | :------------- | :---------: |
 | [University College London]() | 2023 - Current | **Pending** |
