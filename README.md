@@ -1,3 +1,5 @@
-# lochungtin.github.io
+# Hello!
 
-## redirecting page to main site: https://portfolio-lochungtin.vercel.app/
+## I am Timothy <!-- {docsify-ignore} -->
+
+This is my **documentation website**, the central storage of where all my projects are documented in detail.

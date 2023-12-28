@@ -1,356 +1,41 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&display=swap" rel="stylesheet">
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="styles/badge.css">
-    <link rel="stylesheet" href="styles/skill.css">
-    <link rel="stylesheet" href="styles/card.css">
-    <link rel="stylesheet" href="styles/timeline.css">
-    <link rel="stylesheet" href="styles/achievements.css">
-    <link rel="stylesheet" href="styles/footer.css">
-    <link rel="stylesheet" href="styles.css">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
+	<meta name="description" content="">
+	<title></title>
+
+	<!-- Themes (light + dark) -->
+	<link rel="stylesheet" media="(prefers-color-scheme: dark)" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css">
+	<link rel="stylesheet" media="(prefers-color-scheme: light)" href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css">
+
+	<!-- Custom Styles -->
+	<style>
+		:root {
+		/* --theme-hue: 325; */
+		}
+	</style>
 </head>
-
 <body>
-    <section class="about">
-        <div class="badge">
-            <div class="overlay"></div>
-            <div class="image"></div>
-            <div class="content">
-                <img class="icon" src="assets/logo.svg" alt="logo" />
-                <div class="indicator-root">
-                    <div class="indicators"></div>
-                    <!-- <div class="glow"></div> -->
-                </div>
-                <span class="name" id="name">TIMOTHY</span>
-                <a class="link" href="https://github.com/lochungtin">@enigmaoffline</a>
-            </div>
-        </div>
+	<div id="app"></div>
 
-        <h1><span class="color">ABO</span>UT ME</h1>
+	<script>
+		// Docsify Configuration
+		window.$docsify = {
+			loadSidebar: true,
+			auto2top: true,
+			subMaxLevel: 2,
+		};
+	</script>
 
-        <p class="intro">Hi, I am <span class="highlight"><span class="color">Timothy</span> Lo</p>
-        <p class="text">I am a <span class="color">PhD student</span> currently researching at UCL alongside Leo Cancer
-            Centre to further develop
-            techniques and
-            methods for upright radiotherapy for the thorax region.</p>
-        <h2>Artifical Intelligence</h2>
-        <p class="text">I currently specialise in the field of <span class="color">computer vision</span> and <span
-                class="color">advanced image analysis</span>. My previous
-            research during my masters degree is to develop an end to end, <span class="color">image to diagnosis
-                pipeline</span> for ultrasonic
-            scan images of ovarian masses. My current research is closely related to my previous as it also requires
-            extensive work on <span class="color">analysing anatomical structures</span> of the chest region.</p>
-        <h2>Software Engineering</h2>
-        <p class="text">On top of being a research on AI and ML, I am also a <span class="color">self-taught web and
-                mobile developer</span>. I
-            specialise in the react family of frameworks, specifically <span class="color">ReactJS</span> and <span
-                class="color">NextJS</span> for web development and React
-            Native for mobile development. Visit my GitHub page or highlighted projects for more of my work.</p>
-        <h2>Hobbies & Robotics</h2>
-        <p class="text">I have always taken an interest in <span class="color">embedded systems</span> and <span
-                class="color">micro controllers</span>. In fact, I was first exposed to
-            programming through robotics. I have created home automation systems with esp32s and arduino boards. I have
-            also built a NAS system using the raspberry pi 4.</p>
-    </section>
+	<!-- Required -->
+	<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
 
-    <section class="skills">
-        <h1><span class="color">SKI</span>LLS</h1>
-
-        <div class="row">
-            <div class="card">
-                <div class="top">
-                    <img src="assets/python.svg" />
-                    <p>Python</p>
-                </div>
-                <div class="indicators" style="clip-path: inset(0 0 0 0 round 3rem);"></div>
-            </div>
-            <div class="card">
-                <div class="top">
-                    <img src="assets/numpy.svg" />
-                    <p>NumPy</p>
-                </div>
-                <div class="indicators" style="clip-path: inset(0 0 0 0 round 3rem);"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <div class="top">
-                    <img src="assets/pytorch.svg" />
-                    <p>Pytorch</p>
-                </div>
-                <div class="indicators" style="clip-path: inset(0 0 0 0 round 3rem);"></div>
-            </div>
-            <div class="card">
-                <div class="top">
-                    <img src="assets/pandas.svg" />
-                    <p>Pandas</p>
-                </div>
-                <div class="indicators" style="clip-path: inset(0 4rem 0 0 round 3rem);"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <div class="top">
-                    <img src="assets/javascript.svg" />
-                    <p>JavaScript</p>
-                </div>
-                <div class="indicators" style="clip-path: inset(0 0 0 0 round 3rem);"></div>
-            </div>
-            <div class="card">
-                <div class="top">
-                    <img src="assets/typescript.svg" />
-                    <p>TypeScript</p>
-                </div>
-                <div class="indicators" style="clip-path: inset(0 4rem 0 0 round 3rem);"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <div class="top">
-                    <img src="assets/react.svg" />
-                    <p>ReactJS</p>
-                </div>
-                <div class="indicators" style="clip-path: inset(0 2rem 0 0 round 3rem);"></div>
-            </div>
-            <div class="card">
-                <div class="top">
-                    <img src="assets/nextjs.svg" />
-                    <p>NextJS</p>
-                </div>
-                <div class="indicators" style="clip-path: inset(0 4rem 0 0 round 3rem);"></div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="card">
-                <div class="top">
-                    <img src="assets/cplusplus.svg" />
-                    <p>C++</p>
-                </div>
-                <div class="indicators" style="clip-path: inset(0 8rem 0 0 round 3rem);"></div>
-            </div>
-            <div class="card">
-                <div class="top">
-                    <img src="assets/arduino.svg" />
-                    <p>Arduino</p>
-                </div>
-                <div class="indicators" style="clip-path: inset(0 4rem 0 0 round 3rem);"></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="projects">
-        <h1><span class="color">PRO</span>JECTS</h1>
-
-        <div class="card">
-            <div class="dots"></div>
-            <div class="overlay">
-                <span class="title">Ultrasound Auto-Seg</span>
-                <span class="subtitle">Auto-segmentation of medical scans</span>
-                <div class="icons">
-                    <img class="icon" src="assets/python.svg" alt="icon" />
-                    <img class="icon" src="assets/numpy.svg" alt="icon" />
-                    <img class="icon" src="assets/pytorch.svg" alt="icon" />
-                </div>
-            </div>
-            <div class="content">
-                <p class="text"><span class="title">Auto-Seg</span> (auto-segmentation) of ultrasonic scans for ovarian
-                    masses is my main research focus for my Master's thesis. My diagnosis pipline managed to achieved an
-                    accuracy of 92%.</p>
-                <div class="actions">
-                    <a class="btn" href="https://github.com/lochungtin/coincontrol"><img class="icon"
-                            src="assets/github.svg" alt="icon" /></a>
-                    <a class="action" href="https://portfolio-lochungtin.vercel.app/projects/coincontrol">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="dots"></div>
-            <div class="overlay">
-                <span class="title">CoinControl</span>
-                <span class="subtitle">Spendings Managment App</span>
-                <div class="icons">
-                    <img class="icon" src="assets/typescript.svg" alt="icon" />
-                    <img class="icon" src="assets/react.svg" alt="icon" />
-                    <img class="icon" src="assets/firebase.svg" alt="icon" />
-                </div>
-            </div>
-            <div class="content">
-                <p class="text"><span class="title">CoinControl</span> is a money management mobile app with an account
-                    system, cloud backup, analytics, and also a built-in calculator for easy calculations for recording
-                    cashflow.</p>
-                <div class="actions">
-                    <a class="btn" href="https://github.com/lochungtin/coincontrol"><img class="icon"
-                            src="assets/github.svg" alt="icon" /></a>
-                    <a class="action" href="https://portfolio-lochungtin.vercel.app/projects/coincontrol">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="dots"></div>
-            <div class="overlay">
-                <span class="title">Expedite</span>
-                <span class="subtitle">Puzzle Game Solver</span>
-                <div class="icons">
-                    <img class="icon" src="assets/python.svg" alt="icon" />
-                    <img class="icon" src="assets/cplusplus.svg" alt="icon" />
-                    <img class="icon" src="assets/javascript.svg" alt="icon" />
-                </div>
-            </div>
-            <div class="content">
-                <p class="text"><span class="title">Project Expedite</span> is my attempt to create solutions,
-                    algorithms, or solvers to classic puzzle games. A few principles are setup and all the algorithms
-                    abide by these principles.</p>
-                <div class="actions">
-                    <a class="btn" href="https://github.com/lochungtin/coincontrol"><img class="icon"
-                            src="assets/github.svg" alt="icon" /></a>
-                    <a class="action" href="https://portfolio-lochungtin.vercel.app/projects/coincontrol">Learn More</a>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="dots"></div>
-            <div class="overlay">
-                <span class="title">RL Pacman</span>
-                <span class="subtitle">Undergraduate Project</span>
-                <div class="icons">
-                    <img class="icon" src="assets/python.svg" alt="icon" />
-                </div>
-            </div>
-            <div class="content">
-                <p class="text"><span class="title">RL Pacman</span> is my undergraduate disseration. The topic is to
-                    use the Pacman environment to study the differences of classic reinforcement learning and genetic
-                    algorithm.</p>
-                <div class="actions">
-                    <a class="btn" href="https://github.com/lochungtin/coincontrol"><img class="icon"
-                            src="assets/github.svg" alt="icon" /></a>
-                    <a class="action" href="https://portfolio-lochungtin.vercel.app/projects/coincontrol">Learn More</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="education">
-        <h1><span class="color">EDU</span>CATION</h1>
-
-        <div class="timeline">
-            <div class="cover left"></div>
-            <div class="border">
-                <div class="content">
-                    <div class="top">
-                        <p class="title"><span class="color">DPhil</span> Medical Physics & Bioengineering</p>
-                        <p>University College London</p>
-                    </div>
-                    <div class="details">
-                        <p>2023 - Current</p>
-                        <p>Pending</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="timeline">
-            <div class="cover right"></div>
-            <div class="border">
-                <div class="content">
-                    <div class="top">
-                        <p class="title"><span class="color">MRes</span> AI & ML</p>
-                        <p>Imperial College London</p>
-                    </div>
-                    <div class="details">
-                        <p>2022 - 2023</p>
-                        <p>Distinction</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="timeline">
-            <div class="cover left"></div>
-            <div class="border">
-                <div class="content">
-                    <div class="top">
-                        <p class="title"><span class="color">BSc</span> Computer Science</p>
-                        <p>King's College London</p>
-                    </div>
-                    <div class="details">
-                        <p>2019 - 2022</p>
-                        <p>First Class Honours</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="timeline">
-            <div class="cover right"></div>
-            <div class="border">
-                <div class="content">
-                    <div class="top">
-                        <p class="title"><span class="color">IB</span> Diploma Program</p>
-                        <p>HKCCCU Logos Academy</p>
-                    </div>
-                    <div class="details">
-                        <p>2017 - 2019</p>
-                        <p>80 / 100</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="achievements">
-        <h1><span class="color">ACH</span>IEVEMENTS</h1>
-
-        <div class="card">
-            <div class="shape"></div>
-            <p class="date">November 2020</p>
-            <p class="title">Hack Sheffield 6</p>
-            <p class="subtitle">Multi-award-winning Hackathon Project</p>
-            <p class="text">Our team built a working android mobile app with React Native in 24 hours and won best
-                financial hack and best google cloud hack in the 6th Hack Sheffield hackathon.</p>
-        </div>
-        <div class="card">
-            <div class="shape"></div>
-            <p class="date">Summer 2018</p>
-            <p class="title">MITIA Summer Camp</p>
-            <p class="subtitle">Entrepreneurship Summer Camp</p>
-            <p class="text">I was selected to join a highly intensive week summer camp hosted by the MIT Innovative
-                Academy and MIT Innovation Node in Hong Kong.</p>
-        </div>
-        <div class="card">
-            <div class="shape"></div>
-            <p class="date">May 2017</p>
-            <p class="title">18th Robofest</p>
-            <p class="subtitle">Double Robotics World Championship</p>
-            <p class="text">Our team was awarded World Championship and the People's Choice Award in the 18th annual
-                Robofest Global
-                Robotics Art Festival in 2017.</p>
-        </div>
-        <div class="card">
-            <div class="shape"></div>
-            <p class="date">Summer 2015</p>
-            <p class="title">HK Maths Olympiad</p>
-            <p class="subtitle">Modelling Paper Championship</p>
-            <p class="text">Our team was awarded first place in the Hong Kong Junior Maths Olympiad Modeling Paper
-                for a paper on
-                calculating the day of week given an arbitrary date.</p>
-        </div>
-    </section>
-
-    <section class="footer">
-        <div class="icons">
-            <a class="link" href=""><img class="icon" src="assets/twitter.svg" alt="icon" /></a>
-            <a class="link" href=""><img class="icon" src="assets/discord.svg" alt="icon" /></a>
-            <a class="link" href=""><img class="icon" src="assets/instagram.svg" alt="icon" /></a>
-            <a class="link" href=""><img class="icon" src="assets/github.svg" alt="icon" /></a>
-            <a class="link" href=""><img class="icon" src="assets/npm.svg" alt="icon" /></a>
-            <a class="link" href=""><img class="icon" src="assets/linkedin.svg" alt="icon" /></a>
-            <a class="link" href=""><img class="icon" src="assets/gmail.svg" alt="icon" /></a>
-        </div>
-        <p>Made with 🤍 and ☕ by Timothy Lo</p>
-        <p class="faded">Copyright © 2023 Chung Tin Lo. All Rights Reserved.</p>
-    </section>
+	<!-- Recommended -->
+	<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
 </body>
-
 </html>
