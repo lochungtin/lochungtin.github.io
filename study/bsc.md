@@ -22,4 +22,4 @@ Notably, the analysis indicated that the hyper-aggressive and MDP-based ghost ag
 
 However, my work encountered limitations. Computational constraints forced a reduction in grid size, impacting the generalisation of results to the original Pac-Man game. The absence of human data and imperfect rewards further added to the challenges of generalising findings.
 
-Looking forward, I proposed avenues for future work, emphasising the retraining of machine learning-based ghost agents with human data and refined rewards. Additionally, the introduction of convolution or recurrent layers could enhance the versatility of ghost agents, making them more adept at engaging with human players.
+Looking forward, I propose avenues for future work, such as, emphasising the retraining of machine learning-based ghost agents with human data and refined rewards. Additionally, the introduction of convolution or recurrent layers could enhance the versatility of ghost agents, making them more adept at engaging with human players.
