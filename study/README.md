@@ -15,11 +15,11 @@ This is a taught undergraduate degree. The degree focuses on the basics of compu
 ### Grades
 
 | Year      | Grade |
-| :-------- | :---: |
-| Year 1    |  75   |
-| Year 2    |  83   |
-| Year 3    |  77   |
-| **Final** |  79   |
+| :-------- | :---- |
+| Year 1    | 75    |
+| Year 2    | 83    |
+| Year 3    | 77    |
+| **Final** | 79    |
 
 <details>
     <summary>Year 1 - Module Grades</summary>
@@ -70,8 +70,8 @@ This is a taught undergraduate degree. The degree focuses on the basics of compu
 
 This is a research master's degree, which means that the nature of this degree primarily surrounds researching on one specific topic/project and students are graded heavily on their research efforts. Two-thirds of the final grade is weighted towards the [year-long research project (thesis)]("./study/mres.md), with the remaining percentages equally distributed to subsidiary modules and course assignments.
 
-| Institute                   | Duration    |   Final Grade   |
-| :-------------------------- | :---------- | :-------------: |
+| Institute                   | Duration    | Final Grade     |
+| :-------------------------- | :---------- | :-------------- |
 | [Imperial College London]() | 2022 - 2023 | **Distinction** |
 
 ### Grades
@@ -90,5 +90,5 @@ This is a research master's degree, which means that the nature of this degree p
 This is a partnered PhD program between UCL and Leo Cancer Care Ltd. The research focus for this program is understanding and evaluating the performance of segmentation techniques for medical scans. Due to NDAs, details cannot be disclosed about the research.
 
 | Institute                     | Duration       | Final Grade |
-| :---------------------------- | :------------- | :---------: |
+| :---------------------------- | :------------- | :---------- |
 | [University College London]() | 2023 - Current | **Pending** |
