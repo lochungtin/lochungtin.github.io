@@ -1,9 +1,15 @@
-* [Home](/)
-* [Academics](./study/index.md)
-* [Project Expedite](./expedite.md)
-* [Project FullFrame](./fullframe.md)
-* [NPM Packages](./npm/index.md)
-* [AI Snake](./snake.md)
-* [CoinControl](./coincontrol.md)
-* [Preply](./preply.md)
-* [Unifin](./unifin.md)
+-   [Home](/)
+-   [Academics](./study/index.md)
+
+**Software Development**
+
+-   [NPM Packages](./npm.md)
+-   [Project FullFrame]("https://lochungtin.github.io")
+-   [CoinControl]("https://lochungtin.github.io")
+-   [Preply]("https://lochungtin.github.io")
+-   [Unifin]("https://lochungtin.github.io")
+
+**Passion Projects and Algorithms**
+
+-   [Project Expedite]("https://lochungtin.github.io")
+-   [AI Snake]("https://lochungtin.github.io")

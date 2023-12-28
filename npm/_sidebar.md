@@ -1,7 +1,0 @@
-* [NPM Packages](./npm/index.md)
-* [CalendarJS](./npm/calendarjs.md)
-* [Color](./npm/color.md)
-* [Expression Solver](./npm/expsolver.md)
-* [File Tree](./npm/filetree.md)
-* [Github Fetch](./npm/ghfetch.md)
-* [K-Means Clustering](./npm/kmeans.md)
