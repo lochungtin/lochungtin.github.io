@@ -4,9 +4,9 @@ This section of the website is dedicated to documenting my academic work. There 
 
 Below, I will highlight the nature and the subjects of each degree as well as provide detailed grades for each module.
 
-## [BSc Computer Science](./bsc.md)
+## [BSc Computer Science](./study/bsc.md)
 
-This is a taught undergraduate degree. The degree focuses on the basics of computer science and programming. The program is a 3-year degree and 2 semesters per year. There are 7 modules taught each year, 3 in each semester and one spanning across 2 semesters. The [final year project (dissertation)]("./bsc.md) is done in the third year, spanning the entire year.
+This is a taught undergraduate degree. The degree focuses on the basics of computer science and programming. The program is a 3-year degree and 2 semesters per year. There are 7 modules taught each year, 3 in each semester and one spanning across 2 semesters. The [final year project (dissertation)]("./study/bsc.md) is done in the third year, spanning the entire year.
 
 | Institute                 | Duration    |   Final Grade   |
 | :------------------------ | :---------- | :-------------: |
@@ -66,9 +66,9 @@ This is a taught undergraduate degree. The degree focuses on the basics of compu
 
 </details>
 
-## [MRes Aritificial Intelligence and Machine Learning](./mres.md)
+## [MRes Aritificial Intelligence and Machine Learning](./study/mres.md)
 
-This is a research master's degree, which means that the nature of this degree primarily surrounds researching on one specific topic/project and students are graded heavily on their research efforts. Two-thirds of the final grade is weighted towards the [year-long research project (thesis)]("./mres.md), with the remaining percentages equally distributed to subsidiary modules and course assignments.
+This is a research master's degree, which means that the nature of this degree primarily surrounds researching on one specific topic/project and students are graded heavily on their research efforts. Two-thirds of the final grade is weighted towards the [year-long research project (thesis)]("./study/mres.md), with the remaining percentages equally distributed to subsidiary modules and course assignments.
 
 | Institute                   | Duration    |   Final Grade   |
 | :-------------------------- | :---------- | :-------------: |

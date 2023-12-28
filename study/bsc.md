@@ -4,7 +4,7 @@
 
 ## Introduction
 
-In this extensive report, I embarked on the development and analysis of various ghost agent variants within the Pac-Man game environment. I conducted experiments using different approaches, including deep Q-learning, neuroevolution, and temporal difference learning. Throughout my experiments, I delved into the performance of various ghost agent combinations in the Pac-Man game. The diverse variants, including _hyper-aggressive_, _MDP-based_, _TD learning_, and _neuroevolutionary agents_, were meticulously tested and analysed.
+For my undergraduate studies final year project, I embarked on the development and analysis of various ghost agent variants within the Pac-Man game environment. I conducted experiments using different approaches, including deep Q-learning, neuroevolution, and temporal difference learning. Throughout my experiments, I delved into the performance of various ghost agent combinations in the Pac-Man game. The diverse variants, including _hyper-aggressive_, _MDP-based_, _TD learning_, and _neuroevolutionary agents_, were meticulously tested and analysed.
 
 <div style="text-align:center">
 
