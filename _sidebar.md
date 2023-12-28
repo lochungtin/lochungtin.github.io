@@ -1,5 +1,5 @@
 -   [Home](/)
--   [Academics](./study/index.md)
+-   [Academics](./study/)
 
 **Software Development**
 
