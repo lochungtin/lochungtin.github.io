@@ -1,6 +1,8 @@
 -   [Home](/)
 -   [Academics](./study/)
 
+---
+
 **Software Development**
 
 -   [NPM Packages](./npm.md)
@@ -8,6 +10,8 @@
 -   [CoinControl]("https://lochungtin.github.io")
 -   [Preply]("https://lochungtin.github.io")
 -   [Unifin]("https://lochungtin.github.io")
+
+---
 
 **Passion Projects and Algorithms**
 
