@@ -21,15 +21,15 @@ My teammates and I were all **music enthusiasts**, so we decided we would build 
 
 [Robofest 2017 Logos Website](https://logossteampowered.wixsite.com/2017robofest)
 
-## String-less Violin
+## String-less Violin <!-- {docsify-ignore} -->
 
 The string-less violin uses **ultrasonic sensors** to detect the relative position of the player's hand on the neck of the violin. The distance is fed to a pair of Arduinos that would select the corresponding frequency and generate a electric signal of said frequency. The signal is passed through a **in-built amplifier** and played through a speaker.
 
-## Laser Harp
+## Laser Harp <!-- {docsify-ignore} -->
 
 8 **class A laser emitters and receivers** are reused to recreate the strings of a harp. Each laser is pointed directly to the receiver. If any of the receivers stop receiving a signal, the Arduino that is connected to all the receivers will trigger a **serial signal to a connected computer** to play a sound sample. This mimics the act of plucking a string on a harp.
 
-## Marbles Midi-Drum
+## Marbles Midi-Drum <!-- {docsify-ignore} -->
 
 Attached to 4 custom made drum pads are 4 **shock sensors** that can detect any impact on the drum pad surface. A serial signal is triggered from an Arduino to a laptop to play a select drum sample.
 
