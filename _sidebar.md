@@ -10,6 +10,7 @@
 -   [CoinControl](https://lochungtin.github.io/CoinControl)
 -   [Preply](https://lochungtin.github.io/Preply)
 -   [Unifin](https://lochungtin.github.io/Unifin)
+-   [Pyxelite](https://lochungtin.github.io/Pyxelite)
 
 ---
 
