@@ -16,7 +16,7 @@
 **Passion Projects and Algorithms**
 
 -   [Project Expedite](https://lochungtin.github.io/Expedite)
--   [AI Snake](https://lochungtin.github.io/snakeAI)
+-   [AI Snake](https://lochungtin.github.io/SnakeAI)
 
 ---
 
