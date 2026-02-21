@@ -68,19 +68,19 @@
 				"year": "Summer 2021",
 				"title": "Reinforcement Learning Specialisation",
 				"body": "University of Alberta / Coursera",
-				"description": "Brief description of what this certificate covers and why you pursued it."
+				"description": "Applying and implementing reinforcement learning theory and principles via project-based learning."
 			},
 			{
 				"year": "Summer 2020",
 				"title": "Neural Networks and Deep Learning",
 				"body": "Deeplearing.ai / Coursera",
-				"description": "Brief description of what this certificate covers and why you pursued it."
+				"description": "Applying the basic theories of deep learning via hands-on projects while learning the mathematics behind each mechanism."
 			},
 			{
 				"year": "Summer 2020",
 				"title": "CS50’s Mobile App Development with React Native",
 				"body": "Harvard University / EdX",
-				"description": "Brief description of what this certificate covers and why you pursued it."
+				"description": "Basics in mobile app development using React Native."
 			}
 		],
 		"conferences": [
