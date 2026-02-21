@@ -110,19 +110,19 @@
 			},
 			{
 				"type": "Poster Presentation",
-				"title": "A deformable registration-based pipeline for the characterisation of respiratory motion from 2D lung cine MRI",
+				"title": "A Deformable Registration-based Pipeline for the Characterisation of Respiratory Motion from 2D Lung Cine MRI",
 				"venue": "AAPM 2025 · Washington DC, USA",
 				"year": "2025"
 			},
 			{
 				"type": "Oral Presentation - Poster Discussion",
-				"title": "A low-cost, flexible, and accurate technique to study new immobilisation systems for radiotherapy and their associated positional reproducibility/stability",
+				"title": "A Low-cost, Flexible, and Accurate Technique to Study New Immobilisation Systems for Radiotherapy and their Associated Positional Reproducibility/Stability",
 				"venue": "ESTRO 2025 · Vienna, Austria",
 				"year": "2025"
 			},
 			{
 				"type": "Oral Presentation - Proffered Mini Oral Presentation",
-				"title": "Computer vision-based marker detection for quantitative assessment of upright position reproducibility",
+				"title": "Computer Vision-based Marker Detection for Quantitative Assessment of Upright Position Reproducibility",
 				"venue": "Upright Consortium 2024 · Glasgow, United Kingdom",
 				"year": "2024"
 			}
@@ -130,9 +130,9 @@
 		"publications": [
 			{
 				"type": "Journal Article",
-				"title": "Full Title of Your Published Paper Here",
-				"venue": "Frontiers in Oncology, Vol. 15, Issue Y",
-				"year_doi": "2024 · DOI: 10.xxxx/xxxxx"
+				"title": "Upright radiotherapy for breast cancer: a pre-clinical study considering photon and proton beam access, plus arm positioning",
+				"venue": "Frontiers in Oncology, Vol. 15",
+				"year_doi": "2025 · DOI: 10.3389/fonc.2025.1668109"
 			}
 		]
 	},
@@ -142,10 +142,10 @@
 			"type": "Part Time",
 			"role": "Post Graduate Teaching Assistant",
 			"company": "University College London, United Kingdom",
-			"description": "Holding tutorial and seminar sessions on python programming, algorithms, complexity theory, machine learning, computer systems modules for undergraduate and master's students ",
+			"description": "Holding tutorial and seminar sessions on python programming, algorithms, complexity theory, machine learning, computer systems modules for undergraduate and master's students.",
 			"highlights": [
-				"Preparing and delivering course material",
-				"Exam and coursework marking"
+				"Preparing and delivering course material.",
+				"Exam and coursework marking."
 			],
 			"tags": [
 				"Python",
@@ -161,8 +161,8 @@
 			"company": "Code Kids Robotics Ltd., United Kingdom",
 			"description": "Preparing and delivering easily digestible python programming content for 10 - 14 year old kids.",
 			"highlights": [
-				"Weekly online teaching sessions",
-				"5 day camps with intensive teaching blocks"
+				"Hosted weekly online teaching sessions.",
+				"Taught in 5-day camps with intensive teaching blocks."
 			],
 			"tags": [
 				"Python",
@@ -174,9 +174,9 @@
 			"type": "Freelance",
 			"role": "Programming Tutor",
 			"company": "Online - United Kingdom",
-			"description": "Designing course material and teaching python programming to university students and working adults",
+			"description": "Designing course material and teaching python programming to university students and working adults.",
 			"highlights": [
-				"Weekly online teaching sessions"
+				"Hosted weekly online teaching sessions."
 			],
 			"tags": [
 				"Python",
@@ -188,9 +188,9 @@
 			"type": "Contracor",
 			"role": "Software Engineer",
 			"company": "Pawsible, Hong Kong",
-			"description": "Developed a web and app based data visualisation tool to display realtime vital information of house hold pets",
+			"description": "Developed a web and app based data visualisation tool to display realtime vital information of house hold pets.",
 			"highlights": [
-				"Delivered a proof of concept application that communicates with a sensory device that takes in vital readings"
+				"Delivered a proof of concept application that communicates with a sensory device that takes in vital readings."
 			],
 			"tags": [
 				"React.JS",
@@ -205,10 +205,10 @@
 			"type": "Founder & Chairman",
 			"role": "Robotics Club Chairman",
 			"company": "HKCCCU Logos Academy, Hong Kong",
-			"description": "What you worked on during the internship. What product or team were you embedded in?",
+			"description": "Founded and chaired a robotics club in high school, holding after school session where I shared my passion with fellow students of different ages.",
 			"highlights": [
-				"Lead and took part in a team to win two World Championships in Robofest GRAF 2017",
-				"Facilitated more teams to win 1st and 2nd runner ups in Robofest 2017 and 2018"
+				"Lead and took part in a team to win two World Championships in Robofest GRAF 2017.",
+				"Facilitated more teams to win 1st and 2nd runner ups in Robofest 2017 and 2018."
 			],
 			"tags": [
 				"Inter-personal Skills",
