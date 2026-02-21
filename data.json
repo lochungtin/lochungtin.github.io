@@ -32,12 +32,6 @@
 				"arrow": "↗"
 			},
 			{
-				"label": "Google Scholar",
-				"handle": "Scholar Profile",
-				"url": "https://scholar.google.com",
-				"arrow": "↗"
-			},
-			{
 				"label": "CV / Résumé",
 				"handle": "Download PDF",
 				"url": "/cv.pdf",
