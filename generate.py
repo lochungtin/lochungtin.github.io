@@ -453,7 +453,7 @@ def generate(data: dict) -> str:
 def main():
     args = sys.argv[1:]
     data_path = Path(args[0]) if len(args) >= 1 else Path("data.json")
-    output_path = Path(args[1]) if len(args) >= 2 else Path("portfolio.html")
+    output_path = Path(args[1]) if len(args) >= 2 else Path("index.html")
 
     if not data_path.exists():
         print(f"Error: data file '{data_path}' not found.")
