@@ -42,21 +42,21 @@
 	"academics": {
 		"education": [
 			{
-				"years": "2023 — Present",
+				"years": "2023 - Present",
 				"degree": "Ph.D. in Medical Physics and Biomedical Engineering",
 				"institution": "University College London, London, United Kingdom",
 				"description": "Developing a software suite to analyse the potential benefits of upright radiotherapy.",
 				"tag": "In Progress"
 			},
 			{
-				"years": "2022 — 2023",
+				"years": "2022 - 2023",
 				"degree": "M.Res. in Artificial Intelligence and Machine Learning",
 				"institution": "Imperial College London, London, United Kingdom",
 				"description": "Research Project: Automatic segmentation and diagnosis for ovarian masses.",
 				"tag": "Distinction"
 			},
 			{
-				"years": "2019 — 2022",
+				"years": "2019 - 2022",
 				"degree": "B.Sc. in Computer Science",
 				"institution": "King's College London, London, United Kingdom",
 				"description": "Final Year Project: Improving the original ghost AI to more efficiently catch Pacman.",
