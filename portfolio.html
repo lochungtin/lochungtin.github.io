@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio &mdash; Timothy Lo</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">TL.</a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#academics">Academics</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about"      class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">01</span><span class="mobile-menu-label">About Me</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#academics"  class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">02</span><span class="mobile-menu-label">Academics</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#experience" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">03</span><span class="mobile-menu-label">Experience</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#skills"     class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">04</span><span class="mobile-menu-label">Skills</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#projects"   class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">05</span><span class="mobile-menu-label">Projects</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+  </div>
+
+  <!-- HERO -->
+  <section id="hero">
+    <div class="hero-left">
+      <div class="hero-dot-grid">
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div>
+        <p class="hero-tag">Portfolio &mdash; 2026</p>
+      </div>
+      <div>
+        <h1 class="hero-name">Timothy Lo</h1>
+        <p class="hero-title">Researcher · Developer · Medical Imaging · Artificial Intelligence</p>
+      </div>
+      <p class="scroll-indicator">Scroll to explore</p>
+    </div>
+    <div class="hero-right">
+      <div class="hero-index">
+        <div class="hero-index-item"><span>01</span> About Me</div>
+        <div class="hero-index-item"><span>02</span> Education</div>
+        <div class="hero-index-item"><span>03</span> Achievements</div>
+        <div class="hero-index-item"><span>04</span> Publications</div>
+        <div class="hero-index-item"><span>05</span> Experience</div>
+        <div class="hero-index-item"><span>06</span> Skills</div>
+        <div class="hero-index-item"><span>07</span> Projects</div>
+      </div>
+      <p class="hero-bio">
+        Applying computer science in the realm of radiotherapy, not to replace, but to advance.
+      </p>
+      <div></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="section-header">
+      <div class="section-number">01</div>
+      <h2 class="section-title">About Me</h2>
+      <div class="section-dots"><span></span><span></span><span></span></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-col fade-in">
+        <p class="about-label">Who I Am</p>
+        <p class="about-body">
+          I am a technically driven researcher and developer with a strong foundation in computational modelling, medical imaging, and scientific programming. With a background in programming and a growing focus on advanced analytical methods, I work at the intersection of mathematics, software engineering, and applied science.<br><br>
+          My work spans 3D image processing, segmentation, morphological operations, and visualisation, translating complex spatial and physical concepts into efficient and easy-to-use frameworks. I subscribe to the philosophy of building tools that are not only technically robust, but I also strive for computational elegance in what I produce.<br><br>
+          Beyond research, I am deeply invested in continuous learning and technical mastery. From exploring low-level microcontrollers and electronic hardware to studying modern deep learning methods, I approach new domains with a structured, project-based mindset. I value clarity, derivation from first-principles, and qualities of deliberate practice that shape both my professional work and the way I build, teach, and share knowledge.
+        </p>
+      </div>
+      <div class="about-col fade-in">
+        <p class="about-label">Connect</p>
+        <div class="socials">
+          
+          <a href="mailto:lochugtin@gmail.com" class="social-row">
+            <span class="social-name">Email</span>
+            <span class="social-handle">lochungtin@gmail.com</span>
+            <span class="social-arrow">↗</span>
+          </a>
+
+          <a href="https://github.com/lochungtin" class="social-row">
+            <span class="social-name">GitHub</span>
+            <span class="social-handle">github.com/lochungtin</span>
+            <span class="social-arrow">↗</span>
+          </a>
+
+          <a href="https://linkedin.com/in/timothy-lo-chung-tin" class="social-row">
+            <span class="social-name">LinkedIn</span>
+            <span class="social-handle">linkedin.com/in/timothy-lo-chung-tin</span>
+            <span class="social-arrow">↗</span>
+          </a>
+
+          <a href="https://scholar.google.com" class="social-row">
+            <span class="social-name">Google Scholar</span>
+            <span class="social-handle">Scholar Profile</span>
+            <span class="social-arrow">↗</span>
+          </a>
+
+          <a href="/cv.pdf" class="social-row">
+            <span class="social-name">CV / Résumé</span>
+            <span class="social-handle">Download PDF</span>
+            <span class="social-arrow">↓</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ACADEMICS -->
+  <section id="academics">
+    <div class="section-header">
+      <div class="section-number">02</div>
+      <h2 class="section-title">Academics</h2>
+      <div class="section-dots"><span></span><span></span><span></span></div>
+    </div>
+
+    <div class="academics-body">
+      <div class="academics-col fade-in">
+        <div class="subsection-label">Education</div>
+        
+        <div class="entry">
+          <p class="entry-year">2023 — Present</p>
+          <p class="entry-title">Ph.D. in Medical Physics and Biomedical Engineering</p>
+          <p class="entry-sub">University College London, London, United Kingdom</p>
+          <p class="entry-desc">Developing a software suite to analyse the potential benefits of upright radiotherapy.</p>
+          <span class="entry-tag">In Progress</span>
+        </div>
+
+        <div class="entry">
+          <p class="entry-year">2022 — 2023</p>
+          <p class="entry-title">M.Res. in Artificial Intelligence and Machine Learning</p>
+          <p class="entry-sub">Imperial College London, London, United Kingdom</p>
+          <p class="entry-desc">Research Project: Automatic segmentation and diagnosis for ovarian masses.</p>
+          <span class="entry-tag">Distinction</span>
+        </div>
+
+        <div class="entry">
+          <p class="entry-year">2019 — 2022</p>
+          <p class="entry-title">B.Sc. in Computer Science</p>
+          <p class="entry-sub">King&#x27;s College London, London, United Kingdom</p>
+          <p class="entry-desc">Final Year Project: Improving the original ghost AI to more efficiently catch Pacman.</p>
+          <span class="entry-tag">First Class Honours</span>
+        </div>
+      </div>
+      <div class="academics-col fade-in">
+        <div class="subsection-label">Online Certificates</div>
+        
+        <div class="entry">
+          <p class="entry-year">Summer 2021</p>
+          <p class="entry-title">Reinforcement Learning Specialisation</p>
+          <p class="entry-sub">University of Alberta / Coursera</p>
+          <p class="entry-desc">Brief description of what this certificate covers and why you pursued it.</p>
+        </div>
+
+        <div class="entry">
+          <p class="entry-year">Summer 2020</p>
+          <p class="entry-title">Neural Networks and Deep Learning</p>
+          <p class="entry-sub">Deeplearing.ai / Coursera</p>
+          <p class="entry-desc">Brief description of what this certificate covers and why you pursued it.</p>
+        </div>
+
+        <div class="entry">
+          <p class="entry-year">Summer 2020</p>
+          <p class="entry-title">CS50’s Mobile App Development with React Native</p>
+          <p class="entry-sub">Harvard University / EdX</p>
+          <p class="entry-desc">Brief description of what this certificate covers and why you pursued it.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection-full fade-in">
+      <div class="subsection-label" style="padding: 1.5rem 3rem; border-bottom: var(--line-thin);">Conference Presentations</div>
+      <div class="pub-grid">
+        
+        <div class="pub-card">
+          <div class="pub-number">01</div>
+          <p class="pub-type">Oral Presentation - Proffered Paper</p>
+          <p class="pub-title">Respiratory Motion Analysis for the Thoracic Region in the Upright and Supine Postures</p>
+          <p class="pub-venue">ESTRO 2026 · Stockholm, Sweden</p>
+          <p class="pub-year">2026 (Pending)</p>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-number">02</div>
+          <p class="pub-type">Poster Presentation</p>
+          <p class="pub-title">Anatomical Analyses for the Prostate Region in Upright and Supine Postures</p>
+          <p class="pub-venue">ESTRO 2026 · Stockholm, Sweden</p>
+          <p class="pub-year">2026 (Pending)</p>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-number">03</div>
+          <p class="pub-type">Oral Presentation</p>
+          <p class="pub-title">A Standardised Geometric Framework for Quantifying Anatomical Variation Between Upright and Supine Radiotherapy</p>
+          <p class="pub-venue">Upright Consortium 2026 · Stockholm, Sweden</p>
+          <p class="pub-year">2026 (Pending)</p>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-number">04</div>
+          <p class="pub-type">Poster Presentation</p>
+          <p class="pub-title">A deformable registration-based pipeline for the characterisation of respiratory motion from 2D lung cine MRI</p>
+          <p class="pub-venue">AAPM 2025 · Washington DC, USA</p>
+          <p class="pub-year">2025</p>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-number">05</div>
+          <p class="pub-type">Oral Presentation - Poster Discussion</p>
+          <p class="pub-title">A low-cost, flexible, and accurate technique to study new immobilisation systems for radiotherapy and their associated positional reproducibility/stability</p>
+          <p class="pub-venue">ESTRO 2025 · Vienna, Austria</p>
+          <p class="pub-year">2025</p>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-number">06</div>
+          <p class="pub-type">Oral Presentation - Proffered Mini Oral Presentation</p>
+          <p class="pub-title">Computer vision-based marker detection for quantitative assessment of upright position reproducibility</p>
+          <p class="pub-venue">Upright Consortium 2024 · Glasgow, United Kingdom</p>
+          <p class="pub-year">2024</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="subsection-full fade-in">
+      <div class="subsection-label" style="padding: 1.5rem 3rem; border-bottom: var(--line-thin);">Publications</div>
+      <div class="pub-grid">
+        
+        <div class="pub-card">
+          <div class="pub-number">01</div>
+          <p class="pub-type">Journal Article</p>
+          <p class="pub-title">Full Title of Your Published Paper Here</p>
+          <p class="pub-venue">Frontiers in Oncology, Vol. 15, Issue Y</p>
+          <p class="pub-year">2024 · DOI: 10.xxxx/xxxxx</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WORK EXPERIENCE -->
+  <section id="experience">
+    <div class="section-header">
+      <div class="section-number">03</div>
+      <h2 class="section-title">Experience</h2>
+      <div class="section-dots"><span></span><span></span><span></span></div>
+    </div>
+    <div class="exp-list fade-in">
+      
+      <div class="exp-row">
+        <div class="exp-meta">
+          <span class="exp-date">Sep 2024 - Current</span>
+          <span class="exp-type">Part Time</span>
+        </div>
+        <div class="exp-body">
+          <p class="exp-role">Post Graduate Teaching Assistant</p>
+          <p class="exp-company">University College London, United Kingdom</p>
+          <p class="exp-desc">Holding tutorial and seminar sessions on python programming, algorithms, complexity theory, machine learning, computer systems modules for undergraduate and master&#x27;s students </p>
+          <div class="exp-highlights">
+            <span class="exp-highlight">Preparing and delivering course material</span>
+            <span class="exp-highlight">Exam and coursework marking</span>
+          </div>
+        </div>
+        <div class="exp-side">
+          <div class="exp-tag-list">
+            <span class="exp-skill-tag">Python</span>
+            <span class="exp-skill-tag">Data Structures</span>
+            <span class="exp-skill-tag">Algorithms</span>
+            <span class="exp-skill-tag">Assembly</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-meta">
+          <span class="exp-date">Feb 2024 - Feb 2025</span>
+          <span class="exp-type">Contractor</span>
+        </div>
+        <div class="exp-body">
+          <p class="exp-role">Coding Instructor</p>
+          <p class="exp-company">Code Kids Robotics Ltd., United Kingdom</p>
+          <p class="exp-desc">Preparing and delivering easily digestible python programming content for 10 - 14 year old kids.</p>
+          <div class="exp-highlights">
+            <span class="exp-highlight">Weekly online teaching sessions</span>
+            <span class="exp-highlight">5 day camps with intensive teaching blocks</span>
+          </div>
+        </div>
+        <div class="exp-side">
+          <div class="exp-tag-list">
+            <span class="exp-skill-tag">Python</span>
+            <span class="exp-skill-tag">Teaching</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-meta">
+          <span class="exp-date">Sep 2023 - Current</span>
+          <span class="exp-type">Freelance</span>
+        </div>
+        <div class="exp-body">
+          <p class="exp-role">Programming Tutor</p>
+          <p class="exp-company">Online - United Kingdom</p>
+          <p class="exp-desc">Designing course material and teaching python programming to university students and working adults</p>
+          <div class="exp-highlights">
+            <span class="exp-highlight">Weekly online teaching sessions</span>
+          </div>
+        </div>
+        <div class="exp-side">
+          <div class="exp-tag-list">
+            <span class="exp-skill-tag">Python</span>
+            <span class="exp-skill-tag">Teaching</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-meta">
+          <span class="exp-date">Apr 2022 - Jul 2022</span>
+          <span class="exp-type">Contracor</span>
+        </div>
+        <div class="exp-body">
+          <p class="exp-role">Software Engineer</p>
+          <p class="exp-company">Pawsible, Hong Kong</p>
+          <p class="exp-desc">Developed a web and app based data visualisation tool to display realtime vital information of house hold pets</p>
+          <div class="exp-highlights">
+            <span class="exp-highlight">Delivered a proof of concept application that communicates with a sensory device that takes in vital readings</span>
+          </div>
+        </div>
+        <div class="exp-side">
+          <div class="exp-tag-list">
+            <span class="exp-skill-tag">React.JS</span>
+            <span class="exp-skill-tag">React Native</span>
+            <span class="exp-skill-tag">Firebase</span>
+            <span class="exp-skill-tag">Bluetooth BLE</span>
+            <span class="exp-skill-tag">Embedded Systems</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="exp-row">
+        <div class="exp-meta">
+          <span class="exp-date">Sep 2016 - Sep 2018</span>
+          <span class="exp-type">Founder &amp; Chairman</span>
+        </div>
+        <div class="exp-body">
+          <p class="exp-role">Robotics Club Chairman</p>
+          <p class="exp-company">HKCCCU Logos Academy, Hong Kong</p>
+          <p class="exp-desc">What you worked on during the internship. What product or team were you embedded in?</p>
+          <div class="exp-highlights">
+            <span class="exp-highlight">Lead and took part in a team to win two World Championships in Robofest GRAF 2017</span>
+            <span class="exp-highlight">Facilitated more teams to win 1st and 2nd runner ups in Robofest 2017 and 2018</span>
+          </div>
+        </div>
+        <div class="exp-side">
+          <div class="exp-tag-list">
+            <span class="exp-skill-tag">Inter-personal Skills</span>
+            <span class="exp-skill-tag">Administrative Skills</span>
+            <span class="exp-skill-tag">Human Resources</span>
+            <span class="exp-skill-tag">Leadership</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="section-header">
+      <div class="section-number">04</div>
+      <h2 class="section-title">Skills</h2>
+      <div class="section-dots"><span></span><span></span><span></span></div>
+    </div>
+
+    <div class="skills-body fade-in">
+
+      <div class="skills-col">
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <span class="skill-cat-name">Programming Languages</span>
+            <span class="skill-cat-count">04 languages</span>
+          </div>
+          <div class="skill-items">
+            
+            <div class="skill-item">
+              <div class="skill-item-top">
+                <span class="skill-name">Python</span>
+                <span class="skill-level">Expert</span>
+              </div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width:95%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-top">
+                <span class="skill-name">JavaScript / TypeScript</span>
+                <span class="skill-level">Professional</span>
+              </div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-top">
+                <span class="skill-name">C / C++</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width:65%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-top">
+                <span class="skill-name">SQL</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width:50%"></div></div>
+            </div>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <span class="skill-cat-name">ML / Data Libraries</span>
+            <span class="skill-cat-count">06 libraries</span>
+          </div>
+          <div class="skill-items">
+            
+            <div class="skill-item">
+              <div class="skill-item-top">
+                <span class="skill-name">NumPy / Pandas</span>
+                <span class="skill-level">Expert</span>
+              </div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width:90%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-top">
+                <span class="skill-name">PyTorch</span>
+                <span class="skill-level">Expert</span>
+              </div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width:85%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-top">
+                <span class="skill-name">Scikit-learn</span>
+                <span class="skill-level">Proficient</span>
+              </div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-top">
+                <span class="skill-name">TensorFlow</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width:55%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-top">
+                <span class="skill-name">Matplotlib / Seaborn</span>
+                <span class="skill-level">Expert</span>
+              </div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width:88%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-top">
+                <span class="skill-name">Manim</span>
+                <span class="skill-level">Intermediate</span>
+              </div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width:60%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="skills-col">
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <span class="skill-cat-name">Frameworks &amp; Tools</span>
+            <span class="skill-cat-count">Tags</span>
+          </div>
+          <div class="skill-dots-grid">
+                        <span class="skill-dot-item">Juypter</span>
+            <span class="skill-dot-item">React.JS</span>
+            <span class="skill-dot-item">Next.JS</span>
+            <span class="skill-dot-item">Node.JS</span>
+            <span class="skill-dot-item">REST API</span>
+            <span class="skill-dot-item">Firebase</span>
+            <span class="skill-dot-item">Git / GitHub</span>
+            <span class="skill-dot-item">Linux / Bash</span>
+            <span class="skill-dot-item">LaTeX</span>
+            <span class="skill-dot-item">Adobe Creative Suite</span>
+            <span class="skill-dot-item">Google Cloud Computing</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <span class="skill-cat-name">Domain Expertise</span>
+            <span class="skill-cat-count">Tags</span>
+          </div>
+          <div class="skill-dots-grid">
+                        <span class="skill-dot-item">Machine Learning</span>
+            <span class="skill-dot-item">Deep Learning</span>
+            <span class="skill-dot-item">Computer Vision</span>
+            <span class="skill-dot-item">Image Processing</span>
+            <span class="skill-dot-item">NLP</span>
+            <span class="skill-dot-item">Statistical Analysis</span>
+            <span class="skill-dot-item">Data Visualisation</span>
+            <span class="skill-dot-item">Software Engineering</span>
+            <span class="skill-dot-item">Mobile Development</span>
+            <span class="skill-dot-item">Web Development</span>
+            <span class="skill-dot-item">Research Methods</span>
+            <span class="skill-dot-item">Scientific Writing</span>
+          </div>
+        </div>
+        <div class="skill-category">
+          <div class="skill-cat-header">
+            <span class="skill-cat-name">Languages (spoken)</span>
+            <span class="skill-cat-count">03 languages</span>
+          </div>
+          <div class="skill-items">
+            
+            <div class="skill-item">
+              <div class="skill-item-top">
+                <span class="skill-name">English</span>
+                <span class="skill-level">Native</span>
+              </div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-top">
+                <span class="skill-name">Cantonese</span>
+                <span class="skill-level">Native</span>
+              </div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width:100%"></div></div>
+            </div>
+            <div class="skill-item">
+              <div class="skill-item-top">
+                <span class="skill-name">Mandarin</span>
+                <span class="skill-level">Proficient</span>
+              </div>
+              <div class="skill-bar"><div class="skill-bar-fill" style="width:80%"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="section-header">
+      <div class="section-number">05</div>
+      <h2 class="section-title">Projects</h2>
+      <div class="section-dots"><span></span><span></span><span></span></div>
+    </div>
+    <div class="project-list fade-in">
+      
+      <a href="https://github.com/lochungtin/ArMMS" target="_blank" rel="noopener" class="project-row">
+        <span class="project-num">01</span>
+        <div class="project-main">
+          <span class="project-name">ArMMs - ArUCo Marker Measurement System</span>
+          <span class="project-sub">Calibration-free camera-based measurement system.</span>
+        </div>
+        <span class="project-tech">Python · OpenCV</span>
+        <span class="project-link">&#8599;</span>
+      </a>
+
+      <a href="https://github.com/lochungtin/SnakeAI" target="_blank" rel="noopener" class="project-row">
+        <span class="project-num">02</span>
+        <div class="project-main">
+          <span class="project-name">AI Snake</span>
+          <span class="project-sub">AI agent to play the classic arcade game Snake - Trained via reinforcement learning and a custom web game, playable by humans and machines.</span>
+        </div>
+        <span class="project-tech">Python · OpenCV</span>
+        <span class="project-link">&#8599;</span>
+      </a>
+
+      <a href="https://lochungtin.github.io/Expedite" target="_blank" rel="noopener" class="project-row">
+        <span class="project-num">03</span>
+        <div class="project-main">
+          <span class="project-name">Project Expedite - Ever Expanding</span>
+          <span class="project-sub">Puzzle Game Solver - A passion project to mathematically and algorithmically &quot;solve&quot; and create solutions for puzzle games.</span>
+        </div>
+        <span class="project-tech">Vanilla Python · C++</span>
+        <span class="project-link">&#8599;</span>
+      </a>
+
+      <a href="https://www.npmjs.com/~lochungtin" target="_blank" rel="noopener" class="project-row">
+        <span class="project-num">04</span>
+        <div class="project-main">
+          <span class="project-name">NPM Packages</span>
+          <span class="project-sub">Short and simple utility packages released for personal and public use.</span>
+        </div>
+        <span class="project-tech">JavaScript · NodeJS</span>
+        <span class="project-link">&#8599;</span>
+      </a>
+
+      <a href="https://github.com/lochungtin/CoinControl" target="_blank" rel="noopener" class="project-row">
+        <span class="project-num">05</span>
+        <div class="project-main">
+          <span class="project-name">CoinControl</span>
+          <span class="project-sub">Personal finance management mobile application - Tracking, visualising, and analysing your income and spending habits.</span>
+        </div>
+        <span class="project-tech">React · Firebase</span>
+        <span class="project-link">&#8599;</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-name">Timothy Lo.</div>
+    <div class="footer-dots">
+      <span></span><span></span><span></span><span></span><span></span>
+    </div>
+    <div class="footer-copy">&copy; 2026 &mdash; All rights reserved</div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>
