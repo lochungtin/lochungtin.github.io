@@ -582,6 +582,7 @@ footer {
   /* Academics */
   #academics .academics-body { grid-template-columns: 1fr; }
   .academics-col:first-child { border-right: none; }
+  .academics-col:last-child { border-top: var(--line); }
   .subsection-label { padding: 1.25rem 1.25rem; }
   .entry { padding: 1.5rem 1.25rem; }
   .pub-grid { grid-template-columns: 1fr; }
@@ -599,6 +600,7 @@ footer {
   /* Skills */
   #skills .skills-body { grid-template-columns: 1fr; }
   .skills-col:first-child { border-right: none; }
+  .skills-col:last-child { border-top: var(--line); }
   .skill-cat-header { padding: 1.25rem 1.25rem; }
   .skill-items { padding: 1.25rem 1.25rem; }
   .skill-dots-grid { padding: 1.25rem 1.25rem 1.5rem; }
