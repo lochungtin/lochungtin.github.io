@@ -34,7 +34,9 @@ def skill_bar_item(skill: dict) -> str:
 
 
 def dot_tags(items: list) -> str:
-    return "\n".join(f'            <span class="skill-dot-item">{e(item)}</span>' for item in items)
+    return "\n".join(
+        f'            <span class="skill-dot-item">{e(item)}</span>' for item in items
+    )
 
 
 def social_rows(socials: list) -> str:
@@ -126,7 +128,8 @@ def experience_rows(jobs: list) -> str:
             for h in job.get("highlights", [])
         )
         tags_html = "\n".join(
-            f'            <span class="exp-skill-tag">{e(t)}</span>' for t in job.get("tags", [])
+            f'            <span class="exp-skill-tag">{e(t)}</span>'
+            for t in job.get("tags", [])
         )
         rows.append(
             f"""
@@ -432,12 +435,18 @@ def generate(data: dict) -> str:
   <!-- FOOTER -->
   <footer>
     <div class="footer-name">{e(m['name'])}.</div>
+    <div class="theme-toggle" role="group" aria-label="Colour theme">
+      <button class="theme-btn" data-mode="light">Light</button>
+      <button class="theme-btn" data-mode="auto">Auto</button>
+      <button class="theme-btn" data-mode="dark">Dark</button>
+    </div>
     <div class="footer-dots">
       <span></span><span></span><span></span><span></span><span></span>
     </div>
     <div class="footer-copy">&copy; {e(m['year'])} &mdash; All rights reserved</div>
   </footer>
 
+  <script src="theme.js"></script>
   <script src="main.js" defer></script>
 </body>
 </html>"""
@@ -453,7 +462,7 @@ def generate(data: dict) -> str:
 def main():
     args = sys.argv[1:]
     data_path = Path(args[0]) if len(args) >= 1 else Path("data.json")
-    output_path = Path(args[1]) if len(args) >= 2 else Path("index.html")
+    output_path = Path(args[1]) if len(args) >= 2 else Path("portfolio.html")
 
     if not data_path.exists():
         print(f"Error: data file '{data_path}' not found.")

@@ -510,6 +510,11 @@ def build_footer(meta: dict) -> str:
     return f"""  <footer class="proj-footer">
     <div class="proj-footer-inner">
       <a href="{portfolio}#projects" class="proj-footer-back">← Back to Projects</a>
+      <div class="theme-toggle" role="group" aria-label="Colour theme">
+        <button class="theme-btn" data-mode="light">Light</button>
+        <button class="theme-btn" data-mode="auto">Auto</button>
+        <button class="theme-btn" data-mode="dark">Dark</button>
+      </div>
       <div class="footer-dots">
         <span></span><span></span><span></span><span></span><span></span>
       </div>
@@ -564,6 +569,7 @@ def generate(data: dict) -> str:
 
 {build_footer(meta)}
 
+  <script src="../theme.js"></script>
   <script src="project.js" defer></script>
 </body>
 </html>"""
