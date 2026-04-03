@@ -1,0 +1,465 @@
+{
+    "meta": {
+        "nav_logo": "CTL.",
+        "portfolio_url": "portfolio.html",
+        "title_prefix": "Ovarian",
+        "title_italic": "Diagnosis",
+        "number": "02",
+        "tagline": "A fully automatic end-to-end pipeline for ovarian cancer diagnosis — combining VQ-UNet segmentation, blob analysis, and a random forest classifier to mirror the diagnostic workflow of radiologists.",
+        "status": "Completed",
+        "year": "2023",
+        "role": "Sole Researcher · Imperial College London",
+        "stack": "Python · PyTorch · nnUNet · scikit-learn",
+        "tags": [
+            "Medical Imaging",
+            "Image Segmentation",
+            "Deep Learning",
+            "Cancer Diagnosis",
+            "Vector Quantisation"
+        ],
+        "links": [
+            {
+                "label": "Full Thesis ↗",
+                "url": "#"
+            }
+        ],
+        "prev_project": {
+            "label": "← Ghost AI",
+            "url": "#"
+        },
+        "next_project": null
+    },
+    "sections": [
+        {
+            "id": "overview",
+            "title": "Overview",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "style": "lead",
+                    "text": "This MRes thesis proposes a fully automatic pipeline for diagnosing ovarian masses from transvaginal ultrasound scans. The system replicates the manual clinical workflow — segment, measure, classify — replacing each human step with a learned computational counterpart: nine VQ-UNet segmentation models, a blob analysis function that extracts geometric features, and a random forest classifier that outputs a benign or malignant diagnosis."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Ovarian cancer is the sixth most prevalent cancer among females in the UK, with approximately 7,500 new cases and over 4,000 deaths annually. The five-year survival rate exceeds 93% when caught at the earliest stage but falls to just 13% at late-stage diagnosis — making accurate, automated early detection a clinical priority. Ultrasound imaging is the preferred diagnostic modality, but its low signal-to-noise ratio and the subjectivity of manual interpretation create significant room for error."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The study was approved by the Queen Square Research Ethics Committee. All patient data was pseudonymised, with personal identifiers replaced by unique numeric codes prior to any analysis."
+                },
+                {
+                    "type": "callout",
+                    "stats": [
+                        {
+                            "num": "0.92",
+                            "label": "F1 score of proposed pipeline — vs 0.79 for naive ResNet baseline"
+                        },
+                        {
+                            "num": "0.83",
+                            "label": "AUC-ROC — 66% improvement over both ResNet baselines"
+                        },
+                        {
+                            "num": "252",
+                            "label": "Dimensional feature vector fed to the random forest classifier"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "motivation",
+            "title": "Motivation",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "Radiologists tasked with interpreting ovarian ultrasound scans invest substantial time analysing images with a characteristically low signal-to-noise ratio. The process is slow, subjective, and prone to misdiagnosis — particularly among less experienced sonographers. Existing automated approaches either operate end-to-end on raw pixel data without interpretable intermediate representations, or depend on hand-crafted risk models such as the IOTA ADNEX model that require manual feature entry by a clinician."
+                },
+                {
+                    "type": "quote",
+                    "text": "People should stop training radiologists now. It's just completely obvious within five years deep learning is going to do better than radiologists.",
+                    "cite": "— Geoffrey Hinton, 2016"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The IOTA ADNEX model — the current standard for clinical risk stratification — classifies masses into four categories (benign, borderline, primary ovarian cancer, secondary metastatic) using nine inputs, six of which must be manually extracted from ultrasound scans. This process is both time-consuming and dependent on expert knowledge. The thesis asks whether a machine can replicate and exceed this process using only automatically extracted geometric and quantitative measurements."
+                },
+                {
+                    "type": "bullet_list",
+                    "style": "boxed",
+                    "title": "Key research questions",
+                    "items": [
+                        "Can vector quantisation improve the robustness of UNet-based segmentation on noisy ultrasound images?",
+                        "Does binarising segmentation labels per-class outperform multi-class segmentation for this dataset?",
+                        "Is diagnostic accuracy correlated with the quality of individual segmentation outputs, or does the high-dimensional feature representation provide resilience?",
+                        "Can geometric and quantitative features alone — without textural or radiomics data — achieve competitive diagnostic accuracy against the state-of-the-art ODS radiomics model?"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "approach",
+            "title": "Approach",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "The proposed pipeline mirrors the traditional radiological workflow at every stage. Rather than training a single end-to-end model, the architecture decomposes the task into three interpretable components — segmentation, feature extraction, and classification — each optimised independently. Two naive baselines (a standard ResNet and a localised ResNet) are constructed to contextualise the proposed model's gains."
+                },
+                {
+                    "type": "numbered_list",
+                    "style": "steps",
+                    "items": [
+                        {
+                            "title": "Data Collection and Preprocessing",
+                            "text": "Transvaginal ultrasound scans were collected under ethics approval, pseudonymised, and converted from nrrd/tif to nii.gz format. Border text was cropped from all images to prevent models learning from scan annotations. Labels were identically cropped to maintain pixel alignment. Data augmentation (zoom, crop, mirror, rotate) was applied and preprocessed via the nnUNet framework to expand the limited dataset."
+                        },
+                        {
+                            "title": "Sub-experiments: VQ and Label Binarisation",
+                            "text": "Two preparatory experiments established the best model configuration before designing the full pipeline. Experiment one compared a standard UNet against a VQ-UNet on the same train/val/test split. Experiment two compared multi-class label training against per-label binary mask training. Both confirmed hypotheses: VQ improves segmentation (DSC 0.84 vs 0.79) and binarised labels outperform multi-class (DSC 0.85 vs 0.75)."
+                        },
+                        {
+                            "title": "VQ-UNet Segmentation (9 Models)",
+                            "text": "Nine VQ-UNet models were trained independently — one per anatomical label (entire lesion, locules, solid areas, papillations, and five cyst content variants). Each model was trained with binarised labels and individually tuned hyperparameters. The best-performing checkpoint per label was selected for the final pipeline."
+                        },
+                        {
+                            "title": "Blob Analysis and Feature Extraction",
+                            "text": "Each of the nine segmentation masks was passed through a blob analysis function that extracts 28 geometric and numeric features per label — including area, perimeter, convexity, fitted ellipse parameters, fitted circle parameters, bounding rectangles, and extremal points. The nine 28-dimensional vectors were concatenated into a single 252-dimensional feature vector."
+                        },
+                        {
+                            "title": "Random Forest Classification",
+                            "text": "The 252-dimensional feature vector served as the input to a random forest classifier trained to output a binary diagnosis: benign or malignant. The classifier's inherent feature selection and ensemble averaging provided robustness to individual segmentation errors. Its performance was benchmarked against two ResNet baselines and the state-of-the-art ODS radiomics model."
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "src": "",
+                    "alt": "The Proposed Model — Dataset feeds into 9 VQ-UNet models (Label 1–9), each producing a segmentation mask. Masks pass through the Blob Analysis Function to produce Numeric Feature Arrays, which are concatenated and fed to a Random Forest Classifier outputting Benign or Malignant.",
+                    "label": "Fig. 1",
+                    "caption": "Architecture of the proposed pipeline. Nine independently trained VQ-UNet segmentation models produce per-label masks; blob analysis extracts 28 geometric features per label; a random forest classifier outputs the final diagnosis."
+                }
+            ]
+        },
+        {
+            "id": "implementation",
+            "title": "Implementation",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "The VQ-UNet architecture adds a vector quantisation block at the bottleneck of a standard UNet — strategically positioned between the encoder and decoder at the latent space. The codebook consists of learnable vectors with the same dimensionality as the latent feature map, initialised randomly and trained via a custom quantisation loss. The full model can be expressed as a composite function F = Fd ∘ Fq ∘ Fe, where Fe is the contracting encoder, Fq is the quantisation block, and Fd is the expanding decoder."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The quantisation process acts as a noise smoother: by mapping encoder outputs to the nearest codebook entry, high-frequency noise perturbations are discarded at the bottleneck before the decoder reconstructs the segmentation mask. This is the key reason VQ-UNet outperforms standard UNet on ultrasound data, which has a characteristically low signal-to-noise ratio."
+                },
+                {
+                    "type": "table",
+                    "headers": [
+                        "Label #",
+                        "Anatomical Region",
+                        "DSC",
+                        "HD (px)",
+                        "ASSD (px)"
+                    ],
+                    "rows": [
+                        {
+                            "cells": [
+                                "1",
+                                "Entire Lesion",
+                                "0.85",
+                                "35.54",
+                                "9.59"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "2",
+                                "Locules",
+                                "0.85",
+                                "36.34",
+                                "8.74"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "3",
+                                "Solid Areas",
+                                "0.69",
+                                "40.07",
+                                "12.05"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "4",
+                                "Papillations",
+                                "0.82",
+                                "46.33",
+                                "8.91"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "5",
+                                "Cyst Contents: Anechoic",
+                                "0.82",
+                                "51.58",
+                                "13.03"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "6",
+                                "Cyst Contents: Low Level",
+                                "0.82",
+                                "44.91",
+                                "9.76"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "7",
+                                "Cyst Contents: Ground Glass",
+                                "0.70",
+                                "57.74",
+                                "13.33"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "8",
+                                "Cyst Contents: Haemorrhage",
+                                "0.80",
+                                "48.59",
+                                "16.28"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "9",
+                                "**Cyst Contents: Mixed**",
+                                "**0.63**",
+                                "**46.93**",
+                                "**17.70**"
+                            ],
+                            "highlight": true
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Across all nine models, the average Dice score was 77.5%, average Hausdorff distance 45.3 pixels, and average ASSD 12.1 pixels. The average HD/ASSD ratio of 389% — ranging from 270% (label 9) to 520% (label 4) — indicates that failure cases tend to fail more severely than successful cases succeed, a pattern visible in the pronounced lower-bound whiskers of the DSC box plots. Misclassification primarily stems from textural overlap: dark noisy regions are misidentified as locules or anechoic cyst contents."
+                },
+                {
+                    "type": "bullet_list",
+                    "style": "simple",
+                    "title": "28 geometric and numeric features extracted per segmentation label",
+                    "items": [
+                        "Shape features — Area, Perimeter, Convexity, Aspect Ratio, Extent, Solidity, Hull Area, Number of Blobs",
+                        "Fitted Ellipse — Centre (x, y), Width, Height, Angle",
+                        "Fitted Circle — Radius, Centre (x, y)",
+                        "Rotated Bounding Rectangle — four corner coordinates (x1, y1, x2, y2)",
+                        "Axis-aligned Bounding Rectangle — four corner coordinates (x1, y1, x2, y2)",
+                        "Extremal points — Width, Height, Y of leftmost point, Y of rightmost point"
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A key empirical finding during training was that larger batch sizes did not correlate with better model performance — and in many cases smaller batch sizes produced superior results. This was attributed to the lack of visual similarity between different ground truth label instances, meaning the model gained little from batched gradient estimation. All models were therefore trained with reduced batch sizes, each treated as an individual learning example."
+                }
+            ]
+        },
+        {
+            "id": "results",
+            "title": "Results",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "The proposed pipeline substantially outperforms both ResNet baselines across all five evaluation metrics, and matches or exceeds the state-of-the-art ODS radiomics model on F1 score while achieving a higher accuracy. The most striking result is the AUC-ROC improvement: both ResNet baselines score approximately 0.5, equivalent to random chance, whereas the proposed model achieves 0.83 — a 66% relative improvement, demonstrating genuine discriminative ability."
+                },
+                {
+                    "type": "table",
+                    "headers": [
+                        "Model",
+                        "F1",
+                        "Accuracy",
+                        "AUC-ROC",
+                        "Precision",
+                        "Recall"
+                    ],
+                    "rows": [
+                        {
+                            "cells": [
+                                "Naive ResNet",
+                                "0.79",
+                                "0.66",
+                                "0.49",
+                                "0.69",
+                                "0.91"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Localised ResNet",
+                                "0.81",
+                                "0.69",
+                                "0.50",
+                                "0.69",
+                                "1.00"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "**Proposed Pipeline**",
+                                "**0.92**",
+                                "**0.86**",
+                                "**0.83**",
+                                "**0.87**",
+                                "**0.97**"
+                            ],
+                            "highlight": true
+                        },
+                        {
+                            "cells": [
+                                "ODS Radiomics (SOTA)",
+                                "0.83",
+                                "—",
+                                "0.90",
+                                "0.72",
+                                "1.00"
+                            ],
+                            "highlight": false
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The proposed model's higher recall than precision is a deliberate and clinically desirable property. A system deployed for clinical triage should err on the side of sending benign patients for further examination rather than miss a patient with a malignant mass in urgent need of treatment. The imbalanced class distribution in the dataset partially explains the lower AUC-ROC relative to the ODS model, which was designed to prioritise robustness over point-estimate accuracy."
+                },
+                {
+                    "type": "callout",
+                    "stats": [
+                        {
+                            "num": "+13.6%",
+                            "label": "F1 improvement over localised ResNet baseline"
+                        },
+                        {
+                            "num": "+24.6%",
+                            "label": "Accuracy improvement over localised ResNet baseline"
+                        },
+                        {
+                            "num": "+66%",
+                            "label": "AUC-ROC improvement over both ResNet baselines (0.50 → 0.83)"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A sensitivity analysis was conducted to test whether diagnostic accuracy depended on any particular segmentation label. Both label-wise omission (removing all 28 features for one label at a time) and element-wise omission (removing one feature at a time) produced near-identical aggregate metrics — mean F1 of 0.92 with standard deviations of 0.0068 and 0.0024 respectively. Leave-one-out cross validation across the nine decision trees confirmed the same finding: mean F1 of 0.9038 with standard deviation 0.0053. No single label or feature dominates the diagnosis."
+                },
+                {
+                    "type": "table",
+                    "headers": [
+                        "Variation",
+                        "F1",
+                        "Accuracy",
+                        "AUC-ROC",
+                        "Precision",
+                        "Recall"
+                    ],
+                    "rows": [
+                        {
+                            "cells": [
+                                "Proposed Pipeline",
+                                "0.92",
+                                "0.86",
+                                "0.83",
+                                "0.87",
+                                "0.97"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Avg. Label-wise Omission",
+                                "0.92",
+                                "0.86",
+                                "0.84",
+                                "0.87",
+                                "0.97"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Avg. Element-wise Omission",
+                                "0.92",
+                                "0.87",
+                                "0.84",
+                                "0.88",
+                                "0.97"
+                            ],
+                            "highlight": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "challenges",
+            "title": "Challenges",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "Three interlinked challenges constrained the scope and generalisability of the findings, each rooted in the practical realities of a single-researcher MRes project operating on a small, ethically restricted medical dataset."
+                },
+                {
+                    "type": "challenges",
+                    "items": [
+                        {
+                            "title": "Small and class-imbalanced dataset",
+                            "text": "Medical ultrasound data is expensive to collect, annotate, and ethically approve. The limited number of scans — with fewer samples representing rarer labels — created class imbalance that penalised the segmentation models for minority labels (notably label 9, Cyst Contents: Mixed, achieved only DSC 0.63). Data augmentation via zooming, cropping, mirroring, and rotation partially mitigated this, but could not fully substitute for more diverse real data."
+                        },
+                        {
+                            "title": "Textural misclassification in segmentation",
+                            "text": "Several segmentation models incorrectly identified dark, shadowy regions as target labels — most visibly in labels 2, 5, and 7 — because the noisy ultrasound texture of those regions closely resembled the ground truth appearance of the targeted anatomy. The models lack embedded anatomical prior knowledge that a trained radiologist would use to disambiguate these regions spatially."
+                        },
+                        {
+                            "title": "VQ incompatibility with multi-class segmentation",
+                            "text": "Vector quantisation, while highly effective for binary (per-label) segmentation, hurt performance in multi-class segmentation settings (DSC dropped from 0.75 to 0.75 without VQ in multi-class). The quantisation block appears to discard fine-grained class-boundary information when forced to represent multiple class semantics in a single shared codebook. Resolving this incompatibility — which would allow VQ-UNets to serve a broader range of tasks — was identified as the most significant open problem from this work."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "next",
+            "title": "What's Next",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "The thesis identifies four concrete extensions that would directly address the current limitations and significantly increase the clinical readiness of the proposed pipeline."
+                },
+                {
+                    "type": "numbered_list",
+                    "style": "next",
+                    "items": [
+                        "Resolve the VQ and multi-class segmentation incompatibility — investigating whether separate per-class codebooks, hierarchical quantisation, or modified commitment losses can preserve class-boundary information while retaining the noise-robustness benefits of VQ.",
+                        "Embed anatomical prior knowledge into the segmentation models — moving towards a neural-symbolic approach that uses clinical logic as a guide to disambiguate texturally similar regions (e.g. preventing the model from labelling non-lesion dark regions as locules).",
+                        "Expand automated feature extraction — leveraging the model's capacity for high-volume geometric feature generation to construct richer feature vectors, potentially incorporating textural and radiomics-style features alongside the current geometric set for a comprehensive comparison.",
+                        "External and large-scale clinical validation — running the full pipeline on a larger, more diverse multicentre dataset in collaboration with clinical teams, and integrating the model into real diagnostic workflows to assess readiness for regulatory approval and clinical deployment."
+                    ]
+                }
+            ]
+        }
+    ]
+}

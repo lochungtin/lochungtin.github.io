@@ -1,0 +1,266 @@
+{
+    "meta": {
+        "nav_logo": "CTL.",
+        "portfolio_url": "portfolio.html",
+        "title_prefix": "Coin",
+        "title_italic": "Control",
+        "number": "04",
+        "tagline": "A mobile money management app for tracking spending and income — with custom categories, real-time analytics, cloud sync, and a built-in calculator pad for on-the-spot expense recording.",
+        "status": "Completed",
+        "year": "2022",
+        "role": "Lead Developer · with Ken Huang & Issac To",
+        "stack": "React Native · Firebase · TypeScript",
+        "tags": [
+            "Mobile App",
+            "Personal Finance",
+            "React Native",
+            "Firebase",
+            "Data Visualisation"
+        ],
+        "links": [
+            {
+                "label": "GitHub ↗",
+                "url": "https://github.com/lochungtin/CoinControl"
+            }
+        ],
+        "prev_project": {
+            "label": "← ArUco Measurement",
+            "url": "#"
+        },
+        "next_project": null
+    },
+    "sections": [
+        {
+            "id": "overview",
+            "title": "Overview",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "style": "lead",
+                    "text": "CoinControl is a mobile money management application for tracking personal spending and income. It combines an intuitive record-keeping interface with an analytics dashboard, a fully customisable category system, cloud backup via Firebase, and a built-in calculator as the numeric input pad — so expenses can be logged on the spot without switching apps."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The project was led solo before being joined by collaborators Ken Huang and Issac To. It started as a practical tool for personal use and grew into a fully featured application with an account system, multi-device sync, and extensive personalisation options — including per-category icons and colours, app-wide accent theming, dark and light modes, and support for seven international currencies."
+                },
+                {
+                    "type": "callout",
+                    "stats": [
+                        {
+                            "num": "7",
+                            "label": "Supported currency labels — USD, GBP, EUR, HKD, NTD, JPY, KRW"
+                        },
+                        {
+                            "num": "30",
+                            "label": "Custom accent colours available in the flat-design colour picker"
+                        },
+                        {
+                            "num": "3",
+                            "label": "Cloud sync modes — select latest, cloud overwrite, local overwrite"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "features",
+            "title": "Features",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "The app is organised around four core feature areas: records, analytics, customisation, and account management. Each was designed to feel native to mobile — minimal taps to log an entry, glanceable charts, and persistent local storage so the app is fully usable offline without an account."
+                },
+                {
+                    "type": "numbered_list",
+                    "style": "steps",
+                    "items": [
+                        {
+                            "title": "Records",
+                            "text": "Expenses and income entries are classified by category. Each category has a custom name, icon, and colour. Users can create their own categories from scratch or modify the built-in defaults. A built-in calculator serves as the numeric input pad, enabling on-the-spot arithmetic before logging — useful for splitting bills or converting amounts."
+                        },
+                        {
+                            "title": "Analytics",
+                            "text": "The analytics screen surfaces spending and income trends through a proportion pie chart breaking down entries by category, per-category and total sums, spending goal progress tracking, and highlights for the most frequent and most expensive categories. All figures update immediately as new records are added."
+                        },
+                        {
+                            "title": "Customisation",
+                            "text": "The app offers deep personalisation: custom category icons and names, a 30-colour flat-design palette for category styling and the app-wide accent colour, toggleable light mode, and a choice of seven currency labels (USD, GBP, EUR, HKD, NTD, JPY, KRW) that prefix all displayed amounts."
+                        },
+                        {
+                            "title": "Notifications",
+                            "text": "Daily push notifications remind users to log their expenses. The default firing time is 11:00 PM local time, but users can reschedule the notification to any time that fits their routine via the settings screen."
+                        },
+                        {
+                            "title": "Account System & Cloud Sync",
+                            "text": "An optional account system — authenticated via Firebase Authentication — enables cloud storage and backup through Firebase Realtime Database. Data is stored locally regardless of login status. When an account is active, a single-tap sync button reconciles local and cloud data via three selectable strategies: select latest (default), cloud overwrite, or local overwrite."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "implementation",
+            "title": "Implementation",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "CoinControl is built with React Native for cross-platform iOS and Android support from a single TypeScript codebase. Firebase serves dual roles: Authentication handles account creation and login, while Realtime Database stores the JSON-serialised record and settings payload for each user. Local persistence ensures the app works offline-first — cloud sync is a pull/push operation rather than a live connection."
+                },
+                {
+                    "type": "bullet_list",
+                    "style": "boxed",
+                    "title": "Technical architecture highlights",
+                    "items": [
+                        "Offline-first local storage — all records and settings persist on-device; no account required for full functionality.",
+                        "Firebase Authentication — email/password account creation and session management with no backend server required.",
+                        "Firebase Realtime Database — record and settings data serialised to JSON and synced per user UID; three conflict resolution strategies available.",
+                        "Built-in calculator engine — numeric input pad doubles as a live calculator, resolving expressions before storing the result as the record amount.",
+                        "Custom colour picker — 30 flat-design colours exposed as a reusable component used for both category styling and the global app accent."
+                    ]
+                },
+                {
+                    "type": "table",
+                    "headers": [
+                        "Feature",
+                        "Technology"
+                    ],
+                    "rows": [
+                        {
+                            "cells": [
+                                "Cross-platform mobile",
+                                "React Native (iOS & Android)"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Language",
+                                "TypeScript"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Account authentication",
+                                "Firebase Authentication"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Cloud data storage",
+                                "Firebase Realtime Database"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Local persistence",
+                                "AsyncStorage (on-device)"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Push notifications",
+                                "React Native Push Notification library"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Charts",
+                                "React Native SVG / custom pie renderer"
+                            ],
+                            "highlight": false
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "design",
+            "title": "Design",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "The UI was designed around a flat design aesthetic — bold colour blocks, clean typography, and no gradients. The 30-colour accent palette was curated from the flat UI colour set, giving the app a distinct look while keeping colour choices visually coherent regardless of what the user picks. Every screen that displays amounts respects the user's selected currency label and applies it consistently."
+                },
+                {
+                    "type": "bullet_list",
+                    "style": "simple",
+                    "title": "Customisation options available to users",
+                    "items": [
+                        "Category icon — chosen from a curated icon library displayed in a scrollable grid.",
+                        "Category colour — picked from the 30 flat-design colours in the custom colour picker.",
+                        "App accent colour — the same 30-colour picker applied globally across buttons, highlights, and charts.",
+                        "Light / dark mode — toggled from the settings screen; respects the chosen accent colour in both modes.",
+                        "Currency label — seven options (USD, GBP, EUR, HKD, NTD, JPY, KRW) applied as a prefix on all record and summary displays.",
+                        "Daily notification time — push notification scheduling customisable to any local time."
+                    ]
+                },
+                {
+                    "type": "image",
+                    "src": "https://raw.githubusercontent.com/lochungtin/CoinControl/refs/heads/master/docs/img/analytics.jpg",
+                    "alt": "CoinControl analytics screen showing a pie chart breakdown of spending by category with category sums and total",
+                    "label": "Fig. 1",
+                    "caption": "Analytics screen — proportion pie chart of spending by category, category sums, total sum, and spending goal progress."
+                },
+                {
+                    "type": "image",
+                    "src": "https://raw.githubusercontent.com/lochungtin/CoinControl/refs/heads/master/docs/img/home.jpg",
+                    "alt": "CoinControl home screen showing a list of expense and income records grouped by category",
+                    "label": "Fig. 2",
+                    "caption": "Home screen — records listed by category with custom icons and colours."
+                }
+            ]
+        },
+        {
+            "id": "challenges",
+            "title": "Challenges",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "Building a personal finance app involves a few non-obvious engineering challenges — particularly around data consistency, offline reliability, and making sure customisation feels fast rather than complicated."
+                },
+                {
+                    "type": "challenges",
+                    "items": [
+                        {
+                            "title": "Cloud sync conflict resolution",
+                            "text": "When a user makes changes on two devices while offline, naively overwriting with the cloud copy or the local copy both risk data loss. The three-mode sync strategy — select latest (compare timestamps), cloud overwrite, local overwrite — gives users explicit control over which version wins, avoiding silent data loss while remaining simple enough to understand in a consumer mobile context."
+                        },
+                        {
+                            "title": "Offline-first with optional cloud — avoiding split brain",
+                            "text": "The app must feel fully functional without an account or internet connection, but seamlessly extend to cloud sync when an account is present. Keeping local and remote storage in sync required a clear separation between the local persistence layer and the Firebase layer, with sync treated as an explicit user-triggered action rather than a background process that could create conflicting state."
+                        },
+                        {
+                            "title": "Custom calculator input pad",
+                            "text": "Replacing the native numeric keyboard with a built-in calculator required building a lightweight expression parser that evaluates arithmetic in real time, handles operator precedence, and resolves to a final amount on confirmation — while feeling as fast and tactile as the system keyboard on both iOS and Android."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "next",
+            "title": "What's Next",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "The app is feature-complete in its current mobile form. The primary planned extension is a companion web application."
+                },
+                {
+                    "type": "numbered_list",
+                    "style": "next",
+                    "items": [
+                        "Build a CoinControl web application — sharing the same Firebase backend — so users can view, add, and edit records from a desktop browser without being limited to mobile, improving accessibility for detailed review and bulk editing of records.",
+                        "Expand analytics with time-series views — monthly and yearly trend charts showing spending over time per category, enabling users to spot seasonal patterns or track progress against longer-term financial goals.",
+                        "Add recurring record templates — allowing users to define regular expenses (rent, subscriptions) that auto-populate as records on a schedule, reducing manual entry for predictable outgoings.",
+                        "Export functionality — CSV or PDF export of records and analytics summaries for users who want to import data into spreadsheets or share reports."
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Werewolf — Role Reference</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        /* ── PAGE LAYOUT ── */
+        .ww-page {
+            margin-top: 64px;
+            min-height: calc(100vh - 64px);
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* ── HEADER ── */
+        .ww-header {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            border-bottom: var(--line);
+            min-height: 220px;
+        }
+
+        .ww-header-meta {
+            padding: 3rem;
+            border-right: var(--line);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1.5rem;
+        }
+
+        .ww-header-label {
+            font-family: 'DM Mono', monospace;
+            font-size: .68rem;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: var(--mid);
+        }
+
+        .ww-dot-cluster {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 9px;
+            width: fit-content;
+        }
+
+        .ww-dot-cluster span {
+            width: 5px;
+            height: 5px;
+            border-radius: 50%;
+            background: var(--black);
+            opacity: .25;
+            display: block;
+        }
+
+        .ww-header-title {
+            padding: 3rem 3.5rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 1rem;
+        }
+
+        .ww-eyebrow {
+            font-family: 'DM Mono', monospace;
+            font-size: .72rem;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: var(--mid);
+        }
+
+        .ww-title {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(3.5rem, 6vw, 6rem);
+            line-height: .9;
+            letter-spacing: .02em;
+        }
+
+        .ww-title em {
+            font-family: 'DM Serif Display', serif;
+            font-style: italic;
+            color: var(--mid);
+        }
+
+        .ww-subtitle {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1rem;
+            line-height: 1.65;
+            color: var(--mid);
+        }
+
+        /* ── TABLE WRAPPER ── */
+        .ww-table-section {
+            flex: 1;
+        }
+
+        .ww-table-wrap {
+            overflow-x: auto;
+        }
+
+        .ww-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        /* ── TABLE HEAD ── */
+        .ww-table thead tr {
+            border-bottom: var(--line);
+        }
+
+        .ww-table th {
+            font-family: 'DM Mono', monospace;
+            font-size: .68rem;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: var(--mid);
+            padding: 1.1rem 2rem;
+            text-align: left;
+            background: var(--white);
+        }
+
+        .ww-table th:first-child {
+            width: 90px;
+            border-right: var(--line);
+        }
+
+        .ww-table th:nth-child(2) {
+            width: 200px;
+            border-right: var(--line-thin);
+        }
+
+        /* ── TABLE BODY ── */
+        .ww-table tbody tr {
+            border-bottom: var(--line-thin);
+            transition: background .12s;
+        }
+
+        .ww-table tbody tr:last-child {
+            border-bottom: none;
+        }
+
+        .ww-table tbody tr:hover {
+            background: var(--black);
+        }
+
+        .ww-table tbody tr:hover td {
+            color: var(--white);
+        }
+
+        .ww-table tbody tr:hover .ww-card {
+            color: var(--white);
+            opacity: .5;
+            border-color: transparent;
+        }
+
+        .ww-table tbody tr:hover .ww-role {
+            color: var(--white);
+        }
+
+        .ww-table tbody tr:hover .ww-desc {
+            color: #aaa;
+        }
+
+        .ww-table td {
+            padding: 1.4rem 2rem;
+            vertical-align: top;
+        }
+
+        .ww-table td:first-child {
+            border-right: var(--line);
+        }
+
+        .ww-table td:nth-child(2) {
+            border-right: var(--line-thin);
+        }
+
+        /* Card code */
+        .ww-card {
+            font-family: 'DM Mono', monospace;
+            font-size: .75rem;
+            letter-spacing: .12em;
+            color: var(--mid);
+            display: inline-block;
+            padding: .2rem .5rem;
+            border: var(--line-thin);
+            transition: color .12s, border-color .12s, opacity .12s;
+        }
+
+        /* Role name */
+        .ww-role {
+            font-size: .95rem;
+            font-weight: 700;
+            letter-spacing: .02em;
+            transition: color .12s;
+        }
+
+        /* Description */
+        .ww-desc {
+            font-family: 'DM Serif Display', serif;
+            font-size: .95rem;
+            line-height: 1.65;
+            color: #555;
+            transition: color .12s;
+        }
+
+        html[data-theme="dark"] .ww-desc {
+            color: #aaa !important;
+        }
+
+        /* ── FOOTER ── */
+        .ww-footer {
+            border-top: var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.75rem 3rem;
+        }
+
+        .ww-footer-label {
+            font-family: 'DM Mono', monospace;
+            font-size: .68rem;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--mid);
+        }
+
+        .ww-footer-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .ww-footer-dots span {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--black);
+        }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 700px) {
+
+            /* Header */
+            .ww-header {
+                grid-template-columns: 1fr;
+                min-height: unset;
+            }
+
+            .ww-header-meta {
+                border-right: none;
+                border-bottom: var(--line);
+                padding: 1.75rem 1.25rem;
+            }
+
+            .ww-header-title {
+                padding: 1.75rem 1.25rem;
+            }
+
+            .ww-dot-cluster {
+                display: none;
+            }
+
+            .ww-title {
+                font-size: clamp(3rem, 14vw, 4.5rem);
+            }
+
+            /* Hide the table header row entirely */
+            .ww-table thead {
+                display: none;
+            }
+
+            /* Reflow table, tbody, tr into block containers */
+            .ww-table,
+            .ww-table tbody {
+                display: block;
+                width: 100%;
+            }
+
+            /* Each row becomes a card */
+            .ww-table tbody tr {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                grid-template-rows: auto auto;
+                column-gap: 1rem;
+                row-gap: .5rem;
+                padding: 1.25rem;
+                border-bottom: var(--line-thin);
+                border-right: none;
+            }
+
+            .ww-table tbody tr:last-child {
+                border-bottom: none;
+            }
+
+            /* Reset td defaults */
+            .ww-table td {
+                display: block;
+                padding: 0;
+                border: none !important;
+                vertical-align: top;
+            }
+
+            /* Card code pill — top-left, spans one row */
+            .ww-table td:first-child {
+                grid-column: 1;
+                grid-row: 1;
+                align-self: center;
+            }
+
+            /* Role name — top-right */
+            .ww-table td:nth-child(2) {
+                grid-column: 2;
+                grid-row: 1;
+                align-self: center;
+            }
+
+            /* Description — full width below */
+            .ww-table td:nth-child(3) {
+                grid-column: 1 / -1;
+                grid-row: 2;
+            }
+
+            /* Slightly smaller description text on mobile */
+            .ww-desc {
+                font-size: .9rem;
+            }
+
+            /* Disable hover row-invert on touch (no hover state) */
+            .ww-table tbody tr:hover {
+                background: transparent;
+            }
+
+            .ww-table tbody tr:hover td,
+            .ww-table tbody tr:hover .ww-card,
+            .ww-table tbody tr:hover .ww-role,
+            .ww-table tbody tr:hover .ww-desc {
+                color: inherit;
+                opacity: 1;
+                border-color: var(--line-thin);
+            }
+
+            /* Footer */
+            .ww-footer {
+                padding: 1.5rem 1.25rem;
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+
+            .ww-footer-dots {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV — logo only, no links -->
+    <nav>
+        <span class="nav-logo">TL.</span>
+    </nav>
+
+    <div class="ww-page">
+
+        <!-- HEADER -->
+        <div class="ww-header">
+            <div class="ww-header-meta">
+                <span class="ww-header-label">Role Reference</span>
+                <div class="ww-dot-cluster">
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                    <span></span><span></span><span></span><span></span>
+                </div>
+            </div>
+            <div class="ww-header-title">
+                <p class="ww-eyebrow">One Night · Hidden Roles</p>
+                <h1 class="ww-title">Were<em>wolf</em></h1>
+                <p class="ww-subtitle">Each card is assigned a role. Read your role carefully — do not reveal it to
+                    other players.</p>
+            </div>
+        </div>
+
+        <!-- TABLE -->
+        <div class="ww-table-section">
+            <div class="ww-table-wrap">
+                <table class="ww-table">
+                    <thead>
+                        <tr>
+                            <th>Card</th>
+                            <th>Role</th>
+                            <th>Objective</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="ww-card">2♠</span></td>
+                            <td><span class="ww-role">Thief</span></td>
+                            <td><span class="ww-desc">At the start of the game, two extra cards are shown to you. You
+                                    may take on the role of one. If both cards are werewolves, you must take the
+                                    werewolf role.</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="ww-card">Q♥</span></td>
+                            <td><span class="ww-role">Cupid</span></td>
+                            <td><span class="ww-desc">In the beginning of the game, make two players become lovers. If
+                                    one dies, the other dies as well.</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="ww-card">K♠♥♣♦</span></td>
+                            <td><span class="ww-role">Werewolf</span></td>
+                            <td><span class="ww-desc">When awoken at night, agree amongst all werewolves to eliminate a
+                                    player.</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="ww-card">3♥</span></td>
+                            <td><span class="ww-role">Little Girl</span></td>
+                            <td><span class="ww-desc">You can peek when the werewolves act. Don't get spotted — and stay
+                                    alive.</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="ww-card">Q♠</span></td>
+                            <td><span class="ww-role">Witch</span></td>
+                            <td><span class="ww-desc">You have one potion of healing and one potion of killing — use
+                                    them wisely.</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="ww-card">A♦</span></td>
+                            <td><span class="ww-role">Fortune Teller</span></td>
+                            <td><span class="ww-desc">When awoken at night, you may learn whether a chosen player is a
+                                    werewolf or not.</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="ww-card">J♠</span></td>
+                            <td><span class="ww-role">Piper</span></td>
+                            <td><span class="ww-desc">When awoken at night, hypnotise 2 players. If all players are
+                                    charmed or dead, you win. You are neither townfolk nor werewolf.</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="ww-card">A♠</span></td>
+                            <td><span class="ww-role">Hunter</span></td>
+                            <td><span class="ww-desc">If you die — at daytime or night — you may kill one player.</span>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><span class="ww-card">J♦</span></td>
+                            <td><span class="ww-role">Jester</span></td>
+                            <td><span class="ww-desc">Get voted out to win.</span></td>
+                        </tr>
+                        <tr>
+                            <td><span class="ww-card">6–9</span></td>
+                            <td><span class="ww-role">Villager</span></td>
+                            <td><span class="ww-desc">Survive.</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- FOOTER -->
+        <footer class="ww-footer">
+            <span class="ww-footer-label">Werewolf · Role Reference</span>
+            <div class="ww-footer-dots">
+                <span></span><span></span><span></span><span></span><span></span>
+            </div>
+        </footer>
+
+    </div>
+</body>
+
+</html>

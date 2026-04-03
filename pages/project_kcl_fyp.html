@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ghost AI — CTL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="nav-logo">CTL.</a>
+    <div class="nav-links">
+      <a href="index.html#about">About</a>
+      <a href="index.html#academics">Academics</a>
+      <a href="index.html#experience">Experience</a>
+      <a href="index.html#skills">Skills</a>
+      <a href="index.html#projects">Projects</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#overview" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">01</span><span
+          class="mobile-menu-label">Overview</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#motivation" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">02</span><span
+          class="mobile-menu-label">Motivation</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#approach" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">03</span><span
+          class="mobile-menu-label">Approach</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#implementation" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">04</span><span
+          class="mobile-menu-label">Implementation</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#results" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">05</span><span
+          class="mobile-menu-label">Results</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#challenges" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">06</span><span
+          class="mobile-menu-label">Challenges</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#next" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">07</span><span class="mobile-menu-label">What&#x27;s
+          Next</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+  </div>
+
+  <!-- PROJECT HEADER -->
+  <header class="proj-header">
+    <div class="proj-header-meta">
+      <a href="index.html#projects" class="proj-back">← All Projects</a>
+      <div class="proj-meta-block">
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Status</span>
+          <span class="proj-meta-value proj-status-badge">Completed</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Year</span>
+          <span class="proj-meta-value">2022</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Role</span>
+          <span class="proj-meta-value">Sole Author · King&#x27;s College London</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Stack</span>
+          <span class="proj-meta-value">Python 3.9 · NumPy · TKinter</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Links</span>
+          <div class="proj-link-group"><a href="#" class="proj-ext-link" target="_blank" rel="noopener">Full Report
+              ↗</a></div>
+        </div>
+      </div>
+      <div class="proj-dot-cluster">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="proj-header-title">
+      <p class="proj-number">01 / Project</p>
+      <h1 class="proj-title">Ghost<br><em>AI</em></h1>
+      <p class="proj-tagline">Evaluating and improving adversarial ghost agents in Pacman using Markov Decision
+        Processes, Deep Temporal Difference Learning, and Neuroevolutionary Genetic Algorithms.</p>
+      <div class="proj-tag-row"><span class="proj-tag">Reinforcement Learning</span><span class="proj-tag">Genetic
+          Algorithms</span><span class="proj-tag">Multi-Agent Systems</span><span class="proj-tag">Game AI</span></div>
+    </div>
+  </header>
+
+  <!-- TABLE OF CONTENTS -->
+  <nav class="proj-toc" id="toc">
+    <button class="proj-toc-toggle" id="tocToggle" aria-label="Toggle contents">
+      <span class="proj-toc-toggle-label">Contents</span>
+      <span class="proj-toc-toggle-arrow">&#8595;</span>
+    </button>
+    <div class="proj-toc-links" id="tocLinks"><a href="#overview" class="proj-toc-item"><span
+          class="proj-toc-num">01</span> Overview</a><a href="#motivation" class="proj-toc-item"><span
+          class="proj-toc-num">02</span> Motivation</a><a href="#approach" class="proj-toc-item"><span
+          class="proj-toc-num">03</span> Approach</a><a href="#implementation" class="proj-toc-item"><span
+          class="proj-toc-num">04</span> Implementation</a><a href="#results" class="proj-toc-item"><span
+          class="proj-toc-num">05</span> Results</a><a href="#challenges" class="proj-toc-item"><span
+          class="proj-toc-num">06</span> Challenges</a><a href="#next" class="proj-toc-item"><span
+          class="proj-toc-num">07</span> What&#x27;s Next</a></div>
+  </nav>
+
+  <!-- BODY -->
+  <main class="proj-body">
+    <aside class="proj-sidebar" id="sidebar">
+      <p class="proj-sidebar-label">On this page</p>
+      <a href="#overview" class="proj-sidebar-link" data-section="overview">Overview</a>
+      <a href="#motivation" class="proj-sidebar-link" data-section="motivation">Motivation</a>
+      <a href="#approach" class="proj-sidebar-link" data-section="approach">Approach</a>
+      <a href="#implementation" class="proj-sidebar-link" data-section="implementation">Implementation</a>
+      <a href="#results" class="proj-sidebar-link" data-section="results">Results</a>
+      <a href="#challenges" class="proj-sidebar-link" data-section="challenges">Challenges</a>
+      <a href="#next" class="proj-sidebar-link" data-section="next">What&#x27;s Next</a>
+
+    </aside>
+    <article class="proj-article">
+      <section class="proj-section" id="overview">
+        <div class="proj-section-header">
+          <span class="proj-section-num">01</span>
+          <h2 class="proj-section-title">Overview</h2>
+        </div>
+        <div class="proj-content">
+          <p class="lead">This project modifies the ghost agents in a Pacman environment to make the game significantly
+            harder to play. Four ghost variants are introduced — an algorithmically hyper-aggressive agent, an
+            MDP-solver agent, a Deep Temporal Difference Learning agent, and a Neuroevolutionary agent — and evaluated
+            against a deterministic autonomous Pacman baseline.</p>
+          <p>Rather than the conventional focus on building a better Pacman player, this research fills a gap in the
+            literature by directing attention to the adversarial side: how effectively can ghost agents catch Pacman,
+            minimise pellets collected, and deny use of power pellets? All experiments were conducted on a reduced 13×15
+            grid (down from the original 28×36) to manage the state space within available compute constraints.</p>
+          <div class="proj-callout">
+            <div class="proj-callout-inner" style="grid-template-columns: repeat(3, 1fr);">
+              <div class="proj-stat"><span class="proj-stat-num">5</span><span class="proj-stat-label">Ghost AI variants
+                  implemented and evaluated</span></div>
+              <div class="proj-stat"><span class="proj-stat-num">1000</span><span class="proj-stat-label">Games sampled
+                  per experiment</span></div>
+              <div class="proj-stat"><span class="proj-stat-num">203%</span><span class="proj-stat-label">Best metric
+                  score improvement over control group</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="proj-section" id="motivation">
+        <div class="proj-section-header">
+          <span class="proj-section-num">02</span>
+          <h2 class="proj-section-title">Motivation</h2>
+        </div>
+        <div class="proj-content">
+          <p>Pacman has been a popular testbed for AI research for over 15 years. Almost all prior work focuses on
+            building an optimal Pacman-playing agent. A clear research gap exists: no study had focused on improving the
+            adversarial ghost agents themselves. This project is, to the best of the author&#x27;s knowledge, the first
+            attempt at systematically developing and evaluating multi-agent ghost systems for the Pacman environment.
+          </p>
+          <p>The original ghost AI operates through three alternating modes — Scatter, Chase, and Frightened — driven by
+            hard-coded target tile algorithms unique to each of the four ghosts (Blinky, Pinky, Inky, Clyde). While
+            ingeniously designed for gameplay balance, these deterministic rules leave significant room for improvement
+            when the objective is purely to maximise ghost performance.</p>
+          <blockquote class="proj-quote">
+            A major research gap has been found as a lot of these researches only focus on creating an agent to play the
+            game as efficiently and effectively as possible.
+            <cite>— Chung Tin Lo, Final Project Report (2022)</cite>
+          </blockquote>
+          <p class="proj-block-title">Research questions addressed</p>
+          <ul class="proj-list--boxed">
+            <li>What is the most effective pairing of ghost AI variants to minimise Pacman&#x27;s performance?</li>
+            <li>How do rule-based ghost agents compare to machine learning-based ghost agents in terms of catching
+              efficiency?</li>
+            <li>What behavioural differences emerge between agents trained with Deep TD Learning versus Neuroevolution?
+            </li>
+            <li>Does pairing two different ghost variants produce synergistic performance improvements?</li>
+          </ul>
+        </div>
+      </section>
+      <section class="proj-section" id="approach">
+        <div class="proj-section-header">
+          <span class="proj-section-num">03</span>
+          <h2 class="proj-section-title">Approach</h2>
+        </div>
+        <div class="proj-content">
+          <p>Five ghost variants were designed and tested across a matrix of pairings. A control group (two original
+            ORGL ghosts) established the baseline. Subsequent experiments tested each new variant individually, in
+            combination with an original ghost, and paired against other new variants. Performance was measured across
+            three metrics — board completion percentage, timesteps per game, and death tally — combined into a single
+            weighted score.</p>
+          <div class="proj-steps">
+            <div class="proj-step">
+              <div class="proj-step-num">1</div>
+              <div class="proj-step-body"><strong>Grid &amp; Game Reduction</strong>
+                <p>The original 28×36 Pacman grid was reduced to 13×15 (≈75% smaller) to make the state space tractable.
+                  Ghost count was halved to two and power pellets reduced from four to two, preserving core game
+                  mechanics.</p>
+              </div>
+            </div>
+            <div class="proj-step">
+              <div class="proj-step-num">2</div>
+              <div class="proj-step-body"><strong>Baseline Pacman Agents</strong>
+                <p>Two deterministic Pacman agents were built to act as fair opponents: an MDP solver with a
+                  hand-crafted reward function, and a Deep TD Learning agent pre-trained on MDP agent gameplay data
+                  before live RL training.</p>
+              </div>
+            </div>
+            <div class="proj-step">
+              <div class="proj-step-num">3</div>
+              <div class="proj-step-body"><strong>Ghost Variant Design</strong>
+                <p>Five ghost variants were specified: ORGL (original), AGGR (hyper-aggressive, no scatter mode), SMDP
+                  (MDP solver), DTDL (Deep TD Learning with feature extraction), and NEAT (Neuroevolutionary Augmenting
+                  Topologies).</p>
+              </div>
+            </div>
+            <div class="proj-step">
+              <div class="proj-step-num">4</div>
+              <div class="proj-step-body"><strong>Training Protocol</strong>
+                <p>ML-based ghost agents were trained against the Pacman baselines with the second ghost held static,
+                  preventing interference and maximising kill-action learning opportunities. Training continued until
+                  performance plateaued.</p>
+              </div>
+            </div>
+            <div class="proj-step">
+              <div class="proj-step-num">5</div>
+              <div class="proj-step-body"><strong>Experiment Design</strong>
+                <p>Twelve experiments were run — a control group plus three groups testing AGGR pairs, variant-original
+                  mixes, and variant-variant mixes. Each experiment averaged results across 1000 games. Scores were
+                  normalised against the control group.</p>
+              </div>
+            </div>
+          </div>
+          <div class="proj-table-wrap">
+            <table class="proj-table">
+              <thead>
+                <tr>
+                  <th>Variant</th>
+                  <th>Abbr.</th>
+                  <th>AI Type</th>
+                  <th>Key Property</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Original</td>
+                  <td>ORGL</td>
+                  <td>Algorithmic</td>
+                  <td>Scatter / Chase / Frightened modes</td>
+                </tr>
+                <tr>
+                  <td>Hyper-aggressive</td>
+                  <td>AGGR</td>
+                  <td>Algorithmic</td>
+                  <td>Chase mode only — no scatter</td>
+                </tr>
+                <tr>
+                  <td>MDP Solver</td>
+                  <td>SMDP</td>
+                  <td>Classical ML</td>
+                  <td>Value-iteration on game grid</td>
+                </tr>
+                <tr>
+                  <td>Deep TD Learning</td>
+                  <td>DTDL</td>
+                  <td>Deep RL</td>
+                  <td>ANN with feature extraction + replay</td>
+                </tr>
+                <tr class="proj-table-highlight">
+                  <td><strong>Neuroevolutionary</strong></td>
+                  <td>NEAT</td>
+                  <td>Evolutionary</td>
+                  <td><strong>Best overall — 203% improvement</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+      <section class="proj-section" id="implementation">
+        <div class="proj-section-header">
+          <span class="proj-section-num">04</span>
+          <h2 class="proj-section-title">Implementation</h2>
+        </div>
+        <div class="proj-content">
+          <p>The project was built entirely in Python 3.9 with only NumPy (matrix operations) and TKinter (GUI) as
+            external dependencies. The codebase is structured into agents, AI backends (deepq, mdp, neat), game
+            components, and scripts for training, pre-training, and evaluation.</p>
+          <p class="proj-block-title">Feature vector for ML ghost agents (22 inputs for Pacman, 10 for ghosts)</p>
+          <ul class="proj-list--simple">
+            <li>Current valid directions — 4 binary values indicating legal moves from the current tile</li>
+            <li>Relative position of nearest pellet — computed via BFS from Pacman&#x27;s position</li>
+            <li>Relative position of nearest power pellet — normalised by maximum grid distance (25)</li>
+            <li>Relative position and frightened state of each ghost — 5 values per ghost</li>
+          </ul>
+          <div class="proj-code-block">
+            <div class="proj-code-header"><span class="proj-code-lang">Pseudocode</span><span
+                class="proj-code-file">a_star_pathfinding.py</span></div>
+            <pre class="proj-code"><code>pathfind = function(start, goal)
+  openList : PriorityQueue = [start]
+  closedList : List = []
+  g : Map = {start: 0}
+  h : Map = {start: dist(start, goal)}
+  f : Map = {start: h.get(start)}
+  p : Map = {start: start}
+
+  while not openList.isEmpty()
+    currentTile = openList.dequeue()
+    closedList.append(currentTile)
+
+    for each (direction, tile) of currentTile.neighbours
+      if not restrictions(direction, currentTile)
+        if currentTile is goal
+          # reconstruct path
+          path = []
+          parent = goal
+          while parent is not p.get(parent)
+            path.append(parent)
+            parent = p.get(parent)
+          return path
+        else
+          cost = g.get(tile) + dist(currentTile, tile)
+          if f.get(tile) &gt; f
+            g.put(tile, g.get(currentTile) + 1)
+            h.put(tile, dist(currentTile, tile))
+            f.put(tile, cost)
+            p.put(tile, currentTile)</code></pre>
+          </div>
+          <p>A* pathfinding drives all ghost movement, recalculated every timestep as target tiles shift. The
+            restrictions check enforces the original game rule that ghosts cannot turn northward at four specific
+            intersections — retained in the reduced grid (bottom two only). The NEAT variant replaces fixed weight
+            matrices with a topological genome, with weights stored in a central lookup table keyed by connected neuron
+            pairs.</p>
+          <div class="proj-code-block">
+            <div class="proj-code-header"><span class="proj-code-lang">Pseudocode</span><span
+                class="proj-code-file">rl_training_loop.py</span></div>
+            <pre class="proj-code"><code>main = function()
+  game = new Game()
+  action = agent.init(features(game))
+  epochs = 0
+
+  while epochs &lt; epochLimit
+    game.nextStep(action)
+    if game.over or game.won
+      epochs = epochs + 1
+      agent.end(reward(game))
+      game = new Game()
+      action = agent.init(features(game))
+    else
+      action = agent.step(features(game), reward(game))</code></pre>
+          </div>
+          <div class="proj-table-wrap">
+            <table class="proj-table">
+              <thead>
+                <tr>
+                  <th>Condition</th>
+                  <th>Reward Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Default step</td>
+                  <td>−0.5</td>
+                </tr>
+                <tr>
+                  <td>Stationary</td>
+                  <td>−10</td>
+                </tr>
+                <tr>
+                  <td>Ate a pellet</td>
+                  <td>+20</td>
+                </tr>
+                <tr>
+                  <td>Ate a power pellet</td>
+                  <td>+3</td>
+                </tr>
+                <tr>
+                  <td>Ate a ghost</td>
+                  <td>+50</td>
+                </tr>
+                <tr>
+                  <td>Loss</td>
+                  <td>−20 × remaining pellets</td>
+                </tr>
+                <tr class="proj-table-highlight">
+                  <td><strong>Win</strong></td>
+                  <td><strong>+2000</strong></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="proj-image">
+            <div class="proj-figure-placeholder">
+              <div class="proj-figure-icon"><span></span><span></span><span></span><span></span></div>
+              <p class="proj-figure-caption-text">Ghost pathfinding visualisation — A* routes shown as coloured lines
+                from each ghost to Pacman</p>
+            </div>
+            <p class="proj-image-caption"><strong>Fig. 1</strong> — Ghost pathfinding on the reduced 13×15 grid.
+              Coloured lines trace each ghost&#x27;s A* route to its target tile, recalculated every timestep.</p>
+          </div>
+        </div>
+      </section>
+      <section class="proj-section" id="results">
+        <div class="proj-section-header">
+          <span class="proj-section-num">05</span>
+          <h2 class="proj-section-title">Results</h2>
+        </div>
+        <div class="proj-content">
+          <p>Every new ghost variant combination outperformed the control group across the combined metric score. The
+            best-performing pairing was NEAT + ORGL, achieving a 203% improvement — statistically making the game twice
+            as hard for the autonomous Pacman agent. All ML-based variants achieved an average death tally of zero,
+            demonstrating a complete ability to evade power-pellet retaliation.</p>
+          <div class="proj-table-wrap">
+            <table class="proj-table">
+              <thead>
+                <tr>
+                  <th>Experiment</th>
+                  <th>Ghost 1</th>
+                  <th>Ghost 2</th>
+                  <th>Completion %</th>
+                  <th>Timesteps</th>
+                  <th>Deaths</th>
+                  <th>Normalised Score</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Control</td>
+                  <td>ORGL</td>
+                  <td>ORGL</td>
+                  <td>61.71</td>
+                  <td>103.96</td>
+                  <td>0.11</td>
+                  <td>1.00</td>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>AGGR</td>
+                  <td>AGGR</td>
+                  <td>42.89</td>
+                  <td>61.65</td>
+                  <td>0.47</td>
+                  <td>1.48</td>
+                </tr>
+                <tr>
+                  <td>2.1</td>
+                  <td>AGGR</td>
+                  <td>ORGL</td>
+                  <td>46.03</td>
+                  <td>55.49</td>
+                  <td>0.44</td>
+                  <td>1.43</td>
+                </tr>
+                <tr>
+                  <td>2.2</td>
+                  <td>SMDP</td>
+                  <td>ORGL</td>
+                  <td>43.49</td>
+                  <td>53.22</td>
+                  <td>0.00</td>
+                  <td>1.49</td>
+                </tr>
+                <tr>
+                  <td>2.3</td>
+                  <td>DTDL</td>
+                  <td>ORGL</td>
+                  <td>19.78</td>
+                  <td>58.14</td>
+                  <td>0.00</td>
+                  <td>1.95</td>
+                </tr>
+                <tr class="proj-table-highlight">
+                  <td><strong>2.4</strong></td>
+                  <td><strong>NEAT</strong></td>
+                  <td><strong>ORGL</strong></td>
+                  <td><strong>18.77</strong></td>
+                  <td><strong>32.84</strong></td>
+                  <td><strong>0.00</strong></td>
+                  <td><strong>2.03</strong></td>
+                </tr>
+                <tr>
+                  <td>3.1</td>
+                  <td>AGGR</td>
+                  <td>SMDP</td>
+                  <td>30.92</td>
+                  <td>75.75</td>
+                  <td>0.47</td>
+                  <td>1.68</td>
+                </tr>
+                <tr>
+                  <td>3.2</td>
+                  <td>AGGR</td>
+                  <td>DTDL</td>
+                  <td>34.40</td>
+                  <td>35.38</td>
+                  <td>0.31</td>
+                  <td>1.71</td>
+                </tr>
+                <tr>
+                  <td>3.3</td>
+                  <td>AGGR</td>
+                  <td>NEAT</td>
+                  <td>38.54</td>
+                  <td>135.02</td>
+                  <td>0.51</td>
+                  <td>1.38</td>
+                </tr>
+                <tr>
+                  <td>3.4</td>
+                  <td>SMDP</td>
+                  <td>DTDL</td>
+                  <td>30.27</td>
+                  <td>122.04</td>
+                  <td>0.00</td>
+                  <td>1.58</td>
+                </tr>
+                <tr>
+                  <td>3.5</td>
+                  <td>SMDP</td>
+                  <td>NEAT</td>
+                  <td>27.15</td>
+                  <td>113.17</td>
+                  <td>0.00</td>
+                  <td>1.67</td>
+                </tr>
+                <tr>
+                  <td>3.6</td>
+                  <td>DTDL</td>
+                  <td>NEAT</td>
+                  <td>20.31</td>
+                  <td>112.42</td>
+                  <td>0.00</td>
+                  <td>1.80</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="proj-block-title">Key findings</p>
+          <ol class="proj-numbered--boxed">
+            <li>NEAT + ORGL was the single best pairing, reducing board completion to 18.77% and timesteps to 32.84 —
+              the lowest of any experiment.</li>
+            <li>All ML-based pairings (experiments 2.2–2.4, 3.4–3.6) achieved 0 average deaths, completely neutralising
+              Pacman&#x27;s power-pellet mechanic.</li>
+            <li>AGGR + NEAT (3.3) was the worst-performing new combination (1.38×), largely due to stalemate states
+              inflating timestep counts past the 200-step cutoff.</li>
+            <li>Hyper-aggressive (AGGR) pairings excel at reducing completion percentage but carry high death tallies —
+              a high-risk, high-reward profile.</li>
+            <li>Machine learning ghosts paired against each other cause stalemate loops, an emergent failure mode
+              requiring reward reshaping in future work.</li>
+          </ol>
+        </div>
+      </section>
+      <section class="proj-section" id="challenges">
+        <div class="proj-section-header">
+          <span class="proj-section-num">06</span>
+          <h2 class="proj-section-title">Challenges</h2>
+        </div>
+        <div class="proj-content">
+          <p>Three core limitations constrained the generalisability and scope of the findings, each rooted in the
+            practical realities of a solo undergraduate project completed on personal hardware within a semester-length
+            timeline.</p>
+          <div class="proj-challenges">
+            <div class="proj-challenge">
+              <div class="proj-challenge-header"><span class="proj-challenge-dot"></span><strong>Limited computational
+                  power</strong></div>
+              <p>All training was performed on personal hardware. The grid had to be reduced from 28×36 to 13×15 to keep
+                episode lengths and convergence times manageable. This prevents direct generalisation of results to the
+                full Pacman game, where the larger state space would demand significantly more training time and GPU
+                resources.</p>
+            </div>
+            <div class="proj-challenge">
+              <div class="proj-challenge-header"><span class="proj-challenge-dot"></span><strong>Lack of human player
+                  data</strong></div>
+              <p>ML ghost agents were trained exclusively against deterministic Pacman baselines. The agents appear to
+                exploit fixed patterns in the baseline&#x27;s movement rather than learning general pursuit strategies.
+                When tested informally against human players, the learnt behaviours did not transfer — the ghosts
+                exhibited erratic movement unable to exploit the non-deterministic patterns of a human. Attempts to
+                retrain on human gameplay were abandoned as infeasible within the project timeline.</p>
+            </div>
+            <div class="proj-challenge">
+              <div class="proj-challenge-header"><span class="proj-challenge-dot"></span><strong>Imperfect reward
+                  shaping causing stalemate loops</strong></div>
+              <p>When two ML-based ghosts face each other, their individually optimal policies can lock the game into a
+                looping stalemate where no progress is made. A fail-safe auto-terminates games at 200 timesteps, but
+                this inflates the timestep metric artificially. The current reward function inadvertently incentivises
+                the looping behaviour and would need to be reshaped to penalise stalemate states explicitly.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="proj-section" id="next">
+        <div class="proj-section-header">
+          <span class="proj-section-num">07</span>
+          <h2 class="proj-section-title">What&#x27;s Next</h2>
+        </div>
+        <div class="proj-content">
+          <p>The findings open several concrete directions for extending this work, ranging from data collection
+            improvements to architectural changes that would allow agents to generalise beyond the reduced grid and the
+            deterministic baseline opponent.</p>
+          <ul class="proj-next-list">
+            <li data-n="01">Retrain ML ghost agents on human gameplay data — either by pre-training on recorded expert
+              games or deploying the agents in a live setting where they learn from real players — to overcome the
+              deterministic-baseline exploitation problem.</li>
+            <li data-n="02">Introduce convolutional or recurrent layers so agents can learn directly from the raw game
+              grid rather than hand-crafted features, enabling richer spatial and temporal reasoning.</li>
+            <li data-n="03">Reshape the reward function to penalise stalemate states, eliminating the artificial
+              inflation of timestep metrics and producing cleaner comparisons between variant pairings.</li>
+            <li data-n="04">Scale experiments back to the original 28×36 grid with full GPU compute, validating whether
+              the relative performance rankings hold at the true game scale.</li>
+            <li data-n="05">Introduce cooperative multi-agent training so ghost pairs learn to coordinate coverage of
+              the grid rather than independently converging on identical pursuit paths.</li>
+          </ul>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="proj-footer">
+    <div class="proj-footer-inner">
+      <a href="index.html#projects" class="proj-footer-back">← Back to Projects</a>
+      <div class="footer-dots">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="proj-footer-nav">
+
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="project.js" defer></script>
+</body>
+
+</html>

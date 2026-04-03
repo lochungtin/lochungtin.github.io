@@ -1,0 +1,514 @@
+{
+    "meta": {
+        "nav_logo": "CTL.",
+        "portfolio_url": "index.html",
+        "title_prefix": "Ghost",
+        "title_italic": "AI",
+        "number": "01",
+        "tagline": "Evaluating and improving adversarial ghost agents in Pacman using Markov Decision Processes, Deep Temporal Difference Learning, and Neuroevolutionary Genetic Algorithms.",
+        "status": "Completed",
+        "year": "2022",
+        "role": "Sole Author · King's College London",
+        "stack": "Python 3.9 · NumPy · TKinter",
+        "tags": [
+            "Reinforcement Learning",
+            "Genetic Algorithms",
+            "Multi-Agent Systems",
+            "Game AI"
+        ],
+        "links": [
+            {
+                "label": "Full Report ↗",
+                "url": "#"
+            }
+        ],
+        "prev_project": null,
+        "next_project": null
+    },
+    "sections": [
+        {
+            "id": "overview",
+            "title": "Overview",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "style": "lead",
+                    "text": "This project modifies the ghost agents in a Pacman environment to make the game significantly harder to play. Four ghost variants are introduced — an algorithmically hyper-aggressive agent, an MDP-solver agent, a Deep Temporal Difference Learning agent, and a Neuroevolutionary agent — and evaluated against a deterministic autonomous Pacman baseline."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Rather than the conventional focus on building a better Pacman player, this research fills a gap in the literature by directing attention to the adversarial side: how effectively can ghost agents catch Pacman, minimise pellets collected, and deny use of power pellets? All experiments were conducted on a reduced 13×15 grid (down from the original 28×36) to manage the state space within available compute constraints."
+                },
+                {
+                    "type": "callout",
+                    "stats": [
+                        {
+                            "num": "5",
+                            "label": "Ghost AI variants implemented and evaluated"
+                        },
+                        {
+                            "num": "1000",
+                            "label": "Games sampled per experiment"
+                        },
+                        {
+                            "num": "203%",
+                            "label": "Best metric score improvement over control group"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "motivation",
+            "title": "Motivation",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "Pacman has been a popular testbed for AI research for over 15 years. Almost all prior work focuses on building an optimal Pacman-playing agent. A clear research gap exists: no study had focused on improving the adversarial ghost agents themselves. This project is, to the best of the author's knowledge, the first attempt at systematically developing and evaluating multi-agent ghost systems for the Pacman environment."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The original ghost AI operates through three alternating modes — Scatter, Chase, and Frightened — driven by hard-coded target tile algorithms unique to each of the four ghosts (Blinky, Pinky, Inky, Clyde). While ingeniously designed for gameplay balance, these deterministic rules leave significant room for improvement when the objective is purely to maximise ghost performance."
+                },
+                {
+                    "type": "quote",
+                    "text": "A major research gap has been found as a lot of these researches only focus on creating an agent to play the game as efficiently and effectively as possible.",
+                    "cite": "— Chung Tin Lo, Final Project Report (2022)"
+                },
+                {
+                    "type": "bullet_list",
+                    "style": "boxed",
+                    "title": "Research questions addressed",
+                    "items": [
+                        "What is the most effective pairing of ghost AI variants to minimise Pacman's performance?",
+                        "How do rule-based ghost agents compare to machine learning-based ghost agents in terms of catching efficiency?",
+                        "What behavioural differences emerge between agents trained with Deep TD Learning versus Neuroevolution?",
+                        "Does pairing two different ghost variants produce synergistic performance improvements?"
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "approach",
+            "title": "Approach",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "Five ghost variants were designed and tested across a matrix of pairings. A control group (two original ORGL ghosts) established the baseline. Subsequent experiments tested each new variant individually, in combination with an original ghost, and paired against other new variants. Performance was measured across three metrics — board completion percentage, timesteps per game, and death tally — combined into a single weighted score."
+                },
+                {
+                    "type": "numbered_list",
+                    "style": "steps",
+                    "items": [
+                        {
+                            "title": "Grid & Game Reduction",
+                            "text": "The original 28×36 Pacman grid was reduced to 13×15 (≈75% smaller) to make the state space tractable. Ghost count was halved to two and power pellets reduced from four to two, preserving core game mechanics."
+                        },
+                        {
+                            "title": "Baseline Pacman Agents",
+                            "text": "Two deterministic Pacman agents were built to act as fair opponents: an MDP solver with a hand-crafted reward function, and a Deep TD Learning agent pre-trained on MDP agent gameplay data before live RL training."
+                        },
+                        {
+                            "title": "Ghost Variant Design",
+                            "text": "Five ghost variants were specified: ORGL (original), AGGR (hyper-aggressive, no scatter mode), SMDP (MDP solver), DTDL (Deep TD Learning with feature extraction), and NEAT (Neuroevolutionary Augmenting Topologies)."
+                        },
+                        {
+                            "title": "Training Protocol",
+                            "text": "ML-based ghost agents were trained against the Pacman baselines with the second ghost held static, preventing interference and maximising kill-action learning opportunities. Training continued until performance plateaued."
+                        },
+                        {
+                            "title": "Experiment Design",
+                            "text": "Twelve experiments were run — a control group plus three groups testing AGGR pairs, variant-original mixes, and variant-variant mixes. Each experiment averaged results across 1000 games. Scores were normalised against the control group."
+                        }
+                    ]
+                },
+                {
+                    "type": "table",
+                    "headers": [
+                        "Variant",
+                        "Abbr.",
+                        "AI Type",
+                        "Key Property"
+                    ],
+                    "rows": [
+                        {
+                            "cells": [
+                                "Original",
+                                "ORGL",
+                                "Algorithmic",
+                                "Scatter / Chase / Frightened modes"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Hyper-aggressive",
+                                "AGGR",
+                                "Algorithmic",
+                                "Chase mode only — no scatter"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "MDP Solver",
+                                "SMDP",
+                                "Classical ML",
+                                "Value-iteration on game grid"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Deep TD Learning",
+                                "DTDL",
+                                "Deep RL",
+                                "ANN with feature extraction + replay"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "**Neuroevolutionary**",
+                                "NEAT",
+                                "Evolutionary",
+                                "**Best overall — 203% improvement**"
+                            ],
+                            "highlight": true
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "implementation",
+            "title": "Implementation",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "The project was built entirely in Python 3.9 with only NumPy (matrix operations) and TKinter (GUI) as external dependencies. The codebase is structured into agents, AI backends (deepq, mdp, neat), game components, and scripts for training, pre-training, and evaluation."
+                },
+                {
+                    "type": "bullet_list",
+                    "style": "simple",
+                    "title": "Feature vector for ML ghost agents (22 inputs for Pacman, 10 for ghosts)",
+                    "items": [
+                        "Current valid directions — 4 binary values indicating legal moves from the current tile",
+                        "Relative position of nearest pellet — computed via BFS from Pacman's position",
+                        "Relative position of nearest power pellet — normalised by maximum grid distance (25)",
+                        "Relative position and frightened state of each ghost — 5 values per ghost"
+                    ]
+                },
+                {
+                    "type": "code",
+                    "lang": "Pseudocode",
+                    "filename": "a_star_pathfinding.py",
+                    "code": "pathfind = function(start, goal)\n  openList : PriorityQueue = [start]\n  closedList : List = []\n  g : Map = {start: 0}\n  h : Map = {start: dist(start, goal)}\n  f : Map = {start: h.get(start)}\n  p : Map = {start: start}\n\n  while not openList.isEmpty()\n    currentTile = openList.dequeue()\n    closedList.append(currentTile)\n\n    for each (direction, tile) of currentTile.neighbours\n      if not restrictions(direction, currentTile)\n        if currentTile is goal\n          # reconstruct path\n          path = []\n          parent = goal\n          while parent is not p.get(parent)\n            path.append(parent)\n            parent = p.get(parent)\n          return path\n        else\n          cost = g.get(tile) + dist(currentTile, tile)\n          if f.get(tile) > f\n            g.put(tile, g.get(currentTile) + 1)\n            h.put(tile, dist(currentTile, tile))\n            f.put(tile, cost)\n            p.put(tile, currentTile)"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A* pathfinding drives all ghost movement, recalculated every timestep as target tiles shift. The restrictions check enforces the original game rule that ghosts cannot turn northward at four specific intersections — retained in the reduced grid (bottom two only). The NEAT variant replaces fixed weight matrices with a topological genome, with weights stored in a central lookup table keyed by connected neuron pairs."
+                },
+                {
+                    "type": "code",
+                    "lang": "Pseudocode",
+                    "filename": "rl_training_loop.py",
+                    "code": "main = function()\n  game = new Game()\n  action = agent.init(features(game))\n  epochs = 0\n\n  while epochs < epochLimit\n    game.nextStep(action)\n    if game.over or game.won\n      epochs = epochs + 1\n      agent.end(reward(game))\n      game = new Game()\n      action = agent.init(features(game))\n    else\n      action = agent.step(features(game), reward(game))"
+                },
+                {
+                    "type": "table",
+                    "headers": [
+                        "Condition",
+                        "Reward Value"
+                    ],
+                    "rows": [
+                        {
+                            "cells": [
+                                "Default step",
+                                "−0.5"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Stationary",
+                                "−10"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Ate a pellet",
+                                "+20"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Ate a power pellet",
+                                "+3"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Ate a ghost",
+                                "+50"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Loss",
+                                "−20 × remaining pellets"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "**Win**",
+                                "**+2000**"
+                            ],
+                            "highlight": true
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "src": "",
+                    "alt": "Ghost pathfinding visualisation — A* routes shown as coloured lines from each ghost to Pacman",
+                    "label": "Fig. 1",
+                    "caption": "Ghost pathfinding on the reduced 13×15 grid. Coloured lines trace each ghost's A* route to its target tile, recalculated every timestep."
+                }
+            ]
+        },
+        {
+            "id": "results",
+            "title": "Results",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "Every new ghost variant combination outperformed the control group across the combined metric score. The best-performing pairing was NEAT + ORGL, achieving a 203% improvement — statistically making the game twice as hard for the autonomous Pacman agent. All ML-based variants achieved an average death tally of zero, demonstrating a complete ability to evade power-pellet retaliation."
+                },
+                {
+                    "type": "table",
+                    "headers": [
+                        "Experiment",
+                        "Ghost 1",
+                        "Ghost 2",
+                        "Completion %",
+                        "Timesteps",
+                        "Deaths",
+                        "Normalised Score"
+                    ],
+                    "rows": [
+                        {
+                            "cells": [
+                                "Control",
+                                "ORGL",
+                                "ORGL",
+                                "61.71",
+                                "103.96",
+                                "0.11",
+                                "1.00"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "1",
+                                "AGGR",
+                                "AGGR",
+                                "42.89",
+                                "61.65",
+                                "0.47",
+                                "1.48"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "2.1",
+                                "AGGR",
+                                "ORGL",
+                                "46.03",
+                                "55.49",
+                                "0.44",
+                                "1.43"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "2.2",
+                                "SMDP",
+                                "ORGL",
+                                "43.49",
+                                "53.22",
+                                "0.00",
+                                "1.49"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "2.3",
+                                "DTDL",
+                                "ORGL",
+                                "19.78",
+                                "58.14",
+                                "0.00",
+                                "1.95"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "**2.4**",
+                                "**NEAT**",
+                                "**ORGL**",
+                                "**18.77**",
+                                "**32.84**",
+                                "**0.00**",
+                                "**2.03**"
+                            ],
+                            "highlight": true
+                        },
+                        {
+                            "cells": [
+                                "3.1",
+                                "AGGR",
+                                "SMDP",
+                                "30.92",
+                                "75.75",
+                                "0.47",
+                                "1.68"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "3.2",
+                                "AGGR",
+                                "DTDL",
+                                "34.40",
+                                "35.38",
+                                "0.31",
+                                "1.71"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "3.3",
+                                "AGGR",
+                                "NEAT",
+                                "38.54",
+                                "135.02",
+                                "0.51",
+                                "1.38"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "3.4",
+                                "SMDP",
+                                "DTDL",
+                                "30.27",
+                                "122.04",
+                                "0.00",
+                                "1.58"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "3.5",
+                                "SMDP",
+                                "NEAT",
+                                "27.15",
+                                "113.17",
+                                "0.00",
+                                "1.67"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "3.6",
+                                "DTDL",
+                                "NEAT",
+                                "20.31",
+                                "112.42",
+                                "0.00",
+                                "1.80"
+                            ],
+                            "highlight": false
+                        }
+                    ]
+                },
+                {
+                    "type": "numbered_list",
+                    "style": "boxed",
+                    "title": "Key findings",
+                    "items": [
+                        "NEAT + ORGL was the single best pairing, reducing board completion to 18.77% and timesteps to 32.84 — the lowest of any experiment.",
+                        "All ML-based pairings (experiments 2.2–2.4, 3.4–3.6) achieved 0 average deaths, completely neutralising Pacman's power-pellet mechanic.",
+                        "AGGR + NEAT (3.3) was the worst-performing new combination (1.38×), largely due to stalemate states inflating timestep counts past the 200-step cutoff.",
+                        "Hyper-aggressive (AGGR) pairings excel at reducing completion percentage but carry high death tallies — a high-risk, high-reward profile.",
+                        "Machine learning ghosts paired against each other cause stalemate loops, an emergent failure mode requiring reward reshaping in future work."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "challenges",
+            "title": "Challenges",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "Three core limitations constrained the generalisability and scope of the findings, each rooted in the practical realities of a solo undergraduate project completed on personal hardware within a semester-length timeline."
+                },
+                {
+                    "type": "challenges",
+                    "items": [
+                        {
+                            "title": "Limited computational power",
+                            "text": "All training was performed on personal hardware. The grid had to be reduced from 28×36 to 13×15 to keep episode lengths and convergence times manageable. This prevents direct generalisation of results to the full Pacman game, where the larger state space would demand significantly more training time and GPU resources."
+                        },
+                        {
+                            "title": "Lack of human player data",
+                            "text": "ML ghost agents were trained exclusively against deterministic Pacman baselines. The agents appear to exploit fixed patterns in the baseline's movement rather than learning general pursuit strategies. When tested informally against human players, the learnt behaviours did not transfer — the ghosts exhibited erratic movement unable to exploit the non-deterministic patterns of a human. Attempts to retrain on human gameplay were abandoned as infeasible within the project timeline."
+                        },
+                        {
+                            "title": "Imperfect reward shaping causing stalemate loops",
+                            "text": "When two ML-based ghosts face each other, their individually optimal policies can lock the game into a looping stalemate where no progress is made. A fail-safe auto-terminates games at 200 timesteps, but this inflates the timestep metric artificially. The current reward function inadvertently incentivises the looping behaviour and would need to be reshaped to penalise stalemate states explicitly."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "next",
+            "title": "What's Next",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "The findings open several concrete directions for extending this work, ranging from data collection improvements to architectural changes that would allow agents to generalise beyond the reduced grid and the deterministic baseline opponent."
+                },
+                {
+                    "type": "numbered_list",
+                    "style": "next",
+                    "items": [
+                        "Retrain ML ghost agents on human gameplay data — either by pre-training on recorded expert games or deploying the agents in a live setting where they learn from real players — to overcome the deterministic-baseline exploitation problem.",
+                        "Introduce convolutional or recurrent layers so agents can learn directly from the raw game grid rather than hand-crafted features, enabling richer spatial and temporal reasoning.",
+                        "Reshape the reward function to penalise stalemate states, eliminating the artificial inflation of timestep metrics and producing cleaner comparisons between variant pairings.",
+                        "Scale experiments back to the original 28×36 grid with full GPU compute, validating whether the relative performance rankings hold at the true game scale.",
+                        "Introduce cooperative multi-agent training so ghost pairs learn to coordinate coverage of the grid rather than independently converging on identical pursuit paths."
+                    ]
+                }
+            ]
+        }
+    ]
+}

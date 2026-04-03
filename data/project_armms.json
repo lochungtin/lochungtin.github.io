@@ -1,0 +1,318 @@
+{
+    "meta": {
+        "nav_logo": "CTL.",
+        "portfolio_url": "portfolio.html",
+        "title_prefix": "ArUco",
+        "title_italic": "Measurement",
+        "number": "03",
+        "tagline": "A low-cost, calibration-free, portable system coupling printable ArUco markers with consumer cameras to quantify patient positional reproducibility for novel radiotherapy immobilisation devices — achieving sub-millimetre accuracy comparable to commercial SGRT systems.",
+        "status": "Published",
+        "year": "2025",
+        "role": "First Author · UCL Hawkes Institute & Leo Cancer Care",
+        "stack": "Python · OpenCV · NumPy",
+        "tags": [
+            "Computer Vision",
+            "Radiotherapy",
+            "ArUco Markers",
+            "Patient Positioning",
+            "Medical Physics"
+        ],
+        "links": [
+            {
+                "label": "GitHub ↗",
+                "url": "https://github.com/lochungtin/ArMMS"
+            },
+            {
+                "label": "Publication ↗",
+                "url": "#"
+            }
+        ],
+        "prev_project": {
+            "label": "← Ovarian Diagnosis",
+            "url": "#"
+        },
+        "next_project": null
+    },
+    "sections": [
+        {
+            "id": "overview",
+            "title": "Overview",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "style": "lead",
+                    "text": "This technical note presents a portable, calibration-free measurement system for quantifying the positional reproducibility of novel patient immobilisation devices in radiotherapy. The system pairs commercially available cameras on fixed tripods with printable ArUco fiducial markers attached to participants, and uses a Python algorithm to automatically detect markers in each image and compute inter-fractional and intra-fractional displacement — with no camera calibration required."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The system was motivated by a resurgence of interest in upright, gantry-less radiotherapy — particularly for proton and ion therapy — which demands new immobilisation concepts and, crucially, pre-clinical tools to verify their reproducibility before clinical adoption. Commercial Surface-Guided Radiotherapy (SGRT) systems offer comparable accuracy but are expensive, require complex installation, and are not transportable. The proposed system closes this gap: any camera with sufficiently high resolution and low lens distortion can be used, markers can be printed and taped onto any subject, and the system can be deployed in any space — no calibration needed."
+                },
+                {
+                    "type": "callout",
+                    "stats": [
+                        {
+                            "num": "<1mm",
+                            "label": "Mean measurement error — across all camera setups and marker distances"
+                        },
+                        {
+                            "num": "0.082mm",
+                            "label": "Precision mean error — consistency of repeated measurements"
+                        },
+                        {
+                            "num": "MIT",
+                            "label": "Licence — full software and documentation freely available on GitHub"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "motivation",
+            "title": "Motivation",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "Upright radiotherapy replaces rotating beam gantries with fixed treatment beams, reducing infrastructure costs — particularly for proton and ion therapy — and improving comfort for specific patient groups. However, upright treatment necessitates entirely new immobilisation devices: radiotherapy chairs, arm supports, and more open thermoplastic facemasks. As each novel immobilisation concept is proposed, pre-clinical testing must verify that patients can be reproducibly re-positioned on it, both within a session (intra-fraction stability) and across sessions (inter-fraction reproducibility)."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Commercial SGRT systems — AlignRT (VisionRT), Catalyst (C-Rad), and IDENTIFY (Varian) — achieve sub-millimetre accuracy and are established in clinical settings. However, they are expensive, require specialist installation, periodic recalibration, and are not designed to be portable. For early-phase pre-clinical testing in research labs, where full SGRT precision may not yet be necessary, a cheaper and more flexible alternative was needed."
+                },
+                {
+                    "type": "quote",
+                    "text": "There is a need for a cheap and flexible measurement system to aid the testing and development of new immobilisation devices for RT.",
+                    "cite": "— Lo et al., Physics in Medicine & Biology (2025)"
+                },
+                {
+                    "type": "bullet_list",
+                    "style": "boxed",
+                    "title": "Design requirements for the proposed system",
+                    "items": [
+                        "Portable and low-cost — usable outside of clinical environments with no specialist infrastructure.",
+                        "High degree of flexibility — any camera, any location, adaptable marker placement on any subject.",
+                        "Calibration-free and easy to use — deployable without optical calibration expertise.",
+                        "2D positional reproducibility in a single session — capturing both inter-setup and intra-fraction shifts.",
+                        "Sub-millimetre measurement accuracy — suitable for pre-clinical immobilisation research."
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "approach",
+            "title": "Approach",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "The system places one or more stationary cameras on fixed tripods — recommended at 2–3 m from the subject — orthogonal to the plane where positional variation is expected. Printable 3 cm ArUco markers are attached to the participant. After each positioning or at regular intervals, images are captured. The Python algorithm then detects markers in each image, pairs same-ID markers across images, computes the displacement of each marker centre in pixels, and converts to millimetres using the known physical marker edge length — correcting for any marker rotation via a custom 3D reconstruction."
+                },
+                {
+                    "type": "numbered_list",
+                    "style": "steps",
+                    "items": [
+                        {
+                            "title": "Equipment Setup",
+                            "text": "One camera per desired view is mounted on a tripod 2–3 m from the subject. For 2D capture in both the coronal and sagittal planes, two perpendicular cameras are used. Markers are printed to a consistent 3 cm edge length, mounted on rigid card, and taped to the participant. The subject is then imaged at least twice."
+                        },
+                        {
+                            "title": "Marker Detection",
+                            "text": "OpenCV's built-in ArUco detection function identifies each marker in each image, returning a 4×2 matrix of the (x, y) pixel coordinates of the four marker vertices and each marker's unique ID. Markers must span at least 60 pixels to ensure reliable detection and accurate vertex localisation."
+                        },
+                        {
+                            "title": "3D Edge Length Estimation (Rotation Correction)",
+                            "text": "A rotated marker appears foreshortened in the image plane, causing naive pixel-to-mm conversion to underestimate the true marker size. The algorithm recovers the marker's 3D geometry by exploiting the geometric properties of a square — equal edge lengths and orthogonal adjacent edges — and solves the resulting simultaneous equations to recover the Z coordinates of all four vertices, from which the true edge length is computed."
+                        },
+                        {
+                            "title": "Displacement Calculation",
+                            "text": "For each same-ID marker pair across two images, the centre points are computed as the mean of the four vertices. The Euclidean distance between centre points in pixels is then scaled to millimetres using the estimated true edge length. The result is a per-marker displacement measurement between the two image captures."
+                        },
+                        {
+                            "title": "Precision Validation via Vector Closure",
+                            "text": "For three images of the same setup (timepoints i, j, k), the displacement vector Dik should equal Dij + Djk. The residual |Dij + Djk − Dik| across all marker combinations quantifies the measurement consistency (precision) without requiring a separate ground truth measurement device."
+                        }
+                    ]
+                },
+                {
+                    "type": "image",
+                    "src": "",
+                    "alt": "Three-panel image showing two repeat upright setups of a healthy volunteer with ArUco markers attached, and an overlay comparing the two positions.",
+                    "label": "Fig. 1",
+                    "caption": "The measurement algorithm applied to repeat upright set-ups for a healthy volunteer. Left: first set-up. Centre: second set-up. Right: both set-ups overlaid. ArUco markers are visible as square fiducials on the participant."
+                }
+            ]
+        },
+        {
+            "id": "implementation",
+            "title": "Implementation",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "The algorithm is implemented in Python using OpenCV for marker detection and NumPy for matrix operations. The core measurement pipeline runs in two stages — detection and measurement — and requires no camera calibration. The orthographic projection model is used rather than a pinhole model, under the assumption that perspective effects and lens distortion are negligible at the working distances tested (2–3 m). This assumption was validated experimentally."
+                },
+                {
+                    "type": "code",
+                    "lang": "Python",
+                    "filename": "measure.py",
+                    "code": "import cv2\nimport numpy as np\n\ndef detect_markers(image):\n    \"\"\"Detect ArUco markers and return {id: vertices} dict.\"\"\"\n    aruco_dict   = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50)\n    aruco_params = cv2.aruco.DetectorParameters()\n    detector     = cv2.aruco.ArucoDetector(aruco_dict, aruco_params)\n    corners, ids, _ = detector.detectMarkers(image)\n    if ids is None:\n        return {}\n    return {ids[i][0]: corners[i][0] for i in range(len(ids))}\n\ndef centre(vertices):\n    \"\"\"Mean of four 2D vertex coordinates.\"\"\"\n    return vertices.mean(axis=0)\n\ndef recover_z(vertices):\n    \"\"\"Recover Z coords from 2D marker vertices using square geometry constraints.\"\"\"\n    # Equal edge lengths + orthogonal adjacent edges -> solve simultaneous equations\n    # Returns estimated 3D edge length corrected for marker rotation\n    ...\n\ndef displacement_mm(v_i, v_j, marker_size_cm=3.0):\n    \"\"\"Compute displacement between two marker instances in millimetres.\"\"\"\n    edge_px = 0.5 * (recover_z(v_i) + recover_z(v_j))  # mean estimated edge\n    scale   = (marker_size_cm * 10) / edge_px           # mm per pixel\n    delta   = centre(v_j) - centre(v_i)\n    return np.linalg.norm(delta) * scale"
+                },
+                {
+                    "type": "paragraph",
+                    "text": "Validation was conducted using two cameras (SVS-VISTEK exo183CGETR at 20.2 MP and Sony ILCE-6400 at 24.2 MP) imaging 50 validation sheets from 2 m and 3 m. Each sheet encoded a known marker separation from a set of eight ground-truth distances: [0, 0.05, 0.1, 0.2, 0.4, 0.8, 1.6, 2.4] cm. To cover sub-marker distances, two paired sheets were used per distance, with the second sheet's marker shifted relative to the first by the target separation. Twenty-four sampled rotations from real volunteer images were applied to ensure realistic marker geometries in the validation set."
+                },
+                {
+                    "type": "table",
+                    "headers": [
+                        "Camera",
+                        "Distance",
+                        "Resolution",
+                        "Mean Error",
+                        "Notable"
+                    ],
+                    "rows": [
+                        {
+                            "cells": [
+                                "SVS-VISTEK exo183CGETR",
+                                "2 m",
+                                "1280×855 px (downsampled)",
+                                "<1 mm",
+                                "Comparable to Sony"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "SVS-VISTEK exo183CGETR",
+                                "3 m",
+                                "1280×855 px (downsampled)",
+                                "<1 mm",
+                                "Comparable to Sony"
+                            ],
+                            "highlight": false
+                        },
+                        {
+                            "cells": [
+                                "Sony ILCE-6400",
+                                "2 m",
+                                "6000×4000 px",
+                                "<1 mm",
+                                "**Best performing — selected for secondary study**"
+                            ],
+                            "highlight": true
+                        },
+                        {
+                            "cells": [
+                                "Sony ILCE-6400",
+                                "3 m",
+                                "6000×4000 px",
+                                "<1 mm",
+                                "Comparable to 2 m"
+                            ],
+                            "highlight": false
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The lens distortion study placed three additional validation sheets at the horizontal edge, vertical edge, and corner of the camera's field of view simultaneously alongside the primary centre sheet. This allowed a direct comparison of measurement error at extreme lens positions against the centred baseline — a worst-case test of the orthographic model's assumptions. The perspective effect study imaged a physically rotated marker at 50 cm intervals from 50 cm to 300 cm, visually comparing the original captured marker against a digitally reconstructed counterpart using the estimated rotation matrix."
+                }
+            ]
+        },
+        {
+            "id": "results",
+            "title": "Results",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "All four camera and distance configurations achieved sub-millimetre mean measurement error across every tested ground-truth separation. No discernible performance difference was observed between the SVS-VISTEK and Sony cameras, demonstrating that the system generalises across camera hardware. A slight positive correlation between measurement error and measured distance was observed — consistent across all setups — but the rate of increase was the same whether or not the two markers had the same rotation geometry, confirming that marker rotation does not affect accuracy."
+                },
+                {
+                    "type": "callout",
+                    "stats": [
+                        {
+                            "num": "<1mm",
+                            "label": "Mean measurement accuracy — all 4 camera/distance configurations"
+                        },
+                        {
+                            "num": "0.082mm",
+                            "label": "Mean precision error — across all marker pairs in volunteer dataset"
+                        },
+                        {
+                            "num": "0.11mm",
+                            "label": "Precision standard deviation — SD of measurement consistency"
+                        }
+                    ]
+                },
+                {
+                    "type": "paragraph",
+                    "text": "The precision validation yielded a mean error of 0.00823 cm and a standard deviation of 0.0110 cm — both well within the sub-millimetre threshold. When combined with the accuracy results, these figures quantitatively confirm that the proposed system performs on par with commercial SGRT systems, for which similar sub-millimetre accuracy and reproducibility errors are reported in the literature."
+                },
+                {
+                    "type": "numbered_list",
+                    "style": "boxed",
+                    "title": "Key findings",
+                    "items": [
+                        "Sub-millimetre mean error was achieved across all four camera/distance groups (Sony 2 m, Sony 3 m, SVS-VISTEK 2 m, SVS-VISTEK 3 m) for all tested marker separations from 0 to 2.4 cm.",
+                        "Marker rotation does not affect measurement accuracy — the error rate's positive correlation with distance was identical for identical-geometry and mixed-geometry marker pairs.",
+                        "Perspective effects are negligible — the orthographic model's reconstruction of rotated markers showed only pixel-level differences from the physically rotated originals across 50–300 cm.",
+                        "Lens distortion at the edge and corner of the camera's field of view produced no noticeable increase in mean error; only a slight rise in the number of outliers was observed.",
+                        "Precision mean error of 0.00823 cm and SD of 0.0110 cm confirm that repeated measurements of the same physical position are highly consistent."
+                    ]
+                },
+                {
+                    "type": "image",
+                    "src": "",
+                    "alt": "Box plot of measurement accuracy validation results, grouped by known ground-truth marker separation distance, comparing all four camera/distance setups.",
+                    "label": "Fig. 2",
+                    "caption": "Measurement accuracy validation results across all four camera setups (SVS-VISTEK 2 m, SVS-VISTEK 3 m, Sony 2 m, Sony 3 m), grouped by ground-truth distance. All setups achieve sub-millimetre mean error."
+                }
+            ]
+        },
+        {
+            "id": "challenges",
+            "title": "Challenges",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "Three inherent limitations of the current system constrain its scope and should be considered by researchers adopting it for their own immobilisation studies."
+                },
+                {
+                    "type": "challenges",
+                    "items": [
+                        {
+                            "title": "2D measurement only",
+                            "text": "The system measures displacements parallel to the imaging plane and cannot directly capture anterior-posterior motion from a single camera. A second perpendicular camera with its own set of markers is required to extend coverage to a full 2D view in that plane. Full 3D tracking — as offered by commercial SGRT systems — remains out of scope for the current implementation."
+                        },
+                        {
+                            "title": "Resolution and marker size dependency",
+                            "text": "Because the detection algorithm outputs discretised pixel coordinates, measurement fidelity scales directly with image resolution and physical marker size. Markers must span at least 60 pixels in the image for reliable accuracy; at lower resolutions or longer distances, users must verify that this threshold is met before trusting measurements. Camera resolution and imaging distance should be co-designed for each experimental setup."
+                        },
+                        {
+                            "title": "Single-session reproducibility only",
+                            "text": "Taped paper markers cannot be reliably repositioned at the same skin location across different days, limiting the system to within-session (intra-fractional and immediate inter-fractional) reproducibility studies. Day-to-day reproducibility — a clinically important metric — cannot easily be studied using this method in its current form. Additionally, ArUco markers require a white border for reliable detection, necessitating adequate background contrast and lighting conditions."
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "next",
+            "title": "What's Next",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "The system is publicly available and ready to use. Several extensions would meaningfully expand its clinical and research utility."
+                },
+                {
+                    "type": "numbered_list",
+                    "style": "next",
+                    "items": [
+                        "Extend to full 3D tracking by integrating outputs from two perpendicular camera pairs and developing a unified 3D reconstruction from the orthogonal 2D displacement measurements — bridging the gap towards commercial SGRT capability.",
+                        "Develop rigid or semi-rigid reusable marker mounts that can be reproducibly re-attached at the same anatomical location across sessions, enabling multi-day inter-fraction reproducibility studies.",
+                        "Validate the system under varied clinical lighting conditions and against coloured or complex backgrounds, and establish minimum contrast and illumination thresholds for reliable ArUco detection.",
+                        "Apply the system to characterise a range of novel upright radiotherapy immobilisation devices currently in development, building a pre-clinical evidence base to inform device iteration and eventual clinical translation.",
+                        "Investigate automatic stereo-pair calibration to extend measurement capability to out-of-plane directions without requiring users to manually align perpendicular camera rigs."
+                    ]
+                }
+            ]
+        }
+    ]
+}

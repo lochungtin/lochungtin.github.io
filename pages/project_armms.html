@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ArUco Measurement — CTL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="project.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="portfolio.html" class="nav-logo">CTL.</a>
+    <div class="nav-links">
+      <a href="portfolio.html#about">About</a>
+      <a href="portfolio.html#academics">Academics</a>
+      <a href="portfolio.html#experience">Experience</a>
+      <a href="portfolio.html#skills">Skills</a>
+      <a href="portfolio.html#projects">Projects</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#overview" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">01</span><span class="mobile-menu-label">Overview</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#motivation" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">02</span><span class="mobile-menu-label">Motivation</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#approach" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">03</span><span class="mobile-menu-label">Approach</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#implementation" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">04</span><span class="mobile-menu-label">Implementation</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#results" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">05</span><span class="mobile-menu-label">Results</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#challenges" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">06</span><span class="mobile-menu-label">Challenges</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#next" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">07</span><span class="mobile-menu-label">What&#x27;s Next</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+  </div>
+
+  <!-- PROJECT HEADER -->
+  <header class="proj-header">
+    <div class="proj-header-meta">
+      <a href="portfolio.html#projects" class="proj-back">← All Projects</a>
+      <div class="proj-meta-block">
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Status</span>
+          <span class="proj-meta-value proj-status-badge">Published</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Year</span>
+          <span class="proj-meta-value">2025</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Role</span>
+          <span class="proj-meta-value">First Author · UCL Hawkes Institute &amp; Leo Cancer Care</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Stack</span>
+          <span class="proj-meta-value">Python · OpenCV · NumPy</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Links</span>
+          <div class="proj-link-group"><a href="https://github.com/lochungtin/ArMMS" class="proj-ext-link" target="_blank" rel="noopener">GitHub ↗</a><a href="#" class="proj-ext-link" target="_blank" rel="noopener">Publication ↗</a></div>
+        </div>
+      </div>
+      <div class="proj-dot-cluster">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="proj-header-title">
+      <p class="proj-number">03 / Project</p>
+      <h1 class="proj-title">ArUco<br><em>Measurement</em></h1>
+      <p class="proj-tagline">A low-cost, calibration-free, portable system coupling printable ArUco markers with consumer cameras to quantify patient positional reproducibility for novel radiotherapy immobilisation devices — achieving sub-millimetre accuracy comparable to commercial SGRT systems.</p>
+      <div class="proj-tag-row"><span class="proj-tag">Computer Vision</span><span class="proj-tag">Radiotherapy</span><span class="proj-tag">ArUco Markers</span><span class="proj-tag">Patient Positioning</span><span class="proj-tag">Medical Physics</span></div>
+    </div>
+  </header>
+
+  <!-- TABLE OF CONTENTS -->
+  <nav class="proj-toc" id="toc">
+    <button class="proj-toc-toggle" id="tocToggle" aria-label="Toggle contents">
+      <span class="proj-toc-toggle-label">Contents</span>
+      <span class="proj-toc-toggle-arrow">&#8595;</span>
+    </button>
+    <div class="proj-toc-links" id="tocLinks"><a href="#overview" class="proj-toc-item"><span class="proj-toc-num">01</span> Overview</a><a href="#motivation" class="proj-toc-item"><span class="proj-toc-num">02</span> Motivation</a><a href="#approach" class="proj-toc-item"><span class="proj-toc-num">03</span> Approach</a><a href="#implementation" class="proj-toc-item"><span class="proj-toc-num">04</span> Implementation</a><a href="#results" class="proj-toc-item"><span class="proj-toc-num">05</span> Results</a><a href="#challenges" class="proj-toc-item"><span class="proj-toc-num">06</span> Challenges</a><a href="#next" class="proj-toc-item"><span class="proj-toc-num">07</span> What&#x27;s Next</a></div>
+  </nav>
+
+  <!-- BODY -->
+  <main class="proj-body">
+    <aside class="proj-sidebar" id="sidebar">
+      <p class="proj-sidebar-label">On this page</p>
+      <a href="#overview" class="proj-sidebar-link" data-section="overview">Overview</a>
+<a href="#motivation" class="proj-sidebar-link" data-section="motivation">Motivation</a>
+<a href="#approach" class="proj-sidebar-link" data-section="approach">Approach</a>
+<a href="#implementation" class="proj-sidebar-link" data-section="implementation">Implementation</a>
+<a href="#results" class="proj-sidebar-link" data-section="results">Results</a>
+<a href="#challenges" class="proj-sidebar-link" data-section="challenges">Challenges</a>
+<a href="#next" class="proj-sidebar-link" data-section="next">What&#x27;s Next</a>
+
+    </aside>
+    <article class="proj-article">
+      <section class="proj-section" id="overview">
+        <div class="proj-section-header">
+          <span class="proj-section-num">01</span>
+          <h2 class="proj-section-title">Overview</h2>
+        </div>
+        <div class="proj-content">
+<p class="lead">This technical note presents a portable, calibration-free measurement system for quantifying the positional reproducibility of novel patient immobilisation devices in radiotherapy. The system pairs commercially available cameras on fixed tripods with printable ArUco fiducial markers attached to participants, and uses a Python algorithm to automatically detect markers in each image and compute inter-fractional and intra-fractional displacement — with no camera calibration required.</p>
+<p>The system was motivated by a resurgence of interest in upright, gantry-less radiotherapy — particularly for proton and ion therapy — which demands new immobilisation concepts and, crucially, pre-clinical tools to verify their reproducibility before clinical adoption. Commercial Surface-Guided Radiotherapy (SGRT) systems offer comparable accuracy but are expensive, require complex installation, and are not transportable. The proposed system closes this gap: any camera with sufficiently high resolution and low lens distortion can be used, markers can be printed and taped onto any subject, and the system can be deployed in any space — no calibration needed.</p>
+<div class="proj-callout">
+  <div class="proj-callout-inner" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="proj-stat"><span class="proj-stat-num">&lt;1mm</span><span class="proj-stat-label">Mean measurement error — across all camera setups and marker distances</span></div><div class="proj-stat"><span class="proj-stat-num">0.082mm</span><span class="proj-stat-label">Precision mean error — consistency of repeated measurements</span></div><div class="proj-stat"><span class="proj-stat-num">MIT</span><span class="proj-stat-label">Licence — full software and documentation freely available on GitHub</span></div>
+  </div>
+</div>
+        </div>
+      </section>
+      <section class="proj-section" id="motivation">
+        <div class="proj-section-header">
+          <span class="proj-section-num">02</span>
+          <h2 class="proj-section-title">Motivation</h2>
+        </div>
+        <div class="proj-content">
+<p>Upright radiotherapy replaces rotating beam gantries with fixed treatment beams, reducing infrastructure costs — particularly for proton and ion therapy — and improving comfort for specific patient groups. However, upright treatment necessitates entirely new immobilisation devices: radiotherapy chairs, arm supports, and more open thermoplastic facemasks. As each novel immobilisation concept is proposed, pre-clinical testing must verify that patients can be reproducibly re-positioned on it, both within a session (intra-fraction stability) and across sessions (inter-fraction reproducibility).</p>
+<p>Commercial SGRT systems — AlignRT (VisionRT), Catalyst (C-Rad), and IDENTIFY (Varian) — achieve sub-millimetre accuracy and are established in clinical settings. However, they are expensive, require specialist installation, periodic recalibration, and are not designed to be portable. For early-phase pre-clinical testing in research labs, where full SGRT precision may not yet be necessary, a cheaper and more flexible alternative was needed.</p>
+<blockquote class="proj-quote">
+  There is a need for a cheap and flexible measurement system to aid the testing and development of new immobilisation devices for RT.
+  <cite>— Lo et al., Physics in Medicine &amp; Biology (2025)</cite>
+</blockquote>
+<p class="proj-block-title">Design requirements for the proposed system</p>
+<ul class="proj-list--boxed">
+<li>Portable and low-cost — usable outside of clinical environments with no specialist infrastructure.</li>
+<li>High degree of flexibility — any camera, any location, adaptable marker placement on any subject.</li>
+<li>Calibration-free and easy to use — deployable without optical calibration expertise.</li>
+<li>2D positional reproducibility in a single session — capturing both inter-setup and intra-fraction shifts.</li>
+<li>Sub-millimetre measurement accuracy — suitable for pre-clinical immobilisation research.</li>
+</ul>
+        </div>
+      </section>
+      <section class="proj-section" id="approach">
+        <div class="proj-section-header">
+          <span class="proj-section-num">03</span>
+          <h2 class="proj-section-title">Approach</h2>
+        </div>
+        <div class="proj-content">
+<p>The system places one or more stationary cameras on fixed tripods — recommended at 2–3 m from the subject — orthogonal to the plane where positional variation is expected. Printable 3 cm ArUco markers are attached to the participant. After each positioning or at regular intervals, images are captured. The Python algorithm then detects markers in each image, pairs same-ID markers across images, computes the displacement of each marker centre in pixels, and converts to millimetres using the known physical marker edge length — correcting for any marker rotation via a custom 3D reconstruction.</p>
+<div class="proj-steps">
+<div class="proj-step"><div class="proj-step-num">1</div><div class="proj-step-body"><strong>Equipment Setup</strong><p>One camera per desired view is mounted on a tripod 2–3 m from the subject. For 2D capture in both the coronal and sagittal planes, two perpendicular cameras are used. Markers are printed to a consistent 3 cm edge length, mounted on rigid card, and taped to the participant. The subject is then imaged at least twice.</p></div></div>
+<div class="proj-step"><div class="proj-step-num">2</div><div class="proj-step-body"><strong>Marker Detection</strong><p>OpenCV&#x27;s built-in ArUco detection function identifies each marker in each image, returning a 4×2 matrix of the (x, y) pixel coordinates of the four marker vertices and each marker&#x27;s unique ID. Markers must span at least 60 pixels to ensure reliable detection and accurate vertex localisation.</p></div></div>
+<div class="proj-step"><div class="proj-step-num">3</div><div class="proj-step-body"><strong>3D Edge Length Estimation (Rotation Correction)</strong><p>A rotated marker appears foreshortened in the image plane, causing naive pixel-to-mm conversion to underestimate the true marker size. The algorithm recovers the marker&#x27;s 3D geometry by exploiting the geometric properties of a square — equal edge lengths and orthogonal adjacent edges — and solves the resulting simultaneous equations to recover the Z coordinates of all four vertices, from which the true edge length is computed.</p></div></div>
+<div class="proj-step"><div class="proj-step-num">4</div><div class="proj-step-body"><strong>Displacement Calculation</strong><p>For each same-ID marker pair across two images, the centre points are computed as the mean of the four vertices. The Euclidean distance between centre points in pixels is then scaled to millimetres using the estimated true edge length. The result is a per-marker displacement measurement between the two image captures.</p></div></div>
+<div class="proj-step"><div class="proj-step-num">5</div><div class="proj-step-body"><strong>Precision Validation via Vector Closure</strong><p>For three images of the same setup (timepoints i, j, k), the displacement vector Dik should equal Dij + Djk. The residual |Dij + Djk − Dik| across all marker combinations quantifies the measurement consistency (precision) without requiring a separate ground truth measurement device.</p></div></div>
+</div>
+<div class="proj-image">
+  <div class="proj-figure-placeholder"><div class="proj-figure-icon"><span></span><span></span><span></span><span></span></div><p class="proj-figure-caption-text">Three-panel image showing two repeat upright setups of a healthy volunteer with ArUco markers attached, and an overlay comparing the two positions.</p></div>
+  <p class="proj-image-caption"><strong>Fig. 1</strong> — The measurement algorithm applied to repeat upright set-ups for a healthy volunteer. Left: first set-up. Centre: second set-up. Right: both set-ups overlaid. ArUco markers are visible as square fiducials on the participant.</p>
+</div>
+        </div>
+      </section>
+      <section class="proj-section" id="implementation">
+        <div class="proj-section-header">
+          <span class="proj-section-num">04</span>
+          <h2 class="proj-section-title">Implementation</h2>
+        </div>
+        <div class="proj-content">
+<p>The algorithm is implemented in Python using OpenCV for marker detection and NumPy for matrix operations. The core measurement pipeline runs in two stages — detection and measurement — and requires no camera calibration. The orthographic projection model is used rather than a pinhole model, under the assumption that perspective effects and lens distortion are negligible at the working distances tested (2–3 m). This assumption was validated experimentally.</p>
+<div class="proj-code-block">
+  <div class="proj-code-header"><span class="proj-code-lang">Python</span><span class="proj-code-file">measure.py</span></div>
+  <pre class="proj-code"><code>import cv2
+import numpy as np
+
+def detect_markers(image):
+    &quot;&quot;&quot;Detect ArUco markers and return {id: vertices} dict.&quot;&quot;&quot;
+    aruco_dict   = cv2.aruco.getPredefinedDictionary(cv2.aruco.DICT_4X4_50)
+    aruco_params = cv2.aruco.DetectorParameters()
+    detector     = cv2.aruco.ArucoDetector(aruco_dict, aruco_params)
+    corners, ids, _ = detector.detectMarkers(image)
+    if ids is None:
+        return {}
+    return {ids[i][0]: corners[i][0] for i in range(len(ids))}
+
+def centre(vertices):
+    &quot;&quot;&quot;Mean of four 2D vertex coordinates.&quot;&quot;&quot;
+    return vertices.mean(axis=0)
+
+def recover_z(vertices):
+    &quot;&quot;&quot;Recover Z coords from 2D marker vertices using square geometry constraints.&quot;&quot;&quot;
+    # Equal edge lengths + orthogonal adjacent edges -&gt; solve simultaneous equations
+    # Returns estimated 3D edge length corrected for marker rotation
+    ...
+
+def displacement_mm(v_i, v_j, marker_size_cm=3.0):
+    &quot;&quot;&quot;Compute displacement between two marker instances in millimetres.&quot;&quot;&quot;
+    edge_px = 0.5 * (recover_z(v_i) + recover_z(v_j))  # mean estimated edge
+    scale   = (marker_size_cm * 10) / edge_px           # mm per pixel
+    delta   = centre(v_j) - centre(v_i)
+    return np.linalg.norm(delta) * scale</code></pre>
+</div>
+<p>Validation was conducted using two cameras (SVS-VISTEK exo183CGETR at 20.2 MP and Sony ILCE-6400 at 24.2 MP) imaging 50 validation sheets from 2 m and 3 m. Each sheet encoded a known marker separation from a set of eight ground-truth distances: [0, 0.05, 0.1, 0.2, 0.4, 0.8, 1.6, 2.4] cm. To cover sub-marker distances, two paired sheets were used per distance, with the second sheet&#x27;s marker shifted relative to the first by the target separation. Twenty-four sampled rotations from real volunteer images were applied to ensure realistic marker geometries in the validation set.</p>
+<div class="proj-table-wrap">
+  <table class="proj-table">
+    <thead><tr><th>Camera</th><th>Distance</th><th>Resolution</th><th>Mean Error</th><th>Notable</th></tr></thead>
+    <tbody>
+<tr><td>SVS-VISTEK exo183CGETR</td><td>2 m</td><td>1280×855 px (downsampled)</td><td>&lt;1 mm</td><td>Comparable to Sony</td></tr>
+<tr><td>SVS-VISTEK exo183CGETR</td><td>3 m</td><td>1280×855 px (downsampled)</td><td>&lt;1 mm</td><td>Comparable to Sony</td></tr>
+<tr class="proj-table-highlight"><td>Sony ILCE-6400</td><td>2 m</td><td>6000×4000 px</td><td>&lt;1 mm</td><td><strong>Best performing — selected for secondary study</strong></td></tr>
+<tr><td>Sony ILCE-6400</td><td>3 m</td><td>6000×4000 px</td><td>&lt;1 mm</td><td>Comparable to 2 m</td></tr>
+    </tbody>
+  </table>
+</div>
+<p>The lens distortion study placed three additional validation sheets at the horizontal edge, vertical edge, and corner of the camera&#x27;s field of view simultaneously alongside the primary centre sheet. This allowed a direct comparison of measurement error at extreme lens positions against the centred baseline — a worst-case test of the orthographic model&#x27;s assumptions. The perspective effect study imaged a physically rotated marker at 50 cm intervals from 50 cm to 300 cm, visually comparing the original captured marker against a digitally reconstructed counterpart using the estimated rotation matrix.</p>
+        </div>
+      </section>
+      <section class="proj-section" id="results">
+        <div class="proj-section-header">
+          <span class="proj-section-num">05</span>
+          <h2 class="proj-section-title">Results</h2>
+        </div>
+        <div class="proj-content">
+<p>All four camera and distance configurations achieved sub-millimetre mean measurement error across every tested ground-truth separation. No discernible performance difference was observed between the SVS-VISTEK and Sony cameras, demonstrating that the system generalises across camera hardware. A slight positive correlation between measurement error and measured distance was observed — consistent across all setups — but the rate of increase was the same whether or not the two markers had the same rotation geometry, confirming that marker rotation does not affect accuracy.</p>
+<div class="proj-callout">
+  <div class="proj-callout-inner" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="proj-stat"><span class="proj-stat-num">&lt;1mm</span><span class="proj-stat-label">Mean measurement accuracy — all 4 camera/distance configurations</span></div><div class="proj-stat"><span class="proj-stat-num">0.082mm</span><span class="proj-stat-label">Mean precision error — across all marker pairs in volunteer dataset</span></div><div class="proj-stat"><span class="proj-stat-num">0.11mm</span><span class="proj-stat-label">Precision standard deviation — SD of measurement consistency</span></div>
+  </div>
+</div>
+<p>The precision validation yielded a mean error of 0.00823 cm and a standard deviation of 0.0110 cm — both well within the sub-millimetre threshold. When combined with the accuracy results, these figures quantitatively confirm that the proposed system performs on par with commercial SGRT systems, for which similar sub-millimetre accuracy and reproducibility errors are reported in the literature.</p>
+<p class="proj-block-title">Key findings</p>
+<ol class="proj-numbered--boxed">
+<li>Sub-millimetre mean error was achieved across all four camera/distance groups (Sony 2 m, Sony 3 m, SVS-VISTEK 2 m, SVS-VISTEK 3 m) for all tested marker separations from 0 to 2.4 cm.</li>
+<li>Marker rotation does not affect measurement accuracy — the error rate&#x27;s positive correlation with distance was identical for identical-geometry and mixed-geometry marker pairs.</li>
+<li>Perspective effects are negligible — the orthographic model&#x27;s reconstruction of rotated markers showed only pixel-level differences from the physically rotated originals across 50–300 cm.</li>
+<li>Lens distortion at the edge and corner of the camera&#x27;s field of view produced no noticeable increase in mean error; only a slight rise in the number of outliers was observed.</li>
+<li>Precision mean error of 0.00823 cm and SD of 0.0110 cm confirm that repeated measurements of the same physical position are highly consistent.</li>
+</ol>
+<div class="proj-image">
+  <div class="proj-figure-placeholder"><div class="proj-figure-icon"><span></span><span></span><span></span><span></span></div><p class="proj-figure-caption-text">Box plot of measurement accuracy validation results, grouped by known ground-truth marker separation distance, comparing all four camera/distance setups.</p></div>
+  <p class="proj-image-caption"><strong>Fig. 2</strong> — Measurement accuracy validation results across all four camera setups (SVS-VISTEK 2 m, SVS-VISTEK 3 m, Sony 2 m, Sony 3 m), grouped by ground-truth distance. All setups achieve sub-millimetre mean error.</p>
+</div>
+        </div>
+      </section>
+      <section class="proj-section" id="challenges">
+        <div class="proj-section-header">
+          <span class="proj-section-num">06</span>
+          <h2 class="proj-section-title">Challenges</h2>
+        </div>
+        <div class="proj-content">
+<p>Three inherent limitations of the current system constrain its scope and should be considered by researchers adopting it for their own immobilisation studies.</p>
+<div class="proj-challenges">
+<div class="proj-challenge"><div class="proj-challenge-header"><span class="proj-challenge-dot"></span><strong>2D measurement only</strong></div><p>The system measures displacements parallel to the imaging plane and cannot directly capture anterior-posterior motion from a single camera. A second perpendicular camera with its own set of markers is required to extend coverage to a full 2D view in that plane. Full 3D tracking — as offered by commercial SGRT systems — remains out of scope for the current implementation.</p></div>
+<div class="proj-challenge"><div class="proj-challenge-header"><span class="proj-challenge-dot"></span><strong>Resolution and marker size dependency</strong></div><p>Because the detection algorithm outputs discretised pixel coordinates, measurement fidelity scales directly with image resolution and physical marker size. Markers must span at least 60 pixels in the image for reliable accuracy; at lower resolutions or longer distances, users must verify that this threshold is met before trusting measurements. Camera resolution and imaging distance should be co-designed for each experimental setup.</p></div>
+<div class="proj-challenge"><div class="proj-challenge-header"><span class="proj-challenge-dot"></span><strong>Single-session reproducibility only</strong></div><p>Taped paper markers cannot be reliably repositioned at the same skin location across different days, limiting the system to within-session (intra-fractional and immediate inter-fractional) reproducibility studies. Day-to-day reproducibility — a clinically important metric — cannot easily be studied using this method in its current form. Additionally, ArUco markers require a white border for reliable detection, necessitating adequate background contrast and lighting conditions.</p></div>
+</div>
+        </div>
+      </section>
+      <section class="proj-section" id="next">
+        <div class="proj-section-header">
+          <span class="proj-section-num">07</span>
+          <h2 class="proj-section-title">What&#x27;s Next</h2>
+        </div>
+        <div class="proj-content">
+<p>The system is publicly available and ready to use. Several extensions would meaningfully expand its clinical and research utility.</p>
+<ul class="proj-next-list">
+<li data-n="01">Extend to full 3D tracking by integrating outputs from two perpendicular camera pairs and developing a unified 3D reconstruction from the orthogonal 2D displacement measurements — bridging the gap towards commercial SGRT capability.</li>
+<li data-n="02">Develop rigid or semi-rigid reusable marker mounts that can be reproducibly re-attached at the same anatomical location across sessions, enabling multi-day inter-fraction reproducibility studies.</li>
+<li data-n="03">Validate the system under varied clinical lighting conditions and against coloured or complex backgrounds, and establish minimum contrast and illumination thresholds for reliable ArUco detection.</li>
+<li data-n="04">Apply the system to characterise a range of novel upright radiotherapy immobilisation devices currently in development, building a pre-clinical evidence base to inform device iteration and eventual clinical translation.</li>
+<li data-n="05">Investigate automatic stereo-pair calibration to extend measurement capability to out-of-plane directions without requiring users to manually align perpendicular camera rigs.</li>
+</ul>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="proj-footer">
+    <div class="proj-footer-inner">
+      <a href="portfolio.html#projects" class="proj-footer-back">← Back to Projects</a>
+      <div class="theme-toggle" role="group" aria-label="Colour theme">
+        <button class="theme-btn" data-mode="light">Light</button>
+        <button class="theme-btn" data-mode="auto">Auto</button>
+        <button class="theme-btn" data-mode="dark">Dark</button>
+      </div>
+      <div class="footer-dots">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="proj-footer-nav">
+        <a href="#" class="proj-footer-sibling">← Ovarian Diagnosis</a>
+        
+      </div>
+    </div>
+  </footer>
+
+  <script src="../theme.js"></script>
+  <script src="project.js" defer></script>
+</body>
+</html>

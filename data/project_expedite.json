@@ -1,0 +1,271 @@
+{
+  "meta": {
+    "nav_logo": "TL.",
+    "portfolio_url": "index.html",
+    "title_prefix": "Project",
+    "title_italic": "Expedite",
+    "number": "05",
+    "tagline": "Automating fun, one puzzle game at a time.",
+    "status": "Lifelong Project",
+    "year": "Since 2022",
+    "role": "Lead Developer",
+    "stack": "Python · C++",
+    "tags": [
+      "Algorithm Design",
+      "OpenCV"
+    ],
+    "links": [
+      {
+        "label": "GitHub ↗",
+        "url": "https://github.com/yourhandle/project-alpha"
+      },
+      {
+        "label": "Live Demo ↗",
+        "url": "https://example.com/demo"
+      }
+    ],
+    "prev_project": {
+      "label": "← Prev Project",
+      "url": "#"
+    },
+    "next_project": {
+      "label": "Next Project →",
+      "url": "#"
+    }
+  },
+  "sections": [
+    {
+      "id": "overview",
+      "title": "Overview",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "style": "lead",
+          "text": "Write a clear, concise summary of the project here. In two to three paragraphs, explain what the project is, what it produces, and who it is for. This is the elevator pitch — assume the reader is technically literate but unfamiliar with your specific domain."
+        },
+        {
+          "type": "paragraph",
+          "text": "You can expand slightly on the context: where did this project fit in a larger research programme or engineering effort? Was it solo or collaborative? Is it a finished product or an ongoing investigation?"
+        },
+        {
+          "type": "callout",
+          "stats": [
+            {
+              "num": "94.2%",
+              "label": "Accuracy on held-out test set"
+            },
+            {
+              "num": "3×",
+              "label": "Faster than previous baseline"
+            },
+            {
+              "num": "12k",
+              "label": "Training samples used"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "motivation",
+      "title": "Motivation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Describe the gap or problem that motivated this work. What existed before? Why was it insufficient? A well-written motivation section makes the reader feel the urgency of the problem before you present your solution."
+        },
+        {
+          "type": "quote",
+          "text": "The best way to capture something meaningful about a system is often through the places where it breaks.",
+          "cite": "— Relevant Author or Your Own Framing"
+        },
+        {
+          "type": "bullet_list",
+          "style": "boxed",
+          "title": "Key gaps in existing approaches",
+          "items": [
+            "Existing methods rely on fully-labelled datasets that are expensive to obtain.",
+            "Prior architectures scale poorly beyond 10k tokens at inference time.",
+            "No publicly available benchmark covers the target domain adequately.",
+            "Latency requirements for real-time use were not met by any baseline."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "approach",
+      "title": "Approach",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Describe your high-level strategy before diving into implementation. What framework or methodology did you choose, and why? What alternatives did you consider and rule out?"
+        },
+        {
+          "type": "numbered_list",
+          "style": "steps",
+          "items": [
+            {
+              "title": "Data Collection & Preprocessing",
+              "text": "Describe your data sources, how you curated them, any cleaning or normalisation steps, and how you handled edge cases or class imbalance."
+            },
+            {
+              "title": "Model Architecture",
+              "text": "Describe the model family you chose, key design decisions (e.g. attention heads, hidden dimensions), and any modifications to standard architectures."
+            },
+            {
+              "title": "Training & Evaluation",
+              "text": "Describe your training loop, hyperparameter choices, loss function, and how you measured success. What metrics did you optimise for and why?"
+            },
+            {
+              "title": "Deployment",
+              "text": "Describe how the model or system was packaged and served — API, CLI tool, notebook, or other interface."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "implementation",
+      "title": "Implementation",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Go deeper on the technical choices made during implementation. This is the section for specifics: library versions, infrastructure, any non-obvious engineering decisions, and code-level design patterns you found useful."
+        },
+        {
+          "type": "code",
+          "lang": "Python",
+          "filename": "model.py",
+          "code": "# Replace with your own code snippet\nimport torch\nimport torch.nn as nn\n\nclass ProjectModel(nn.Module):\n    def __init__(self, vocab_size, hidden_dim=256):\n        super().__init__()\n        self.embed = nn.Embedding(vocab_size, hidden_dim)\n        self.encoder = nn.TransformerEncoder(\n            nn.TransformerEncoderLayer(d_model=hidden_dim, nhead=8),\n            num_layers=6\n        )\n        self.head = nn.Linear(hidden_dim, 1)\n\n    def forward(self, x):\n        x = self.embed(x)\n        x = self.encoder(x)\n        return self.head(x.mean(dim=1))"
+        },
+        {
+          "type": "paragraph",
+          "text": "Explain what the above snippet demonstrates, what alternatives you considered, and any gotchas that weren't obvious from documentation alone."
+        },
+        {
+          "type": "image",
+          "src": "",
+          "alt": "Architecture diagram",
+          "label": "Fig. 1",
+          "caption": "Architecture diagram or system overview. Replace src with your image path."
+        },
+        {
+          "type": "bullet_list",
+          "style": "simple",
+          "title": "Key dependencies",
+          "items": [
+            "PyTorch 2.1 — core deep learning framework",
+            "FastAPI 0.110 — REST API serving layer",
+            "Hugging Face Transformers 4.38 — pretrained model hub",
+            "Ray 2.9 — distributed training orchestration"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results",
+      "title": "Results",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Present your quantitative and qualitative findings. Be specific: include numbers, comparisons to baselines, and confidence intervals or standard deviations where appropriate."
+        },
+        {
+          "type": "table",
+          "headers": [
+            "Method",
+            "Accuracy",
+            "F1 Score",
+            "Latency (ms)"
+          ],
+          "rows": [
+            {
+              "cells": [
+                "Baseline A",
+                "81.4%",
+                "0.79",
+                "142"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "Baseline B",
+                "86.1%",
+                "0.84",
+                "98"
+              ],
+              "highlight": false
+            },
+            {
+              "cells": [
+                "**This Work**",
+                "94.2%",
+                "0.93",
+                "47"
+              ],
+              "highlight": true
+            }
+          ]
+        },
+        {
+          "type": "numbered_list",
+          "style": "boxed",
+          "title": "Notable qualitative findings",
+          "items": [
+            "The model generalises well to out-of-distribution samples in three of the four tested subdomains.",
+            "Failure cases are concentrated in examples with ambiguous label boundaries — a known challenge in this task.",
+            "Inference speed improvements stem primarily from a fused attention kernel, not architectural changes."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "challenges",
+      "title": "Challenges",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Honest reflection on what went wrong, what took longer than expected, and what you would do differently. This section builds credibility — it shows you understand the limitations of your own work."
+        },
+        {
+          "type": "challenges",
+          "items": [
+            {
+              "title": "Data sparsity in rare categories",
+              "text": "Describe the problem in one sentence. Then describe how you addressed or worked around it."
+            },
+            {
+              "title": "Training instability at higher learning rates",
+              "text": "Describe the problem and the mitigation strategy — e.g. gradient clipping, learning rate warmup, layer-wise decay."
+            },
+            {
+              "title": "Deployment latency under concurrent load",
+              "text": "Describe any infrastructure or batching strategies you used to resolve the issue in production."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "next",
+      "title": "What's Next",
+      "blocks": [
+        {
+          "type": "paragraph",
+          "text": "Describe planned extensions, open questions, or directions you'd pursue given more time or resources."
+        },
+        {
+          "type": "numbered_list",
+          "style": "next",
+          "items": [
+            "Extend the dataset to cover additional domains or languages.",
+            "Explore more efficient architectures (e.g. sparse attention, quantisation) to further reduce inference latency.",
+            "Conduct a formal user study to validate the system in a real-world deployment context.",
+            "Write up findings for submission to [Target Venue]."
+          ]
+        }
+      ]
+    }
+  ]
+}
