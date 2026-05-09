@@ -9,8 +9,8 @@ Usage:  python generate.py [data.json] [output.html]
 
 import json
 import sys
-from html import escape
 from pathlib import Path
+from html import escape
 
 # ─────────────────────────────────────────────
 # Helpers
@@ -42,14 +42,12 @@ def dot_tags(items: list) -> str:
 def social_rows(socials: list) -> str:
     rows = []
     for s in socials:
-        rows.append(
-            f"""
+        rows.append(f"""
           <a href="{e(s['url'])}" class="social-row">
             <span class="social-name">{e(s['label'])}</span>
             <span class="social-handle">{e(s['handle'])}</span>
             <span class="social-arrow">{s['arrow']}</span>
-          </a>"""
-        )
+          </a>""")
     return "\n".join(rows)
 
 
@@ -61,63 +59,52 @@ def education_entries(entries: list) -> str:
             if entry.get("tag")
             else ""
         )
-        blocks.append(
-            f"""
+        blocks.append(f"""
         <div class="entry">
           <p class="entry-year">{e(entry['years'])}</p>
           <p class="entry-title">{e(entry['degree'])}</p>
           <p class="entry-sub">{e(entry['institution'])}</p>
           <p class="entry-desc">{e(entry['description'])}</p>{tag_html}
-        </div>"""
-        )
+        </div>""")
     return "\n".join(blocks)
 
 
 def achievement_entries(entries: list) -> str:
     blocks = []
     for entry in entries:
-        blocks.append(
-            f"""
+        blocks.append(f"""
         <div class="entry">
           <p class="entry-year">{e(entry['year'])}</p>
           <p class="entry-title">{e(entry['title'])}</p>
           <p class="entry-sub">{e(entry['body'])}</p>
           <p class="entry-desc">{e(entry['description'])}</p>
-        </div>"""
-        )
+        </div>""")
     return "\n".join(blocks)
 
 
-def conference_cards(items: list) -> str:
-    cards = []
-    for i, item in enumerate(items, 1):
-        cards.append(
-            f"""
-        <div class="pub-card">
+def _pub_card(i: int, item: dict, year_field: str) -> str:
+    url = item.get("url", "").strip()
+    tag = "a" if url else "div"
+    href = f' href="{e(url)}" target="_blank" rel="noopener"' if url else ""
+    arrow = '<span class="pub-arrow">↗</span>' if url else ""
+    year_val = e(item.get(year_field, item.get("year", "")))
+    return f"""
+        <{tag} class="pub-card"{href}>
+          {arrow}
           <div class="pub-number">{i:02d}</div>
           <p class="pub-type">{e(item['type'])}</p>
           <p class="pub-title">{e(item['title'])}</p>
           <p class="pub-venue">{e(item['venue'])}</p>
-          <p class="pub-year">{e(item['year'])}</p>
-        </div>"""
-        )
-    return "\n".join(cards)
+          <p class="pub-year">{year_val}</p>
+        </{tag}>"""
+
+
+def conference_cards(items: list) -> str:
+    return "\n".join(_pub_card(i, item, "year") for i, item in enumerate(items, 1))
 
 
 def pub_cards(items: list) -> str:
-    cards = []
-    for i, item in enumerate(items, 1):
-        cards.append(
-            f"""
-        <div class="pub-card">
-          <div class="pub-number">{i:02d}</div>
-          <p class="pub-type">{e(item['type'])}</p>
-          <p class="pub-title">{e(item['title'])}</p>
-          <p class="pub-venue">{e(item['venue'])}</p>
-          <p class="pub-year">{e(item.get('year_doi', item.get('year', '')))}</p>
-        </div>"""
-        )
-    return "\n".join(cards)
+    return "\n".join(_pub_card(i, item, "year_doi") for i, item in enumerate(items, 1))
 
 
 def experience_rows(jobs: list) -> str:
@@ -131,8 +118,7 @@ def experience_rows(jobs: list) -> str:
             f'            <span class="exp-skill-tag">{e(t)}</span>'
             for t in job.get("tags", [])
         )
-        rows.append(
-            f"""
+        rows.append(f"""
       <div class="exp-row">
         <div class="exp-meta">
           <span class="exp-date">{e(job['date'])}</span>
@@ -151,16 +137,14 @@ def experience_rows(jobs: list) -> str:
 {tags_html}
           </div>
         </div>
-      </div>"""
-        )
+      </div>""")
     return "\n".join(rows)
 
 
 def project_rows(projects: list) -> str:
     rows = []
     for i, proj in enumerate(projects, 1):
-        rows.append(
-            f"""
+        rows.append(f"""
       <a href="{e(proj['url'])}" target="_blank" rel="noopener" class="project-row">
         <span class="project-num">{i:02d}</span>
         <div class="project-main">
@@ -169,8 +153,7 @@ def project_rows(projects: list) -> str:
         </div>
         <span class="project-tech">{e(proj['tech'])}</span>
         <span class="project-link">&#8599;</span>
-      </a>"""
-        )
+      </a>""")
     return "\n".join(rows)
 
 
@@ -436,9 +419,9 @@ def generate(data: dict) -> str:
   <footer>
     <div class="footer-name">{e(m['name'])}.</div>
     <div class="theme-toggle" role="group" aria-label="Colour theme">
-      <button class="theme-btn" data-mode="light">Light</button>
-      <button class="theme-btn" data-mode="auto">Auto</button>
-      <button class="theme-btn" data-mode="dark">Dark</button>
+      <button class="theme-btn" data-mode="light" title="Light mode">&#9788;</button>
+      <button class="theme-btn" data-mode="auto"  title="Auto (time-based)">&#9680;</button>
+      <button class="theme-btn" data-mode="dark"  title="Dark mode">&#9790;</button>
     </div>
     <div class="footer-dots">
       <span></span><span></span><span></span><span></span><span></span>

@@ -511,9 +511,9 @@ def build_footer(meta: dict) -> str:
     <div class="proj-footer-inner">
       <a href="{portfolio}#projects" class="proj-footer-back">← Back to Projects</a>
       <div class="theme-toggle" role="group" aria-label="Colour theme">
-        <button class="theme-btn" data-mode="light">Light</button>
-        <button class="theme-btn" data-mode="auto">Auto</button>
-        <button class="theme-btn" data-mode="dark">Dark</button>
+        <button class="theme-btn" data-mode="light" title="Light mode">&#9788;</button>
+        <button class="theme-btn" data-mode="auto"  title="Auto (time-based)">&#9680;</button>
+        <button class="theme-btn" data-mode="dark"  title="Dark mode">&#9790;</button>
       </div>
       <div class="footer-dots">
         <span></span><span></span><span></span><span></span><span></span>
@@ -549,7 +549,7 @@ def generate(data: dict) -> str:
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../style.css">
-  <link rel="stylesheet" href="project.css">
+  <link rel="stylesheet" href="../project.css">
 </head>
 <body>
 

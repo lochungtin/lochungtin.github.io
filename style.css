@@ -123,6 +123,10 @@ html[data-theme="dark"] .pub-number {
   color: #383836 !important;
 }
 
+html[data-theme="dark"] a.pub-card:hover .pub-number {
+  color: #d0d0c8 !important;
+}
+
 html[data-theme="dark"] .social-row:hover .social-handle {
   color: #666 !important;
 }
@@ -170,22 +174,24 @@ html[data-theme="dark"] .exp-highlight {
   border: var(--line);
   height: 32px;
   overflow: hidden;
+  flex-shrink: 0;
 }
 
 .theme-btn {
-  font-family: 'DM Mono', monospace;
-  font-size: .62rem;
-  letter-spacing: .1em;
-  text-transform: uppercase;
-  padding: 0 .9rem;
+  font-size: 1rem;
+  line-height: 1;
+  width: 32px;
   height: 100%;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: none;
   border: none;
   border-right: var(--line-thin);
   color: var(--mid);
   cursor: pointer;
   transition: background .15s, color .15s;
-  white-space: nowrap;
 }
 
 .theme-btn:last-child {
@@ -723,10 +729,53 @@ section {
   border-right: var(--line-thin);
   border-bottom: var(--line-thin);
   position: relative;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  transition: background .15s;
 }
 
 .pub-card:nth-child(3n) {
   border-right: none;
+}
+
+a.pub-card:hover {
+  background: var(--black);
+}
+
+a.pub-card:hover .pub-type {
+  color: #666;
+}
+
+a.pub-card:hover .pub-title {
+  color: var(--white);
+}
+
+a.pub-card:hover .pub-venue {
+  color: #888;
+}
+
+a.pub-card:hover .pub-year {
+  color: #666;
+}
+
+a.pub-card:hover .pub-number {
+  color: #2a2a26;
+}
+
+a.pub-card:hover .pub-arrow {
+  opacity: 1;
+}
+
+.pub-arrow {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.75rem;
+  font-size: .85rem;
+  color: var(--mid);
+  opacity: 0;
+  transition: opacity .15s;
+  font-family: 'DM Mono', monospace;
 }
 
 .pub-number {
@@ -1335,6 +1384,9 @@ footer {
 
   /* Footer */
   footer {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.25rem;
     padding: 1.5rem 1.25rem;
   }
 

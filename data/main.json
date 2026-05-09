@@ -126,7 +126,15 @@
 				"type": "Journal Article",
 				"title": "Upright radiotherapy for breast cancer: a pre-clinical study considering photon and proton beam access, plus arm positioning",
 				"venue": "Frontiers in Oncology, Vol. 15",
-				"year_doi": "2025 · DOI: 10.3389/fonc.2025.1668109"
+				"year_doi": "2025 · DOI: 10.3389/fonc.2025.1668109",
+				"url": "https://doi.org/10.3389/fonc.2025.1668109"
+			},
+			{
+				"type": "Journal Article",
+				"title": "A low-cost, flexible, and accurate technique to study new immobilisation systems for radiotherapy and their 2D in-plane positional reproducibility and stability",
+				"venue": "Physics in Medicine and Biology, Vol. 72",
+				"year_doi": "2026 · DOI: 10.1088/1361-6560/ae6afa",
+				"url": "https://doi.org/10.1088/1361-6560/ae6afa"
 			}
 		]
 	},
