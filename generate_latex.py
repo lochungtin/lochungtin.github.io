@@ -5,7 +5,7 @@ from pathlib import Path
 # CONFIG
 # =============================
 
-INPUT_JSON = "data.json"
+INPUT_JSON = "data/main.json"
 OUTPUT_TEX = "cv.tex"
 
 
