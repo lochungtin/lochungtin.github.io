@@ -1,355 +1,342 @@
 {
-	"meta": {
-		"name": "Timothy Lo",
-		"initials": "TL.",
-		"title": "Researcher · Developer · Medical Imaging · Artificial Intelligence",
-		"year": "2026",
-		"bio": "Applying computer science in the realm of radiotherapy, not to replace, but to advance."
-	},
-	"about": {
-		"paragraphs": [
-			"I am a technically driven researcher and developer with a strong foundation in computational modelling, medical imaging, and scientific programming. With a background in programming and a growing focus on advanced analytical methods, I work at the intersection of mathematics, software engineering, and applied science.",
-			"My work spans 3D image processing, segmentation, morphological operations, and visualisation, translating complex spatial and physical concepts into efficient and easy-to-use frameworks. I subscribe to the philosophy of building tools that are not only technically robust, but I also strive for computational elegance in what I produce.",
-			"Beyond research, I am deeply invested in continuous learning and technical mastery. From exploring low-level microcontrollers and electronic hardware to studying modern deep learning methods, I approach new domains with a structured, project-based mindset. I value clarity, derivation from first-principles, and qualities of deliberate practice that shape both my professional work and the way I build, teach, and share knowledge."
-		],
-		"socials": [
-			{
-				"label": "Email",
-				"handle": "lochungtin@gmail.com",
-				"url": "mailto:lochugtin@gmail.com",
-				"arrow": "↗"
-			},
-			{
-				"label": "GitHub",
-				"handle": "github.com/lochungtin",
-				"url": "https://github.com/lochungtin",
-				"arrow": "↗"
-			},
-			{
-				"label": "LinkedIn",
-				"handle": "linkedin.com/in/timothy-lo-chung-tin",
-				"url": "https://linkedin.com/in/timothy-lo-chung-tin",
-				"arrow": "↗"
-			},
-			{
-				"label": "CV / Résumé",
-				"handle": "Download PDF",
-				"url": "/cv.pdf",
-				"arrow": "↓"
-			}
-		]
-	},
-	"academics": {
-		"education": [
-			{
-				"years": "2023 - Present",
-				"degree": "Ph.D. in Medical Physics and Biomedical Engineering",
-				"institution": "University College London, London, United Kingdom",
-				"description": "Developing a software suite to analyse the potential benefits of upright radiotherapy.",
-				"tag": "In Progress"
-			},
-			{
-				"years": "2022 - 2023",
-				"degree": "M.Res. in Artificial Intelligence and Machine Learning",
-				"institution": "Imperial College London, London, United Kingdom",
-				"description": "Research Project: Automatic segmentation and diagnosis for ovarian masses.",
-				"tag": "Distinction"
-			},
-			{
-				"years": "2019 - 2022",
-				"degree": "B.Sc. in Computer Science",
-				"institution": "King's College London, London, United Kingdom",
-				"description": "Final Year Project: Improving the original ghost AI to more efficiently catch Pacman.",
-				"tag": "First Class Honours"
-			}
-		],
-		"certificates": [
-			{
-				"year": "Summer 2021",
-				"title": "Reinforcement Learning Specialisation",
-				"body": "University of Alberta / Coursera",
-				"description": "Applying and implementing reinforcement learning theory and principles via project-based learning."
-			},
-			{
-				"year": "Summer 2020",
-				"title": "Neural Networks and Deep Learning",
-				"body": "Deeplearing.ai / Coursera",
-				"description": "Applying the basic theories of deep learning via hands-on projects while learning the mathematics behind each mechanism."
-			},
-			{
-				"year": "Summer 2020",
-				"title": "CS50’s Mobile App Development with React Native",
-				"body": "Harvard University / EdX",
-				"description": "Learning the basics of mobile app development and design using React Native. Developed 4 different apps in increasing difficulty."
-			}
-		],
-		"conferences": [
-			{
-				"type": "Oral Presentation - Proffered Paper",
-				"title": "Respiratory Motion Analysis for the Thoracic Region in the Upright and Supine Postures",
-				"venue": "ESTRO 2026 · Stockholm, Sweden",
-				"year": "2026 (Pending)"
-			},
-			{
-				"type": "Poster Presentation",
-				"title": "Anatomical Analyses for the Prostate Region in Upright and Supine Postures",
-				"venue": "ESTRO 2026 · Stockholm, Sweden",
-				"year": "2026 (Pending)"
-			},
-			{
-				"type": "Oral Presentation",
-				"title": "A Standardised Geometric Framework for Quantifying Anatomical Variation Between Upright and Supine Radiotherapy",
-				"venue": "Upright Consortium 2026 · Stockholm, Sweden",
-				"year": "2026 (Pending)"
-			},
-			{
-				"type": "Poster Presentation",
-				"title": "A Deformable Registration-based Pipeline for the Characterisation of Respiratory Motion from 2D Lung Cine MRI",
-				"venue": "AAPM 2025 · Washington DC, USA",
-				"year": "2025"
-			},
-			{
-				"type": "Oral Presentation - Poster Discussion",
-				"title": "A Low-cost, Flexible, and Accurate Technique to Study New Immobilisation Systems for Radiotherapy and their Associated Positional Reproducibility/Stability",
-				"venue": "ESTRO 2025 · Vienna, Austria",
-				"year": "2025"
-			},
-			{
-				"type": "Oral Presentation - Proffered Mini Oral Presentation",
-				"title": "Computer Vision-based Marker Detection for Quantitative Assessment of Upright Position Reproducibility",
-				"venue": "Upright Consortium 2024 · Glasgow, United Kingdom",
-				"year": "2024"
-			}
-		],
-		"publications": [
-			{
-				"type": "Journal Article",
-				"title": "Upright radiotherapy for breast cancer: a pre-clinical study considering photon and proton beam access, plus arm positioning",
-				"venue": "Frontiers in Oncology, Vol. 15",
-				"year_doi": "2025 · DOI: 10.3389/fonc.2025.1668109",
-				"url": "https://doi.org/10.3389/fonc.2025.1668109"
-			},
-			{
-				"type": "Journal Article",
-				"title": "A low-cost, flexible, and accurate technique to study new immobilisation systems for radiotherapy and their 2D in-plane positional reproducibility and stability",
-				"venue": "Physics in Medicine and Biology, Vol. 72",
-				"year_doi": "2026 · DOI: 10.1088/1361-6560/ae6afa",
-				"url": "https://doi.org/10.1088/1361-6560/ae6afa"
-			}
-		]
-	},
-	"experience": [
-		{
-			"date": "Sep 2024 - Current",
-			"type": "Part Time",
-			"role": "Post Graduate Teaching Assistant",
-			"company": "University College London, United Kingdom",
-			"description": "Holding tutorial and seminar sessions on python programming, algorithms, complexity theory, machine learning, computer systems modules for undergraduate and master's students.",
-			"highlights": [
-				"Preparing and delivering course material.",
-				"Exam and coursework marking."
-			],
-			"tags": [
-				"Python",
-				"Data Structures",
-				"Algorithms",
-				"Assembly"
-			]
-		},
-		{
-			"date": "Feb 2024 - Feb 2025",
-			"type": "Contractor",
-			"role": "Coding Instructor",
-			"company": "Code Kids Robotics Ltd., United Kingdom",
-			"description": "Preparing and delivering easily digestible python programming content for 10 - 14 year old kids.",
-			"highlights": [
-				"Hosted weekly online teaching sessions.",
-				"Taught in 5-day camps with intensive teaching blocks."
-			],
-			"tags": [
-				"Python",
-				"Teaching"
-			]
-		},
-		{
-			"date": "Sep 2023 - Current",
-			"type": "Freelance",
-			"role": "Programming Tutor",
-			"company": "Online - United Kingdom",
-			"description": "Designing course material and teaching python programming to university students and working adults.",
-			"highlights": [
-				"Hosted weekly online teaching sessions."
-			],
-			"tags": [
-				"Python",
-				"Teaching"
-			]
-		},
-		{
-			"date": "Apr 2022 - Jul 2022",
-			"type": "Contractor",
-			"role": "Software Engineer",
-			"company": "Pawsible, Hong Kong",
-			"description": "Developed a web and app based data visualisation tool to display realtime vital information of house hold pets.",
-			"highlights": [
-				"Delivered a proof of concept application that communicates with a sensory device that takes in vital readings."
-			],
-			"tags": [
-				"React.JS",
-				"React Native",
-				"Firebase",
-				"Bluetooth BLE",
-				"Embedded Systems"
-			]
-		},
-		{
-			"date": "Sep 2016 - Sep 2018",
-			"type": "Founder & Chairman",
-			"role": "Robotics Club Chairman",
-			"company": "HKCCCU Logos Academy, Hong Kong",
-			"description": "Founded and chaired a robotics club in high school, holding after school session where I shared my passion with fellow students of different ages.",
-			"highlights": [
-				"Lead and took part in a team to win two World Championships in Robofest GRAF 2017.",
-				"Facilitated more teams to win 1st and 2nd runner ups in Robofest 2017 and 2018."
-			],
-			"tags": [
-				"Inter-personal Skills",
-				"Administrative Skills",
-				"Human Resources",
-				"Leadership"
-			]
-		}
-	],
-	"skills": {
-		"languages": [
-			{
-				"name": "Python",
-				"level": "Expert",
-				"pct": 95
-			},
-			{
-				"name": "JavaScript / TypeScript",
-				"level": "Professional",
-				"pct": 85
-			},
-			{
-				"name": "C / C++",
-				"level": "Intermediate",
-				"pct": 65
-			},
-			{
-				"name": "SQL",
-				"level": "Intermediate",
-				"pct": 50
-			}
-		],
-		"libraries": [
-			{
-				"name": "NumPy / Pandas",
-				"level": "Expert",
-				"pct": 90
-			},
-			{
-				"name": "PyTorch",
-				"level": "Expert",
-				"pct": 85
-			},
-			{
-				"name": "Scikit-learn",
-				"level": "Proficient",
-				"pct": 80
-			},
-			{
-				"name": "TensorFlow",
-				"level": "Intermediate",
-				"pct": 55
-			},
-			{
-				"name": "Matplotlib / Seaborn",
-				"level": "Expert",
-				"pct": 88
-			},
-			{
-				"name": "Manim",
-				"level": "Intermediate",
-				"pct": 60
-			}
-		],
-		"tools": [
-			"Juypter",
-			"React.JS",
-			"Next.JS",
-			"Node.JS",
-			"REST API",
-			"Firebase",
-			"Git / GitHub",
-			"Linux / Bash",
-			"LaTeX",
-			"Adobe Creative Suite",
-			"Google Cloud Computing"
-		],
-		"domains": [
-			"Machine Learning",
-			"Deep Learning",
-			"Computer Vision",
-			"Image Processing",
-			"NLP",
-			"Statistical Analysis",
-			"Data Visualisation",
-			"Software Engineering",
-			"Mobile Development",
-			"Web Development",
-			"Research Methods",
-			"Scientific Writing"
-		],
-		"spoken_languages": [
-			{
-				"name": "English",
-				"level": "Native",
-				"pct": 100
-			},
-			{
-				"name": "Cantonese",
-				"level": "Native",
-				"pct": 100
-			},
-			{
-				"name": "Mandarin",
-				"level": "Proficient",
-				"pct": 80
-			}
-		]
-	},
-	"projects": [
-		{
-			"name": "ArMMs - ArUCo Marker Measurement System",
-			"description": "Calibration-free camera-based measurement system.",
-			"tech": "Python · OpenCV",
-			"url": "https://github.com/lochungtin/ArMMS"
-		},
-		{
-			"name": "AI Snake",
-			"description": "AI agent to play the classic arcade game Snake - Trained via reinforcement learning and a custom web game, playable by humans and machines.",
-			"tech": "Python · OpenCV",
-			"url": "https://github.com/lochungtin/SnakeAI"
-		},
-		{
-			"name": "Project Expedite - Ever Expanding",
-			"description": "Puzzle Game Solver - A passion project to mathematically and algorithmically \"solve\" and create solutions for puzzle games.",
-			"tech": "Vanilla Python · C++",
-			"url": "https://lochungtin.github.io/Expedite"
-		},
-		{
-			"name": "NPM Packages",
-			"description": "Short and simple utility packages released for personal and public use.",
-			"tech": "JavaScript · NodeJS",
-			"url": "https://www.npmjs.com/~lochungtin"
-		},
-		{
-			"name": "CoinControl",
-			"description": "Personal finance management mobile application - Tracking, visualising, and analysing your income and spending habits.",
-			"tech": "React · Firebase",
-			"url": "https://github.com/lochungtin/CoinControl"
-		}
-	]
+  "meta": {
+    "name": "Timothy Lo",
+    "initials": "TL.",
+    "title": "Researcher · Developer · Medical Imaging · Artificial Intelligence",
+    "year": "2026",
+    "bio": "Applying computer science in the realm of radiotherapy, not to replace, but to advance."
+  },
+  "about": {
+    "paragraphs": [
+      "I am a technically driven researcher and developer with a strong foundation in computational modelling, medical imaging, and scientific programming. With a background in programming and a growing focus on advanced analytical methods, I work at the intersection of mathematics, software engineering, and applied science.",
+      "My work spans 3D image processing, segmentation, morphological operations, and visualisation, translating complex spatial and physical concepts into efficient and easy-to-use frameworks. I subscribe to the philosophy of building tools that are not only technically robust, but I also strive for computational elegance in what I produce.",
+      "Beyond research, I am deeply invested in continuous learning and technical mastery. From exploring low-level microcontrollers and electronic hardware to studying modern deep learning methods, I approach new domains with a structured, project-based mindset. I value clarity, derivation from first-principles, and qualities of deliberate practice that shape both my professional work and the way I build, teach, and share knowledge."
+    ],
+    "socials": [
+      {
+        "label": "Email",
+        "handle": "lochungtin@gmail.com",
+        "url": "mailto:lochugtin@gmail.com",
+        "arrow": "↗"
+      },
+      {
+        "label": "GitHub",
+        "handle": "github.com/lochungtin",
+        "url": "https://github.com/lochungtin",
+        "arrow": "↗"
+      },
+      {
+        "label": "LinkedIn",
+        "handle": "linkedin.com/in/timothy-lo-chung-tin",
+        "url": "https://linkedin.com/in/timothy-lo-chung-tin",
+        "arrow": "↗"
+      },
+      {
+        "label": "CV / Résumé",
+        "handle": "Download PDF",
+        "url": "/cv.pdf",
+        "arrow": "↓"
+      }
+    ]
+  },
+  "academics": {
+    "education": [
+      {
+        "years": "2023 - Present",
+        "degree": "Ph.D. in Medical Physics and Biomedical Engineering",
+        "institution": "University College London, London, United Kingdom",
+        "description": "Developing a software suite to analyse the potential benefits of upright radiotherapy.",
+        "tag": "In Progress"
+      },
+      {
+        "years": "2022 - 2023",
+        "degree": "M.Res. in Artificial Intelligence and Machine Learning",
+        "institution": "Imperial College London, London, United Kingdom",
+        "description": "Research Project: Automatic segmentation and diagnosis for ovarian masses.",
+        "tag": "Distinction"
+      },
+      {
+        "years": "2019 - 2022",
+        "degree": "B.Sc. in Computer Science",
+        "institution": "King's College London, London, United Kingdom",
+        "description": "Final Year Project: Improving the original ghost AI to more efficiently catch Pacman.",
+        "tag": "First Class Honours"
+      }
+    ],
+    "certificates": [
+      {
+        "year": "Summer 2021",
+        "title": "Reinforcement Learning Specialisation",
+        "body": "University of Alberta / Coursera",
+        "description": "Applying and implementing reinforcement learning theory and principles via project-based learning."
+      },
+      {
+        "year": "Summer 2020",
+        "title": "Neural Networks and Deep Learning",
+        "body": "Deeplearing.ai / Coursera",
+        "description": "Applying the basic theories of deep learning via hands-on projects while learning the mathematics behind each mechanism."
+      },
+      {
+        "year": "Summer 2020",
+        "title": "CS50’s Mobile App Development with React Native",
+        "body": "Harvard University / EdX",
+        "description": "Learning the basics of mobile app development and design using React Native. Developed 4 different apps in increasing difficulty."
+      }
+    ],
+    "conferences": [
+      {
+        "type": "Oral Presentation - Proffered Paper",
+        "title": "SPLASH: Semi-automatic Pipeline for Lung motion Analysis using Single-frame Human input",
+        "venue": "ESTRO 2026 · Stockholm, Sweden",
+        "year": "2026"
+      },
+      {
+        "type": "Poster Presentation",
+        "title": "Anatomical Analyses for the Prostate Region in Upright and Supine Postures",
+        "venue": "ESTRO 2026 · Stockholm, Sweden",
+        "year": "2026"
+      },
+      {
+        "type": "Oral Presentation",
+        "title": "GUAVA: a Geometric Upright–supine Anatomical Variation Analysis framework",
+        "venue": "Upright Consortium 2026 · Stockholm, Sweden",
+        "year": "2026"
+      },
+      {
+        "type": "Poster Presentation",
+        "title": "A Deformable Registration-based Pipeline for the Characterisation of Respiratory Motion from 2D Lung Cine MRI",
+        "venue": "AAPM 2025 · Washington DC, USA",
+        "year": "2025"
+      },
+      {
+        "type": "Oral Presentation - Poster Discussion",
+        "title": "A Low-cost, Flexible, and Accurate Technique to Study New Immobilisation Systems for Radiotherapy and their Associated Positional Reproducibility/Stability",
+        "venue": "ESTRO 2025 · Vienna, Austria",
+        "year": "2025"
+      },
+      {
+        "type": "Oral Presentation - Proffered Mini Oral Presentation",
+        "title": "Computer Vision-based Marker Detection for Quantitative Assessment of Upright Position Reproducibility",
+        "venue": "Upright Consortium 2024 · Glasgow, United Kingdom",
+        "year": "2024"
+      }
+    ],
+    "publications": [
+      {
+        "type": "Journal Article",
+        "title": "A low-cost, flexible, and accurate technique to study new immobilisation systems for radiotherapy and their 2D in-plane positional reproducibility and stability",
+        "venue": "Physics in Medicine and Biology, Vol. 72",
+        "year_doi": "2026 · DOI: 10.1088/1361-6560/ae6afa",
+        "url": "https://doi.org/10.1088/1361-6560/ae6afa"
+      },
+      {
+        "type": "Journal Article",
+        "title": "Upright radiotherapy for breast cancer: a pre-clinical study considering photon and proton beam access, plus arm positioning",
+        "venue": "Frontiers in Oncology, Vol. 15",
+        "year_doi": "2025 · DOI: 10.3389/fonc.2025.1668109",
+        "url": "https://doi.org/10.3389/fonc.2025.1668109"
+      }
+    ]
+  },
+  "experience": [
+    {
+      "date": "Sep 2024 - Current",
+      "type": "Part Time",
+      "role": "Post Graduate Teaching Assistant",
+      "company": "University College London, United Kingdom",
+      "description": "Holding tutorial and seminar sessions on python programming, algorithms, complexity theory, machine learning, computer systems modules for undergraduate and master's students.",
+      "highlights": [
+        "Preparing and delivering course material.",
+        "Exam and coursework marking."
+      ],
+      "tags": ["Python", "Data Structures", "Algorithms", "Assembly"]
+    },
+    {
+      "date": "Feb 2024 - Feb 2025",
+      "type": "Contractor",
+      "role": "Coding Instructor",
+      "company": "Code Kids Robotics Ltd., United Kingdom",
+      "description": "Preparing and delivering easily digestible python programming content for 10 - 14 year old kids.",
+      "highlights": [
+        "Hosted weekly online teaching sessions.",
+        "Taught in 5-day camps with intensive teaching blocks."
+      ],
+      "tags": ["Python", "Teaching"]
+    },
+    {
+      "date": "Sep 2023 - Current",
+      "type": "Freelance",
+      "role": "Programming Tutor",
+      "company": "Online - United Kingdom",
+      "description": "Designing course material and teaching python programming to university students and working adults.",
+      "highlights": ["Hosted weekly online teaching sessions."],
+      "tags": ["Python", "Teaching"]
+    },
+    {
+      "date": "Apr 2022 - Jul 2022",
+      "type": "Contractor",
+      "role": "Software Engineer",
+      "company": "Pawsible, Hong Kong",
+      "description": "Developed a web and app based data visualisation tool to display realtime vital information of house hold pets.",
+      "highlights": [
+        "Delivered a proof of concept application that communicates with a sensory device that takes in vital readings."
+      ],
+      "tags": [
+        "React.JS",
+        "React Native",
+        "Firebase",
+        "Bluetooth BLE",
+        "Embedded Systems"
+      ]
+    },
+    {
+      "date": "Sep 2016 - Sep 2018",
+      "type": "Founder & Chairman",
+      "role": "Robotics Club Chairman",
+      "company": "HKCCCU Logos Academy, Hong Kong",
+      "description": "Founded and chaired a robotics club in high school, holding after school session where I shared my passion with fellow students of different ages.",
+      "highlights": [
+        "Lead and took part in a team to win two World Championships in Robofest GRAF 2017.",
+        "Facilitated more teams to win 1st and 2nd runner ups in Robofest 2017 and 2018."
+      ],
+      "tags": [
+        "Inter-personal Skills",
+        "Administrative Skills",
+        "Human Resources",
+        "Leadership"
+      ]
+    }
+  ],
+  "skills": {
+    "languages": [
+      {
+        "name": "Python",
+        "level": "Expert",
+        "pct": 95
+      },
+      {
+        "name": "JavaScript / TypeScript",
+        "level": "Professional",
+        "pct": 85
+      },
+      {
+        "name": "C / C++",
+        "level": "Intermediate",
+        "pct": 65
+      },
+      {
+        "name": "SQL",
+        "level": "Intermediate",
+        "pct": 50
+      }
+    ],
+    "libraries": [
+      {
+        "name": "NumPy / Pandas",
+        "level": "Expert",
+        "pct": 90
+      },
+      {
+        "name": "PyTorch",
+        "level": "Expert",
+        "pct": 85
+      },
+      {
+        "name": "Scikit-learn",
+        "level": "Proficient",
+        "pct": 80
+      },
+      {
+        "name": "TensorFlow",
+        "level": "Intermediate",
+        "pct": 55
+      },
+      {
+        "name": "Matplotlib / Seaborn",
+        "level": "Expert",
+        "pct": 88
+      },
+      {
+        "name": "Manim",
+        "level": "Intermediate",
+        "pct": 60
+      }
+    ],
+    "tools": [
+      "Juypter",
+      "React.JS",
+      "Next.JS",
+      "Node.JS",
+      "REST API",
+      "Firebase",
+      "Git / GitHub",
+      "Linux / Bash",
+      "LaTeX",
+      "Adobe Creative Suite",
+      "Google Cloud Computing"
+    ],
+    "domains": [
+      "Machine Learning",
+      "Deep Learning",
+      "Computer Vision",
+      "Image Processing",
+      "NLP",
+      "Statistical Analysis",
+      "Data Visualisation",
+      "Software Engineering",
+      "Mobile Development",
+      "Web Development",
+      "Research Methods",
+      "Scientific Writing"
+    ],
+    "spoken_languages": [
+      {
+        "name": "English",
+        "level": "Native",
+        "pct": 100
+      },
+      {
+        "name": "Cantonese",
+        "level": "Native",
+        "pct": 100
+      },
+      {
+        "name": "Mandarin",
+        "level": "Proficient",
+        "pct": 80
+      }
+    ]
+  },
+  "projects": [
+    {
+      "name": "ArMMs - ArUCo Marker Measurement System",
+      "description": "Calibration-free camera-based measurement system.",
+      "tech": "Python · OpenCV",
+      "url": "https://github.com/lochungtin/ArMMS"
+    },
+    {
+      "name": "AI Snake",
+      "description": "AI agent to play the classic arcade game Snake - Trained via reinforcement learning and a custom web game, playable by humans and machines.",
+      "tech": "Python · OpenCV",
+      "url": "https://github.com/lochungtin/SnakeAI"
+    },
+    {
+      "name": "Project Expedite - Ever Expanding",
+      "description": "Puzzle Game Solver - A passion project to mathematically and algorithmically \"solve\" and create solutions for puzzle games.",
+      "tech": "Vanilla Python · C++",
+      "url": "https://lochungtin.github.io/Expedite"
+    },
+    {
+      "name": "NPM Packages",
+      "description": "Short and simple utility packages released for personal and public use.",
+      "tech": "JavaScript · NodeJS",
+      "url": "https://www.npmjs.com/~lochungtin"
+    },
+    {
+      "name": "CoinControl",
+      "description": "Personal finance management mobile application - Tracking, visualising, and analysing your income and spending habits.",
+      "tech": "React · Firebase",
+      "url": "https://github.com/lochungtin/CoinControl"
+    }
+  ]
 }
