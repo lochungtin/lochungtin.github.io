@@ -25,9 +25,12 @@
         ],
         "prev_project": {
             "label": "← Ghost AI",
-            "url": "#"
+            "url": "project_kcl_fyp.html"
         },
-        "next_project": null
+        "next_project": {
+            "label": "PhD Research →",
+            "url": "project_phd_research.html"
+        }
     },
     "sections": [
         {

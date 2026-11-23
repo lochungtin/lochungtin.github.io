@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deck, Monitor &amp; jobq — CTL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="portfolio.html" class="nav-logo">CTL.</a>
+    <div class="nav-links">
+      <a href="portfolio.html#about">About</a>
+      <a href="portfolio.html#academics">Academics</a>
+      <a href="portfolio.html#experience">Experience</a>
+      <a href="portfolio.html#skills">Skills</a>
+      <a href="portfolio.html#projects">Projects</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#overview" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">01</span><span class="mobile-menu-label">Overview</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#motivation" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">02</span><span class="mobile-menu-label">Motivation</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#deck" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">03</span><span class="mobile-menu-label">Deck</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#monitor" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">04</span><span class="mobile-menu-label">Monitor</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#jobq" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">05</span><span class="mobile-menu-label">jobq</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#challenges" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">06</span><span class="mobile-menu-label">Challenges</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#next" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">07</span><span class="mobile-menu-label">What&#x27;s Next</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+  </div>
+
+  <!-- PROJECT HEADER -->
+  <header class="proj-header">
+    <div class="proj-header-meta">
+      <a href="portfolio.html#projects" class="proj-back">← All Projects</a>
+      <div class="proj-meta-block">
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Status</span>
+          <span class="proj-meta-value proj-status-badge">In Progress</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Year</span>
+          <span class="proj-meta-value">2026</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Role</span>
+          <span class="proj-meta-value">Solo Developer</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Stack</span>
+          <span class="proj-meta-value">React Native (Expo) · Python · aiohttp · React + Vite · SQLite</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Links</span>
+          <div class="proj-link-group"></div>
+        </div>
+      </div>
+      <div class="proj-dot-cluster">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="proj-header-title">
+      <p class="proj-number">06 / Project</p>
+      <h1 class="proj-title">Deck, Monitor<br><em>&amp; jobq</em></h1>
+      <p class="proj-tagline">A home-built &quot;Stream Deck&quot; out of an old Pixel phone — which grew a system monitor and a GPU job queue once the same desk started running deep learning training around the clock.</p>
+      <div class="proj-tag-row"><span class="proj-tag">Home Lab</span><span class="proj-tag">Desktop Tooling</span><span class="proj-tag">React Native</span><span class="proj-tag">Python</span><span class="proj-tag">Job Scheduling</span><span class="proj-tag">GPU</span></div>
+    </div>
+  </header>
+
+  <!-- TABLE OF CONTENTS -->
+  <nav class="proj-toc" id="toc">
+    <button class="proj-toc-toggle" id="tocToggle" aria-label="Toggle contents">
+      <span class="proj-toc-toggle-label">Contents</span>
+      <span class="proj-toc-toggle-arrow">&#8595;</span>
+    </button>
+    <div class="proj-toc-links" id="tocLinks"><a href="#overview" class="proj-toc-item"><span class="proj-toc-num">01</span> Overview</a><a href="#motivation" class="proj-toc-item"><span class="proj-toc-num">02</span> Motivation</a><a href="#deck" class="proj-toc-item"><span class="proj-toc-num">03</span> Deck</a><a href="#monitor" class="proj-toc-item"><span class="proj-toc-num">04</span> Monitor</a><a href="#jobq" class="proj-toc-item"><span class="proj-toc-num">05</span> jobq</a><a href="#challenges" class="proj-toc-item"><span class="proj-toc-num">06</span> Challenges</a><a href="#next" class="proj-toc-item"><span class="proj-toc-num">07</span> What&#x27;s Next</a></div>
+  </nav>
+
+  <!-- BODY -->
+  <main class="proj-body">
+    <aside class="proj-sidebar" id="sidebar">
+      <p class="proj-sidebar-label">On this page</p>
+      <a href="#overview" class="proj-sidebar-link" data-section="overview">Overview</a>
+<a href="#motivation" class="proj-sidebar-link" data-section="motivation">Motivation</a>
+<a href="#deck" class="proj-sidebar-link" data-section="deck">Deck</a>
+<a href="#monitor" class="proj-sidebar-link" data-section="monitor">Monitor</a>
+<a href="#jobq" class="proj-sidebar-link" data-section="jobq">jobq</a>
+<a href="#challenges" class="proj-sidebar-link" data-section="challenges">Challenges</a>
+<a href="#next" class="proj-sidebar-link" data-section="next">What&#x27;s Next</a>
+
+    </aside>
+    <article class="proj-article">
+      <section class="proj-section" id="overview">
+        <div class="proj-section-header">
+          <span class="proj-section-num">01</span>
+          <h2 class="proj-section-title">Overview</h2>
+        </div>
+        <div class="proj-content">
+<p class="lead">Three small tools that ended up as one system. Deck turns an old Pixel 7a, plugged into the PC and lying in landscape, into a custom Stream Deck: a shortcut grid, media controls, a clock and weather. Monitor is a tiny always-on-top desktop widget for GPU, CPU, RAM and disk usage. jobq is a job queue for the workstation&#x27;s GPUs and CPU. Deck is the screen that ties them together.</p>
+<p>It started as a convenience project: easier access to media and shortcuts without buying a Stream Deck, using hardware already sitting in a drawer. Monitor and jobq came later, once the same machine was running long AI training jobs at home on two consumer GPUs, and keeping track of what was running, what was waiting and when it would finish became the real problem.</p>
+<div class="proj-callout">
+  <div class="proj-callout-inner" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="proj-stat"><span class="proj-stat-num">4</span><span class="proj-stat-label">Swipeable slides on the phone — Main, Clocks, System, Jobs</span></div><div class="proj-stat"><span class="proj-stat-num">3</span><span class="proj-stat-label">Compute units scheduled by jobq — two GPUs and the CPU</span></div><div class="proj-stat"><span class="proj-stat-num">0</span><span class="proj-stat-label">Third-party dependencies in Monitor — tkinter, nvidia-smi and /proc only</span></div>
+  </div>
+</div>
+<p class="proj-block-title">Screenshots from the phone</p>
+<div class="proj-gallery">
+  <div class="proj-gallery-track" tabindex="0" aria-label="Screenshot gallery">
+<figure class="proj-gallery-item"><img src="../img/deck/main.png" alt="Deck main slide: a 3 by 4 shortcut grid on the left, a large 11:44 clock with weather at the top right, and a media widget with play controls and a volume slider below it" loading="lazy"><figcaption class="proj-gallery-caption"><strong>01</strong> — Main slide — shortcut grid, time and weather, and media controls with volume.</figcaption></figure>
+<figure class="proj-gallery-item"><img src="../img/deck/clocks.png" alt="Deck clocks slide: a stopwatch, a 5 minute timer ring with preset buttons, and world clocks for London, Hong Kong, Dresden and Adelaide" loading="lazy"><figcaption class="proj-gallery-caption"><strong>02</strong> — Clocks slide — stopwatch, timer with presets, and world clocks.</figcaption></figure>
+<figure class="proj-gallery-item"><img src="../img/deck/jobs.png" alt="Deck jobs slide: three columns for the 1660 GPU, the 4060 GPU and the CPU, each showing the running job with progress, rate and ETA, and the queue of waiting jobs with predicted start times" loading="lazy"><figcaption class="proj-gallery-caption"><strong>03</strong> — Jobs slide — the jobq queue live, per unit: running jobs with progress and ETA, manual runs on a GPU, and the queue with predicted start times.</figcaption></figure>
+  </div>
+  <div class="proj-gallery-controls"><span class="proj-gallery-count"><span class="proj-gallery-current">01</span> / 03</span><div class="proj-gallery-buttons"><button class="proj-gallery-btn" data-dir="-1" aria-label="Previous image">&#8592;</button><button class="proj-gallery-btn" data-dir="1" aria-label="Next image">&#8594;</button></div></div>
+</div>
+        </div>
+      </section>
+      <section class="proj-section" id="motivation">
+        <div class="proj-section-header">
+          <span class="proj-section-num">02</span>
+          <h2 class="proj-section-title">Motivation</h2>
+        </div>
+        <div class="proj-content">
+<p>The original itch was simple: media keys, volume and a handful of shortcuts within reach, without alt-tabbing to a music player or remembering key combinations. A Stream Deck does this, but an old phone already has a touchscreen, a USB port and enough compute to run a React Native app, so Deck was built as a custom one: landscape-only, dark, and configured entirely from JSON files on the PC.</p>
+<p>Then the workstation became a training machine. With models training for many hours on a GTX 1660 and an RTX 4060, the questions changed: is the GPU actually busy, how much VRAM is left, which run finishes next, and can the next experiment start the moment a card frees up — at 3 a.m., without waiting for someone to type the command? Monitor answered the first two. jobq answered the rest. And since the phone was already on the desk and always on, Deck grew a System slide and a Jobs slide to show both at a glance.</p>
+<div class="proj-steps">
+<div class="proj-step"><div class="proj-step-num">1</div><div class="proj-step-body"><strong>Deck</strong><p>A custom Stream Deck for media and shortcuts: an old phone, a Python daemon on the PC, and a settings web app.</p></div></div>
+<div class="proj-step"><div class="proj-step-num">2</div><div class="proj-step-body"><strong>Monitor</strong><p>A floating desktop widget for GPU utilisation, VRAM, temperatures, CPU, RAM and disk space, to see training load without opening a terminal.</p></div></div>
+<div class="proj-step"><div class="proj-step-num">3</div><div class="proj-step-body"><strong>jobq</strong><p>A queue and scheduler for every GPU and CPU job on the machine, so training and evaluation runs start, chain and report progress on their own.</p></div></div>
+</div>
+        </div>
+      </section>
+      <section class="proj-section" id="deck">
+        <div class="proj-section-header">
+          <span class="proj-section-num">03</span>
+          <h2 class="proj-section-title">Deck</h2>
+        </div>
+        <div class="proj-content">
+<p>Deck is three parts. A React Native (Expo) app runs on the phone. A Python daemon on the PC runs one aiohttp server for the phone&#x27;s WebSocket, the settings web app and its REST API. The settings web app (React + Vite) edits every field of the config, and the phone updates straight away. The phone talks to the PC over the USB cable: the daemon watches adb devices and re-runs adb reverse whenever the phone reconnects, so the app just connects to localhost.</p>
+<p class="proj-block-title">What each slide does</p>
+<ul class="proj-list--boxed">
+<li>Main — a 3×4 shortcut grid (key combinations, shell commands or URLs), a clock with Open-Meteo weather, and a media widget reading the OS media session (MPRIS on Linux, SMTC on Windows) with cover art, seeking and volume.</li>
+<li>Clocks — a stopwatch with laps, a timer with presets and a keypad, and world clocks whose UTC offsets the daemon works out. The stopwatch and timer run entirely on the phone, from timestamps, so they don&#x27;t drift.</li>
+<li>System — live CPU, memory, NVIDIA GPU and disk usage of the PC, sent once a second only while the slide is open.</li>
+<li>Jobs — the jobq queue, live: per GPU and CPU, the running jobs with progress, rate and ETA, other processes on the GPU, and the queue with predicted start times.</li>
+</ul>
+<p>The JSON config files are the only source of truth: the phone, the web app and hand edits all change the same files, and the daemon pushes a new config to everyone when one changes. The message and config types are defined once as pydantic models in the daemon, and the TypeScript types for the app and the web app are generated from them, never written by hand. The daemon runs as a systemd user service on Linux and a Scheduled Task on Windows.</p>
+        </div>
+      </section>
+      <section class="proj-section" id="monitor">
+        <div class="proj-section-header">
+          <span class="proj-section-num">04</span>
+          <h2 class="proj-section-title">Monitor</h2>
+        </div>
+        <div class="proj-content">
+<p>Monitor is a single Python file: a small, borderless, always-on-top tkinter window showing each NVIDIA GPU&#x27;s utilisation, VRAM and temperature, plus CPU load and temperature and system RAM, with a second window for disk space per mounted drive. It has no third-party dependencies — it reads nvidia-smi, /proc/stat and /proc/meminfo directly — so it runs anywhere Python does.</p>
+<ul class="proj-list--simple">
+<li>Bars change colour as usage climbs past 70% and 90%, so a full card stands out at a glance.</li>
+<li>Drag to move, double-click for a compact mode, right-click for a menu.</li>
+<li>The same readings later became Deck&#x27;s System slide, so they are visible even with the desktop full of windows.</li>
+</ul>
+        </div>
+      </section>
+      <section class="proj-section" id="jobq">
+        <div class="proj-section-header">
+          <span class="proj-section-num">05</span>
+          <h2 class="proj-section-title">jobq</h2>
+        </div>
+        <div class="proj-content">
+<p>jobq is a job queue for one workstation. Each compute unit — one per GPU, identified by UUID so device renumbering never picks the wrong card, plus the CPU — has its own ordered queue and a number of slots. Jobs start when their unit is free and their conditions hold, report progress, and can be inserted, reordered, held, rescheduled, edited or cancelled at any time.</p>
+<div class="proj-code-block">
+  <div class="proj-code-header"><span class="proj-code-lang">Shell</span><span class="proj-code-file">jobq</span></div>
+  <pre class="proj-code"><code>jobq add --name unet-eval --on 1660 --est 1h -- uv run python evaluate.py --run unet
+jobq add --name compare --on cpu --depends 3 -- uv run python compare.py
+jobq add --on 4060 --attach &#x27;out/*.png&#x27; --attach-log -- python train.py
+jobq ls --watch
+jobq move 4 --front
+jobq schedule 4 --at 23:30</code></pre>
+</div>
+<p class="proj-block-title">Scheduling</p>
+<ul class="proj-list--boxed">
+<li>Conditions — a job can depend on another (--depends), wait for a start time (--not-before), or run a bash check just before starting. A job that isn&#x27;t ready doesn&#x27;t block the ones behind it.</li>
+<li>Shared GPUs — processes jobq didn&#x27;t start (manual runs) are listed, and a GPU using more than 1 GB elsewhere counts as busy unless the job declares how much memory it needs.</li>
+<li>Progress — a job prints @jobq progress &lt;iter&gt;/&lt;total&gt; (or calls jobq.report() in Python), or jobq reads its existing output with a regex. Rates are smoothed, and ETAs chain through each unit&#x27;s queue using estimates or the last run time of similar jobs.</li>
+<li>Notifications — every finished job can send an email with its state, timing, final metrics, the end of its log, and any files it asked to attach (plots, CSVs).</li>
+</ul>
+<p>The scheduler, jobqd, runs as a systemd user service that starts at boot. State lives in SQLite on the local disk, with every change written to an event log. A local JSON API on 127.0.0.1 serves the status and a server-sent event stream; reads are open to local clients and changes need a token. Deck&#x27;s daemon follows that stream only while the Jobs slide or the web app&#x27;s Jobs page is open, and relays it to them.</p>
+        </div>
+      </section>
+      <section class="proj-section" id="challenges">
+        <div class="proj-section-header">
+          <span class="proj-section-num">06</span>
+          <h2 class="proj-section-title">Challenges</h2>
+        </div>
+        <div class="proj-content">
+<div class="proj-challenges">
+<div class="proj-challenge"><div class="proj-challenge-header"><span class="proj-challenge-dot"></span><strong>Keeping localhost safe when a shortcut can run shell commands</strong></div><p>The daemon only listens on 127.0.0.1, but websites in the browser can still send requests to localhost. It checks the Host header (against DNS rebinding), rejects writes and WebSocket connections from any other Origin, requires JSON for writes and never sends CORS headers. Remote access goes through tailscale serve, and only the machine owner&#x27;s Tailscale login is let in.</p></div>
+<div class="proj-challenge"><div class="proj-challenge-header"><span class="proj-challenge-dot"></span><strong>Jobs that survive their scheduler</strong></div><p>Training runs last many hours, so restarting or updating jobqd must never kill them. Each job is its own session, the service is set to leave its processes alone, and the next jobqd picks them up from the database and follows them to the end. After a reboot, jobs whose process has gone are put back at the front of the queue, or marked interrupted.</p></div>
+<div class="proj-challenge"><div class="proj-challenge-header"><span class="proj-challenge-dot"></span><strong>One shared set of types across Python and TypeScript</strong></div><p>Deck has a Python daemon, a React Native app and a React web app all speaking the same protocol and editing the same config. Rather than keep three copies in sync, the pydantic models are the single definition, a script generates JSON Schema and TypeScript from them, and the app and web builds fail if the generated files are out of date.</p></div>
+<div class="proj-challenge"><div class="proj-challenge-header"><span class="proj-challenge-dot"></span><strong>A phone whose clock you can&#x27;t trust</strong></div><p>The phone may have no SIM or Wi-Fi, so its clock drifts. The daemon sends its own time on connect, and the phone shows PC time from the offset — which also lines up the screen&#x27;s periodic blink (a burn-in guard) with the wall clock.</p></div>
+</div>
+        </div>
+      </section>
+      <section class="proj-section" id="next">
+        <div class="proj-section-header">
+          <span class="proj-section-num">07</span>
+          <h2 class="proj-section-title">What&#x27;s Next</h2>
+        </div>
+        <div class="proj-content">
+<ul class="proj-next-list">
+<li data-n="01">Edit the queue from Deck — hold, reorder and cancel jobs from the phone and web app, not just watch them.</li>
+<li data-n="02">Fill in the shortcut grid with real actions and icons, replacing the placeholders.</li>
+<li data-n="03">Run and test the Windows backend for Deck end to end.</li>
+<li data-n="04">jobq templates and per-project default environments, so recurring training and evaluation runs are one command.</li>
+</ul>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="proj-footer">
+    <div class="proj-footer-inner">
+      <a href="portfolio.html#projects" class="proj-footer-back">← Back to Projects</a>
+      <div class="theme-toggle" role="group" aria-label="Colour theme">
+        <button class="theme-btn" data-mode="light" title="Light mode">&#9788;</button>
+        <button class="theme-btn" data-mode="auto"  title="Auto (time-based)">&#9680;</button>
+        <button class="theme-btn" data-mode="dark"  title="Dark mode">&#9790;</button>
+      </div>
+      <div class="footer-dots">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="proj-footer-nav">
+        <a href="project_expedite.html" class="proj-footer-sibling">← Project Expedite</a>
+        
+      </div>
+    </div>
+  </footer>
+
+  <script src="../theme.js"></script>
+  <script src="project.js" defer></script>
+</body>
+</html>

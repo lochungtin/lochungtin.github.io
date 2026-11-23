@@ -66,3 +66,44 @@ document.querySelectorAll('.proj-dot-cluster span').forEach((dot, i) => {
   dot.style.transition = `opacity .4s ease ${i * 0.05}s`;
   setTimeout(() => { dot.style.opacity = 0.25; }, 80);
 });
+
+// ── Horizontal galleries: prev/next buttons + counter ───────────────
+document.querySelectorAll('.proj-gallery').forEach(gallery => {
+  const track = gallery.querySelector('.proj-gallery-track');
+  const items = [...track.querySelectorAll('.proj-gallery-item')];
+  const current = gallery.querySelector('.proj-gallery-current');
+  const [prev, next] = gallery.querySelectorAll('.proj-gallery-btn');
+
+  const index = () => {
+    const left = track.scrollLeft;
+    let best = 0;
+    items.forEach((item, i) => {
+      if (Math.abs(item.offsetLeft - track.offsetLeft - left) <
+          Math.abs(items[best].offsetLeft - track.offsetLeft - left)) best = i;
+    });
+    return best;
+  };
+
+  const update = () => {
+    const i = index();
+    current.textContent = String(i + 1).padStart(2, '0');
+    const atEnd = track.scrollLeft + track.clientWidth >= track.scrollWidth - 2;
+    prev.disabled = i === 0 && track.scrollLeft <= 2;
+    next.disabled = atEnd;
+  };
+
+  const go = dir => {
+    const target = items[Math.max(0, Math.min(items.length - 1, index() + dir))];
+    track.scrollTo({ left: target.offsetLeft - track.offsetLeft, behavior: 'smooth' });
+  };
+
+  prev.addEventListener('click', () => go(-1));
+  next.addEventListener('click', () => go(1));
+  track.addEventListener('keydown', ev => {
+    if (ev.key === 'ArrowLeft')  { ev.preventDefault(); go(-1); }
+    if (ev.key === 'ArrowRight') { ev.preventDefault(); go(1); }
+  });
+  track.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
+  window.addEventListener('resize', update);
+  update();
+});

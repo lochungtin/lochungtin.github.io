@@ -1020,6 +1020,103 @@
 }
 
 
+/* ── GALLERY (horizontal scroll) ───────────────────────────────────── */
+
+.proj-gallery {
+  margin: 2rem 0;
+}
+
+.proj-gallery-track {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
+  padding-bottom: 1rem;
+  scrollbar-width: thin;
+  scrollbar-color: var(--mid) transparent;
+}
+
+.proj-gallery-track:focus-visible {
+  outline: var(--line);
+  outline-offset: 4px;
+}
+
+.proj-gallery-item {
+  flex: 0 0 85%;
+  margin: 0;
+  scroll-snap-align: start;
+}
+
+.proj-gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border: var(--line);
+}
+
+.proj-gallery-caption {
+  font-family: 'DM Mono', monospace;
+  font-size: .72rem;
+  line-height: 1.5;
+  color: var(--mid);
+  padding-top: .75rem;
+}
+
+.proj-gallery-caption strong {
+  color: var(--black);
+  font-weight: 700;
+}
+
+.proj-gallery-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: .75rem;
+  border-top: var(--line-thin);
+}
+
+.proj-gallery-count {
+  font-family: 'DM Mono', monospace;
+  font-size: .72rem;
+  letter-spacing: .1em;
+  color: var(--mid);
+}
+
+.proj-gallery-current {
+  color: var(--black);
+  font-weight: 500;
+}
+
+.proj-gallery-buttons {
+  display: flex;
+  gap: .5rem;
+}
+
+.proj-gallery-btn {
+  width: 2.25rem;
+  height: 2.25rem;
+  border: var(--line);
+  background: transparent;
+  color: var(--black);
+  font-family: 'DM Mono', monospace;
+  font-size: .9rem;
+  cursor: pointer;
+  transition: background .2s, color .2s, opacity .2s;
+}
+
+.proj-gallery-btn:hover:not(:disabled) {
+  background: var(--black);
+  color: var(--white);
+}
+
+.proj-gallery-btn:disabled {
+  opacity: .3;
+  cursor: default;
+}
+
+
 /* ── RESPONSIVE ────────────────────────────────────────────────────── */
 
 @media (max-width: 900px) {
@@ -1167,6 +1264,10 @@
 
   .proj-figure-placeholder {
     aspect-ratio: 16 / 9;
+  }
+
+  .proj-gallery-item {
+    flex-basis: 92%;
   }
 
   /* ── Table — text wraps, no horizontal scroll ── */

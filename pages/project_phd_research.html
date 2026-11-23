@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PhD Research — CTL</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="stylesheet" href="../project.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="portfolio.html" class="nav-logo">CTL.</a>
+    <div class="nav-links">
+      <a href="portfolio.html#about">About</a>
+      <a href="portfolio.html#academics">Academics</a>
+      <a href="portfolio.html#experience">Experience</a>
+      <a href="portfolio.html#skills">Skills</a>
+      <a href="portfolio.html#projects">Projects</a>
+    </div>
+    <button class="nav-hamburger" id="hamburger" aria-label="Toggle menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- MOBILE MENU -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#overview" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">01</span><span class="mobile-menu-label">Overview</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+    <a href="#projects" class="mobile-menu-item">
+      <div class="mobile-menu-left"><span class="mobile-menu-num">02</span><span class="mobile-menu-label">Projects</span></div>
+      <span class="mobile-menu-arrow">&#8595;</span>
+    </a>
+  </div>
+
+  <!-- PROJECT HEADER -->
+  <header class="proj-header">
+    <div class="proj-header-meta">
+      <a href="portfolio.html#projects" class="proj-back">← All Projects</a>
+      <div class="proj-meta-block">
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Status</span>
+          <span class="proj-meta-value proj-status-badge">In Progress</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Year</span>
+          <span class="proj-meta-value">2023 – Present</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Role</span>
+          <span class="proj-meta-value">PhD Researcher · University College London</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Stack</span>
+          <span class="proj-meta-value">Python</span>
+        </div>
+        <div class="proj-meta-row">
+          <span class="proj-meta-label">Links</span>
+          <div class="proj-link-group"></div>
+        </div>
+      </div>
+      <div class="proj-dot-cluster">
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span>
+      </div>
+    </div>
+    <div class="proj-header-title">
+      <p class="proj-number">03 / Project</p>
+      <h1 class="proj-title">PhD<br><em>Research</em></h1>
+      <p class="proj-tagline">Developing a software suite to analyse the potential benefits of upright radiotherapy.</p>
+      <div class="proj-tag-row"><span class="proj-tag">Medical Physics</span><span class="proj-tag">Radiotherapy</span><span class="proj-tag">Upright Radiotherapy</span><span class="proj-tag">Medical Imaging</span></div>
+    </div>
+  </header>
+
+  <!-- TABLE OF CONTENTS -->
+  <nav class="proj-toc" id="toc">
+    <button class="proj-toc-toggle" id="tocToggle" aria-label="Toggle contents">
+      <span class="proj-toc-toggle-label">Contents</span>
+      <span class="proj-toc-toggle-arrow">&#8595;</span>
+    </button>
+    <div class="proj-toc-links" id="tocLinks"><a href="#overview" class="proj-toc-item"><span class="proj-toc-num">01</span> Overview</a><a href="#projects" class="proj-toc-item"><span class="proj-toc-num">02</span> Projects</a></div>
+  </nav>
+
+  <!-- BODY -->
+  <main class="proj-body">
+    <aside class="proj-sidebar" id="sidebar">
+      <p class="proj-sidebar-label">On this page</p>
+      <a href="#overview" class="proj-sidebar-link" data-section="overview">Overview</a>
+<a href="#projects" class="proj-sidebar-link" data-section="projects">Projects</a>
+
+    </aside>
+    <article class="proj-article">
+      <section class="proj-section" id="overview">
+        <div class="proj-section-header">
+          <span class="proj-section-num">01</span>
+          <h2 class="proj-section-title">Overview</h2>
+        </div>
+        <div class="proj-content">
+<p class="lead">Ph.D. in Medical Physics and Biomedical Engineering at University College London, developing a software suite to analyse the potential benefits of upright radiotherapy.</p>
+<p>A fuller write-up is coming soon.</p>
+        </div>
+      </section>
+      <section class="proj-section" id="projects">
+        <div class="proj-section-header">
+          <span class="proj-section-num">02</span>
+          <h2 class="proj-section-title">Projects</h2>
+        </div>
+        <div class="proj-content">
+<p>Each project from the PhD will get its own page, linked from here.</p>
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <footer class="proj-footer">
+    <div class="proj-footer-inner">
+      <a href="portfolio.html#projects" class="proj-footer-back">← Back to Projects</a>
+      <div class="theme-toggle" role="group" aria-label="Colour theme">
+        <button class="theme-btn" data-mode="light" title="Light mode">&#9788;</button>
+        <button class="theme-btn" data-mode="auto"  title="Auto (time-based)">&#9680;</button>
+        <button class="theme-btn" data-mode="dark"  title="Dark mode">&#9790;</button>
+      </div>
+      <div class="footer-dots">
+        <span></span><span></span><span></span><span></span><span></span>
+      </div>
+      <div class="proj-footer-nav">
+        <a href="project_icl_res.html" class="proj-footer-sibling">← Ovarian Diagnosis</a>
+        <a href="project_coincontrol.html"  class="proj-footer-sibling">CoinControl →</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../theme.js"></script>
+  <script src="project.js" defer></script>
+</body>
+</html>

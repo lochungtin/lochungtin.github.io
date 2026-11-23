@@ -1,0 +1,56 @@
+{
+    "meta": {
+        "nav_logo": "CTL.",
+        "portfolio_url": "portfolio.html",
+        "title_prefix": "PhD",
+        "title_italic": "Research",
+        "number": "03",
+        "tagline": "Developing a software suite to analyse the potential benefits of upright radiotherapy.",
+        "status": "In Progress",
+        "year": "2023 – Present",
+        "role": "PhD Researcher · University College London",
+        "stack": "Python",
+        "tags": [
+            "Medical Physics",
+            "Radiotherapy",
+            "Upright Radiotherapy",
+            "Medical Imaging"
+        ],
+        "links": [],
+        "prev_project": {
+            "label": "← Ovarian Diagnosis",
+            "url": "project_icl_res.html"
+        },
+        "next_project": {
+            "label": "CoinControl →",
+            "url": "project_coincontrol.html"
+        }
+    },
+    "sections": [
+        {
+            "id": "overview",
+            "title": "Overview",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "style": "lead",
+                    "text": "Ph.D. in Medical Physics and Biomedical Engineering at University College London, developing a software suite to analyse the potential benefits of upright radiotherapy."
+                },
+                {
+                    "type": "paragraph",
+                    "text": "A fuller write-up is coming soon."
+                }
+            ]
+        },
+        {
+            "id": "projects",
+            "title": "Projects",
+            "blocks": [
+                {
+                    "type": "paragraph",
+                    "text": "Each project from the PhD will get its own page, linked from here."
+                }
+            ]
+        }
+    ]
+}

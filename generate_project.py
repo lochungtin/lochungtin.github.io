@@ -92,6 +92,12 @@ table
 challenges
   "items": [{ "title": "Challenge title.", "text": "Explanation." }]
   Renders bordered cards with a dot marker.
+
+gallery
+  "title": "Optional heading above the gallery"   (optional)
+  "items": [{ "src": "path.png", "alt": "...", "caption": "..." }, ...]
+  Horizontally scrollable strip of images (scroll-snap), with prev/next
+  buttons and a counter wired up in project.js. Captions are numbered.
 """
 
 import json
@@ -307,6 +313,39 @@ def render_challenges(block: dict) -> str:
     return '<div class="proj-challenges">\n' f"{cards}" "</div>\n"
 
 
+def render_gallery(block: dict) -> str:
+    items = block.get("items", [])
+    title_html = _block_title(block.get("title", ""))
+    figs = ""
+    for i, item in enumerate(items, 1):
+        caption = item.get("caption", "")
+        cap_html = (
+            f'<figcaption class="proj-gallery-caption">'
+            f"<strong>{str(i).zfill(2)}</strong> — {e(caption)}</figcaption>"
+            if caption
+            else ""
+        )
+        figs += (
+            '<figure class="proj-gallery-item">'
+            f'<img src="{e(item.get("src", ""))}" alt="{e(item.get("alt", ""))}" loading="lazy">'
+            f"{cap_html}"
+            "</figure>\n"
+        )
+    total = str(len(items)).zfill(2)
+    return (
+        f"{title_html}"
+        '<div class="proj-gallery">\n'
+        f'  <div class="proj-gallery-track" tabindex="0" aria-label="Screenshot gallery">\n{figs}  </div>\n'
+        '  <div class="proj-gallery-controls">'
+        f'<span class="proj-gallery-count"><span class="proj-gallery-current">01</span> / {total}</span>'
+        '<div class="proj-gallery-buttons">'
+        '<button class="proj-gallery-btn" data-dir="-1" aria-label="Previous image">&#8592;</button>'
+        '<button class="proj-gallery-btn" data-dir="1" aria-label="Next image">&#8594;</button>'
+        "</div></div>\n"
+        "</div>\n"
+    )
+
+
 def _block_title(title: str) -> str:
     if not title:
         return ""
@@ -324,6 +363,7 @@ RENDERERS = {
     "code": render_code,
     "table": render_table,
     "challenges": render_challenges,
+    "gallery": render_gallery,
 }
 
 

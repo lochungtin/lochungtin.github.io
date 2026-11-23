@@ -24,10 +24,13 @@
             }
         ],
         "prev_project": {
-            "label": "← ArUco Measurement",
-            "url": "#"
+            "label": "← PhD Research",
+            "url": "project_phd_research.html"
         },
-        "next_project": null
+        "next_project": {
+            "label": "Project Expedite →",
+            "url": "project_expedite.html"
+        }
     },
     "sections": [
         {
