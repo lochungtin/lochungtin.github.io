@@ -1,7 +1,7 @@
 {
     "meta": {
         "nav_logo": "CTL.",
-        "portfolio_url": "portfolio.html",
+        "portfolio_url": "../index.html",
         "title_prefix": "Coin",
         "title_italic": "Control",
         "number": "04",

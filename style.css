@@ -891,6 +891,11 @@ a.pub-card:hover .pub-arrow {
   opacity: 1;
 }
 
+.project-separator {
+  border-top: var(--line);
+  margin-top: -1px;
+}
+
 /* ── FOOTER ── */
 footer {
   display: flex;

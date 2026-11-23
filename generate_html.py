@@ -143,16 +143,24 @@ def experience_rows(jobs: list) -> str:
 
 def project_rows(projects: list) -> str:
     rows = []
-    for i, proj in enumerate(projects, 1):
+    i = 0
+    for proj in projects:
+        if proj.get("separator"):
+            rows.append('\n      <div class="project-separator" role="separator"></div>')
+            continue
+        i += 1
+        external = proj["url"].startswith(("http://", "https://", "mailto:"))
+        target = ' target="_blank" rel="noopener"' if external else ""
+        arrow = "&#8599;" if external else "&#8594;"
         rows.append(f"""
-      <a href="{e(proj['url'])}" target="_blank" rel="noopener" class="project-row">
+      <a href="{e(proj['url'])}"{target} class="project-row">
         <span class="project-num">{i:02d}</span>
         <div class="project-main">
           <span class="project-name">{e(proj['name'])}</span>
           <span class="project-sub">{e(proj['description'])}</span>
         </div>
         <span class="project-tech">{e(proj['tech'])}</span>
-        <span class="project-link">&#8599;</span>
+        <span class="project-link">{arrow}</span>
       </a>""")
     return "\n".join(rows)
 

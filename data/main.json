@@ -16,7 +16,7 @@
       {
         "label": "Email",
         "handle": "lochungtin@gmail.com",
-        "url": "mailto:lochugtin@gmail.com",
+        "url": "mailto:lochungtin@gmail.com",
         "arrow": "↗"
       },
       {
@@ -318,10 +318,25 @@
   },
   "projects": [
     {
-      "name": "ArMMs - ArUCo Marker Measurement System",
-      "description": "Calibration-free camera-based measurement system.",
-      "tech": "Python · OpenCV",
-      "url": "https://github.com/lochungtin/ArMMS"
+      "name": "Ghost AI",
+      "description": "Final Year Project at King's College London - Improving the original ghost AI to more efficiently catch Pacman.",
+      "tech": "Python",
+      "url": "pages/project_kcl_fyp.html"
+    },
+    {
+      "name": "Ovarian Diagnosis",
+      "description": "Automatic segmentation and diagnosis for ovarian masses - an end-to-end pipeline mirroring the diagnostic workflow of radiologists.",
+      "tech": "Python · PyTorch",
+      "url": "pages/project_icl_res.html"
+    },
+    {
+      "name": "PhD Research",
+      "description": "Developing a software suite to analyse the potential benefits of upright radiotherapy.",
+      "tech": "Python",
+      "url": "pages/project_phd_research.html"
+    },
+    {
+      "separator": true
     },
     {
       "name": "AI Snake",
@@ -330,22 +345,28 @@
       "url": "https://github.com/lochungtin/SnakeAI"
     },
     {
+      "name": "CoinControl",
+      "description": "Personal finance management mobile application - Tracking, visualising, and analysing your income and spending habits.",
+      "tech": "React · Firebase",
+      "url": "pages/project_coincontrol.html"
+    },
+    {
       "name": "Project Expedite - Ever Expanding",
       "description": "Puzzle Game Solver - A passion project to mathematically and algorithmically \"solve\" and create solutions for puzzle games.",
       "tech": "Vanilla Python · C++",
-      "url": "https://lochungtin.github.io/Expedite"
+      "url": "pages/project_expedite.html"
+    },
+    {
+      "name": "Deck, Monitor & jobq",
+      "description": "A custom Stream Deck built from an old phone - plus a system monitor and a GPU job queue for managing AI training at home.",
+      "tech": "React Native · Python",
+      "url": "pages/project_deck.html"
     },
     {
       "name": "NPM Packages",
       "description": "Short and simple utility packages released for personal and public use.",
       "tech": "JavaScript · NodeJS",
       "url": "https://www.npmjs.com/~lochungtin"
-    },
-    {
-      "name": "CoinControl",
-      "description": "Personal finance management mobile application - Tracking, visualising, and analysing your income and spending habits.",
-      "tech": "React · Firebase",
-      "url": "https://github.com/lochungtin/CoinControl"
     }
   ]
 }
